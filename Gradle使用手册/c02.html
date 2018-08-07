@@ -1,0 +1,418 @@
+<html>
+    
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            第一个Java项目 - Gradle使用手册
+        </title>
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="base.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="docs.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="userguide.css">
+        <meta content="DocBook XSL Stylesheets V1.75.2" name="generator">
+        <link rel="home" href="userguide.html" title="Gradle使用手册">
+        <link rel="up" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+        <link rel="prev" href="c01.html" title="简介 - Gradle使用手册">
+        <link rel="next" href="c03.html" title="依赖管理 - Gradle使用手册">
+    </head>
+    
+    <body>
+        <div class="navheader">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c01.html" title="简介 - Gradle使用手册">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle使用手册">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c03.html" title="依赖管理 - Gradle使用手册">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="titlepage">
+                <div>
+                    <div>
+                        <h1 xmlns:xslthl="http://xslthl.sf.net">
+                            <a name="第一个Java项目">
+                            </a>
+                            Chapter&nbsp;2.&nbsp;第一个Java项目
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="toc">
+                <p>
+                    <b>
+                        目录
+                    </b>
+                </p>
+                <dl>
+                    <dt>
+                        <span class="section">
+                            <a href="c02.html#N201A">
+                                2.1. 创建一个Java项目
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c02.html#N202A">
+                                2.2. Java项目结构
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c02.html#N203A">
+                                2.3. 为构建加入一个主类（main class）
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c02.html#N204A">
+                                2.4. Java工程中的任务
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c02.html#N205A">
+                                2.5. 打包我们的项目
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c02.html#N206A">
+                                2.6. 配置Jar文件的主类
+                            </a>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+			<p>
+				这篇教程的主要内容是讲解如何用Gradle编译和打包一个简单的Java项目。
+			</p>
+			<p>
+				该Java项目只有一个需求：我们的构建脚本必须创建一个可执行的Jar文件，换句话说，
+				我们必须能够使用命令java -jar jarfile.jar 来运行我们的程序。我们来看一下如何满足这个需求。
+			</p>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N201A" class="section-anchor"
+                                href="#N201A">
+                                </a>
+                                2.1.&nbsp;创建一个Java项目
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+				<p>
+					我们可以使用Java插件（译注：关于Gradle插件的定义，请查看第一篇教程）来创建一个Java项目，
+					为了做到这点，我们需要把下面这段语句加入到build.gradle文件中：
+				</p>
+				<pre class="programlisting">
+                    apply plugin: 'java'
+				</pre>
+				<p>
+					就是这样，现在我们已经创建了一个Java项目。Java插件会在我们的构建中添加一些新的约定（如默认的项目结构），
+					新的任务，和新的属性。
+				</p>
+            </div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N202A" class="section-anchor"
+                                href="#N202A">
+                                </a>
+                                2.2.&nbsp;Java项目结构
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					默认的项目结构如下：
+                </p>
+				<div class="itemizedlist">
+					<ul class="itemizedlist">
+						<li class="listitem">
+							<p>
+								src/main/java目录包含了项目的源代码。
+							</p>
+						</li>
+						<li class="listitem">
+							<p>
+								src/main/resources目录包含了项目的资源（如属性文件）。
+							</p>
+						</li>
+						<li class="listitem">
+							<p>
+								src/test/java目录包含了测试类。
+							</p>
+						</li>
+						<li class="listitem">
+							<p>
+								src/test/resources目录包含了测试资源。
+							</p>
+						</li>
+						<li class="listitem">
+							<p>
+								build/classes目录包含编译过的.class文件。
+							</p>
+						</li>
+						<li class="listitem">
+							<p>
+								build/libs目录包含构建生成的jar或war文件。
+							</p>
+						</li>
+					</ul>
+				</div>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N203A" class="section-anchor"
+                                href="#N203A">
+                                </a>
+                                2.3.&nbsp;为构建加入一个主类（main class）
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					让我们创建一个简单的主类，在这个类中会打印一个“Hello world”然后System.out出来。这个HelloWorld类的源代码如下：
+                </p>
+				<div class="figure-contents">
+					<img src="img/main_class.png" alt="main_class">
+				</div>
+				<p>
+					HelloWorld类存放在src/main/java/net/petrikainulainen/gradle目录
+				</p>
+				<p>
+					这很好，然而，我们还需要编译和打包我们的项目，不是吗？我们先看一下这个Java工程中的任务。
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N204A" class="section-anchor"
+                                href="#N204A">
+                                </a>
+                                2.4.&nbsp;Java工程中的任务
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Java插件在我们的构建中加入了很多任务，我们这篇教程涉及到的任务如下：
+                </p>
+				<div class="itemizedlist">
+					<ul class="itemizedlist">
+						<li class="listitem">
+							<p>
+								assemble任务会编译程序中的源代码，并打包生成Jar文件，这个任务不执行单元测试。
+							</p>
+						</li>
+						<li class="listitem">
+							<p>
+								build任务会执行一个完整的项目构建。
+							</p>
+						</li>
+						<li class="listitem">
+							<p>
+								clean任务会删除构建目录。
+							</p>
+						</li>
+						<li class="listitem">
+							<p>
+								compileJava任务会编译程序中的源代码。
+							</p>
+						</li>
+					</ul>
+				</div>
+				<p>
+					我们还可以执行以下命令得到一个可运行任务及其描述的完整列表
+				</p>
+				<pre class="programlisting">
+                    gradle tasks
+				</pre>
+				<p>
+					这是一个很好的方式，不需要阅读构建脚本，就能对你的项目进行大致的浏览，
+					如果我们在项目根目录下运行这个命令，我们可以看到以下输出：
+				</p>
+				<pre class="screen">
+                    &gt; gradle tasks
+                    :tasks
+                    
+                    ------------------------------------------------------------
+                    All tasks runnable from root project
+                    ------------------------------------------------------------
+                    
+                    Application tasks
+                    -----------------
+                    installApp - Installs the project as a JVM application along with libs and OS sp
+                    ecific scripts.
+                    run - Runs this project as a JVM application
+                    
+                    Build tasks
+                    -----------
+                    assemble - Assembles the outputs of this project.
+                    build - Assembles and tests this project.
+                    buildDependents - Assembles and tests this project and all projects that depend
+                    on it.
+                    buildNeeded - Assembles and tests this project and all projects it depends on.
+                    classes - Assembles main classes.
+                    clean - Deletes the build directory.
+                    jar - Assembles a jar archive containing the main classes.
+				</pre>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N205A" class="section-anchor"
+                                href="#N205A">
+                                </a>
+                                2.5.&nbsp;打包我们的项目
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					如果我们在命令提示符中执行命令gradle assemble，我们可以看到以下输出：
+                </p>
+				<div class="figure-contents">
+					<img src="img/gradle_assemble.png" alt="gradle_assemble">
+				</div>
+				<p>
+					如果我们在命令提示符中执行命令gradle build，我们可以看到以下输出：
+                </p>
+				<div class="figure-contents">
+					<img src="img/gradle_build.png" alt="gradle_build">
+				</div>
+				<p>
+					这些命令的输出表明了它们的区别：
+				</p>
+				<div class="itemizedlist">
+					<ul class="itemizedlist">
+						<li class="listitem">
+							<p>
+								assemble任务仅仅执行项目打包所必须的任务集。
+							</p>
+						</li>
+						<li class="listitem">
+							<p>
+								build任务执行项目打包所必须的任务集，以及执行自动化测试。
+							</p>
+						</li>
+					</ul>
+				</div>
+				<p>
+					这两个命令都会在build/libs目录中创建一个file-java-project.jar文件。默认创建的Jar文件名称
+					是由这个模版决定的：[projectname].jar，此外，项目的默认名称和其所处的目录名称是一致的。
+					因此如果你的项目目录名称是first-java-project，那么创建的Jar文件名称就是first-java-project.jar。
+				</p>
+				<p>
+					现在，我们尝试使用以下命令运行我们的程序：
+				</p>
+				<pre class="programlisting">
+                    java -jar first-java-project.jar
+				</pre>
+				<p>
+					我们可以看到以下输出：
+				</p>
+				<pre class="screen">
+                    &gt; java -jar first-java-project.jar
+                    No main manifest attribute, in first-java-project.jar
+				</pre>
+				<p>
+					问题出在，我们没有在manifest文件中配置Jar文件的主类，让我们继续看看怎样解决这个问题。
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N206A" class="section-anchor"
+                                href="#N206A">
+                                </a>
+                                2.6.&nbsp;配置Java文件的主类
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Java插件在我们的项目中加入了一个Jar任务，每一个Jar对象都一个manifest属性，这个属性是Manifest的一个实例。
+                </p>
+				<p>
+					我们可以对生成的Jar文件的主类进行配置，使用Manifest接口的attributes()方法。换句话说，
+					我们可以使用一个包含键值对的map结构指定加入到manifest文件的属性集。
+				</p>
+				<p>
+					我们能够通过设置Main-Class属性的值，指定我们程序的入口点。在我们对build.gradle文件进行必要的改动后，代码如下：
+				</p>
+				<pre class="programlisting">
+                    apply plugin: 'java'
+                    jar {
+                        manifest {
+                        atributes 'Main-Class': 'net.petrikainulainen.gradle.HelloWorld'
+                        }
+                    }
+				</pre>
+				<p>
+					在我们执行gradle assemble或gradle build命令生成一个新的jar文件之后，
+					我们可以执行以下命令运行jar文件，可以看到正确打印了。
+				</p>
+				<pre class="programlisting">
+                    java -jar first-java-project.jar
+				</pre>
+            </div>
+        </div>
+        <div class="navfooter">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c01.html" title="简介 - Gradle使用手册">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle使用手册">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c03.html" title="依赖管理 - Gradle使用手册">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

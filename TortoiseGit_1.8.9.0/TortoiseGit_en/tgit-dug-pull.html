@@ -1,0 +1,34 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2.7. Pull and Fetch change</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-dug.html" title="Chapter 2. TortoiseGit Daily Use Guide"><link rel="prev" href="tgit-dug-wcstatus.html" title="2.6. Getting Status Information"><link rel="next" href="tgit-dug-push.html" title="2.8. Push"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.7. Pull and Fetch change</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-dug-wcstatus.html">Prev</a> </td><th width="60%" align="center">Chapter 2. TortoiseGit Daily Use Guide</th><td width="20%" align="right"> <a accesskey="n" href="tgit-dug-push.html">Next</a></td></tr></table><hr></div><div class="sect1" title="2.7. Pull and Fetch change"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-dug-pull"></a>2.7. Pull and Fetch change</h2></div></div></div><a name="id777944"></a><a name="id778736"></a><p>
+    This section talks about how to fetch or pull change from the other
+	repository. The difference between pull and fetch is:
+  </p><p>
+	Pull will merge remote branch change to local branch which tracked with 
+	remote branch. Fetch just get change from remote branch and never merge.
+  </p><p>
+    <span class="guimenu">TortoiseGit
+      </span> &#8594; <span class="guimenuitem">Pull...
+	  </span>. 
+  </p><p>
+    <span class="guimenu">TortoiseGit
+      </span> &#8594; <span class="guimenuitem">Fetch...
+	  </span>. 
+  </p><p>
+    Pull\fetch Dialog will show. </p><div><img src="images/GitPull.png"></div><p> </p><div><img src="images/Fetch.png"></div><p>
+  </p><p>
+    <span class="guilabel">Remote:</span> Choose Remote
+  </p><p>
+    <span class="guilabel">Other:</span> Input Other URL or local directory.
+    You can click <span class="guibutton">...</span> to browse directory. 
+  </p><p>
+    If you check the <span class="guilabel">Autoload Putty Key</span> checkbox, Putty key
+	will auto load by Pageant.
+  </p><p>
+    <span class="guilabel">Manage Remotes</span> to add or modify remote configuration.
+  </p><p>
+    <span class="guilabel">Tags</span> has three states (git 1.9 and later): Checked: All tags as well as branches are downloaded (--tags is passed to git), unchecked: No tags are downloaded (--no-tags is passed to git), and third state: use default behavior (based on remote <code class="option">name</code>.tagopt setting).
+    <span class="guilabel">Tags</span> has three states (prior to git 1.9): Only all tags are downloaded but no branches are downloaded (--tags is passed to git), unchecked: No tags are downloaded (--no-tags is passed to git), and third state: use default behavior (based on remote <code class="option">name</code>.tagopt setting).
+  </p><p>
+    <span class="guilabel">Prune</span> has three states: True to remove remote-tracking branches which no longer exist on the remote, false: not to remove, and third state: use default behavior (based on remote <code class="option">name</code>.prune or fetch.prune setting).
+  </p><div class="tip" title="Tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>You can find more information about PuTTY and using ssh-keys at <a class="xref" href="tgit-ssh-howto.html" title="Appendix F. Tips and tricks for SSH/PuTTY">Appendix F, <i>Tips and tricks for SSH/PuTTY</i></a>.</p></td></tr></table></div><p>
+    You can find more information at <a class="xref" href="git-command.html#git-fetch(1)" title="G.3.44. git-fetch(1)">Section G.3.44, &#8220;git-fetch(1)&#8221;</a> and <a class="xref" href="git-command.html#git-pull(1)" title="G.3.94. git-pull(1)">Section G.3.94, &#8220;git-pull(1)&#8221;</a>.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-dug-wcstatus.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-dug.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-dug-push.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.6. Getting Status Information </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2.8. Push</td></tr></table></div></body></html>

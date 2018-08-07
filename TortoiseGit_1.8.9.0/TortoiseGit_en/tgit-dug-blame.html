@@ -1,0 +1,42 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2.32. Who Changed Which Line?</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-dug.html" title="Chapter 2. TortoiseGit Daily Use Guide"><link rel="prev" href="tgit-dug-patch.html" title="2.31. Creating and Applying Patches and Pull Requests"><link rel="next" href="tgit-dug-export.html" title="2.33. Exporting a Git Working Tree"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.32. Who Changed Which Line?</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-dug-patch.html">Prev</a> </td><th width="60%" align="center">Chapter 2. TortoiseGit Daily Use Guide</th><td width="20%" align="right"> <a accesskey="n" href="tgit-dug-export.html">Next</a></td></tr></table><hr></div><div class="sect1" title="2.32. Who Changed Which Line?"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-dug-blame"></a>2.32. Who Changed Which Line?</h2></div></div></div><a name="id680461"></a><a name="id681860"></a><a name="id681560"></a><p>
+		Sometimes you need to know not only what lines have changed, but also
+		who exactly changed specific lines in a file. That's when the
+		<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Blame...</span>
+		command, sometimes also referred to as <em class="firstterm">annotate</em>
+		command comes in handy.
+	</p><p>
+		This command lists, for every line in a file, the author and the revision
+		the line was changed.
+	</p><div class="sect2" title="2.32.1. Blame for Files"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-blame-simple"></a>2.32.1. Blame for Files</h3></div></div></div><p>
+			By default the blame file is viewed using <em class="firstterm">TortoiseGitBlame</em>,
+			which highlights the different revisions to make it easier to read.
+		</p><p>
+			</p><div class="figure"><a name="tgit-dug-blame-dia-2"></a><p class="title"><b>Figure 2.50. TortoiseGitBlame</b></p><div class="figure-contents"><div><img src="images/TortoiseBlame.png" alt="TortoiseGitBlame"></div></div></div><p><br class="figure-break">
+			TortoiseGitBlame, which is included with TortoiseGit. 
+			When you hover the mouse over a line in the blame info
+			column, all lines with the same revision are shown with a darker
+			background. Lines from other revisions which were changed by the same author
+			are shown with a light background.
+			The colouring may not work as clearly if you have your display set to
+			256 colour mode.
+		</p><p>
+			If you <span class="action">left click</span>
+			on a line, all lines with the same revision are highlighted, and lines from
+			other revisions by the same author are highlighted in a lighter colour.
+			This highlighting is sticky, allowing you to move the mouse without losing
+			the highlights. Click on that revision again to turn off highlighting.
+		</p><p>
+			The revision comments (log message) are shown in a hint box whenever
+			the mouse hovers over the blame info column. If you want to copy the
+			log message for that revision, use the context menu which appears when
+			you right click on the blame info column.
+		</p><p>
+			You can search within the Blame report using
+			<span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Find...</span>.
+			This allows you to search for revision numbers, authors and the content of
+			the file itself. Log messages are not included in the search - you should
+			use the Log Dialog to search those.
+		</p><p>
+			You can also jump to a specific line number using
+			<span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Go To Line...</span>.
+		</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-dug-patch.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-dug.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-dug-export.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.31. Creating and Applying Patches and Pull Requests </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2.33. Exporting a Git Working Tree</td></tr></table></div></body></html>

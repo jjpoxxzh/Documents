@@ -1,0 +1,532 @@
+<html>
+    
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Relations - GreenDao Documentation 2.10
+        </title>
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="base.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="docs.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="userguide.css">
+        <meta content="DocBook XSL Stylesheets V1.75.2" name="generator">
+        <link rel="home" href="userguide.html" title="GreenDao Documentation 2.10">
+        <link rel="up" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+        <link rel="prev" href="c06.html" title="Joins - GreenDao Documentation 2.10">
+        <link rel="next" href="c08.html" title="Custom Types - GreenDao Documentation 2.10">
+    </head>
+    
+    <body>
+        <div class="navheader">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c06.html" title="Joins - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c08.html" title="Custom Types - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="titlepage">
+                <div>
+                    <div>
+                        <h1 xmlns:xslthl="http://xslthl.sf.net">
+                            <a name="modelling_entities">
+                            </a>
+                            Chapter&nbsp;7.&nbsp;Relations
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="toc">
+                <p>
+                    <b>
+                        目录
+                    </b>
+                </p>
+                <dl>
+                    <dt>
+                        <span class="section">
+                            <a href="c07.html#N701A">
+                                7.1. Relation Names and multiple Relations
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c07.html#N702A">
+                                7.2. Modelling To-One Relations
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c07.html#N703A">
+                                7.3. Relation Names and multiple Relations
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c07.html#N704A">
+                                7.4. Modelling To-Many Relations
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c07.html#N705A">
+                                7.5. Resolving and Updating To-Many Relations
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c07.html#N706A">
+                                7.6. Bi-Directional 1:N Relations
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c07.html#N707A">
+                                7.7. Many-to-Many Relations (n:m)
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c07.html#N708A">
+                                7.8. Modelling Tree Relations (Example)
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c07.html#N709A">
+                                7.9. More examples
+                            </a>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+			<p>
+				Database tables may relate to each other using 1:1, 1:n, or m:n relations. If you are
+				new to database relations, it’s a good idea to catch up before we discus ORM specifics.
+				Here are some random links discussing relations in general.
+			</p>
+			<p>
+				In greenDAO, entities relate using to-one or to-many relations. For example, if you want
+				to model a 1:n relation in greenDAO, you will have a to-one and a to-many relation. However,
+				note that the to-one and a to-many relations are not connected with each other, so you will
+				have to update both.
+			</p>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N701A" class="section-anchor"
+                                href="#N701A">
+                                </a>
+                                7.1.&nbsp;Relation Names and multiple Relations
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+				<p>
+					Each relation has a name, which is used for the corresponding property in the generated
+					entity hosting the relationship. The default name is the name of the target entity. This
+					name can be overridden by using the setName method. Keep in mind that the default name
+					cannot not unique if an entity has multiple relations to the same target entity. In this
+					case you must specify relation names explicitly.
+				</p>
+            </div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N702A" class="section-anchor"
+                                href="#N702A">
+                                </a>
+                                7.2.&nbsp;Modelling To-One Relations
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					In your greenDAO generator model you must model a property for the foreign key (ID) value.
+					Using this property, you can add a to-one relation using Entity.addToOne.
+                </p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            Example:
+                        </code>
+                    </strong>
+					A user has a picture.
+				</p>
+                <pre class="programlisting">
+                    // The variables "user" and "picture" are just regualar entities
+                    Property pictureIdProperty = user.addLongProperty("pictureId").getProperty();
+                    user.addToOne(picture, pictureIdProperty);
+				</pre>
+				<p>
+					This will result in a User entity having a Picture property (getPicture/setPicture),
+					and you can work directly with Picture objects.
+				</p>
+				<p>
+					The getter Methods of to-one relations resolve the target entity lazily on the first
+					access. Subsequent accesses will return the previously resolved object directly.
+				</p>
+				<p>
+					Note that the foreign key property (“pictureId”) and the entity object property (“picture”)
+					are tied together. If you change the the pictureId, the next getPicture() call will resolve
+					the Picture entity for the updated ID. Also, if you set a new Picture entity, the pictureId
+					property will be updated as well.
+				</p>
+				<p>
+					greenDAO supports also eager loading to-one relations. It will resolve an entity with all
+					to-one relations with a single database query. This is great for performance if you need
+					the related entities anyway. Currently, you use loadDeep and queryDeep methods of the
+					generated DAO to use this feature (may change in the future).
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N703A" class="section-anchor"
+                                href="#N703A">
+                                </a>
+                                7.3.&nbsp;Relation Names and multiple Relations
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Each relation has a name, which is used for the corresponding property in the generated
+					entity hosting the relationship. The default name is the name of the target entity. This
+					name can be overridden by using the setName method. The default name is not unique if an
+					Entity has multiple relations to the same target entity. In this case you must specify
+					relation names explicitly.
+                </p>
+				<p>
+					Let’s expand the previous example, and say the user also has a thumbnail picture. Because
+					both the main picture and the thumbnail refer to the same entity Picture, there would be
+					a name collision. Thus, we rename the second relation to “thumbnail”:
+				</p>
+				<pre class="programlisting">
+                    Property pictureIdProperty = user.addLongProperty("pictureId").getProperty();
+                    Property thumbnailIdProperty = user.addLongProperty("thumbnailId").getProperty();
+                    user.addToOne(picture, pictureIdProperty);
+                    user.addToOne(picture, thumbnailIdProperty, "thumbnail");
+				</pre>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N704A" class="section-anchor"
+                                href="#N704A">
+                                </a>
+                                7.4.&nbsp;Modelling To-Many Relations
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					To-many relations are modeled like to-one relations, except that the foreign key is placed
+					in the destination table. Let’s have a look at a customer/order example. A customer can
+					place multiple orders, so we have an to-many relation. In the database we create the 1:N
+					relation by adding a customer ID column to the order table. Like this, it’s possible to
+					query all orders for a customer using the customer’s ID.
+                </p>
+				<p>
+					Modelling the to-many relation in greenDAO is very close to the database approach. First, you
+					need to add a property in the destination entity to reference the source entity of the to-many
+					relation. Then you can add a to-many relation to the source entity using the just added property
+					in the destination entity.
+				</p>
+				<p>
+					Let’s assume we have a customer and an order entity, and we want to connect orders to a customer.
+					The following code adds the to-many relation to the customer entity:
+				</p>
+				<pre class="programlisting">
+                    Property customerId = order.addLongProperty("customerId").notNull().getProperty();
+                    ToMany customerToOrders = customer.addToMany(order, customerId);
+                    customerToOrders.setName("orders");	// Optional
+                    customerToOrders.orderAsc(orderDate); // Optional
+				</pre>
+				<p>
+					Like this, we can simply call the generated getOrders() method of the Customer class to get the orders:
+				</p>
+				<pre class="programlisting">
+                    List orders = customer.getOrders();
+				</pre>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N705A" class="section-anchor"
+                                href="#N705A">
+                                </a>
+                                7.5.&nbsp;Resolving and Updating To-Many Relations
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					To-many relations are resolved lazily on the first request. After that, the related
+					entities are cached in the source entity inside a List object. Subsequent calls to
+					the get method of the relation do not query the database.
+                </p>
+				<p>
+					Note that updating to-many relations require some additional work. Because to-many lists
+					are cached, they are not updated when related entities are added to the database. The
+					following code illustrates the behavior:
+                </p>
+				<pre class="programlisting">
+                    List orders1 = customer.getOrders();
+                    int size1 = orders1.size();
+                    
+                    Order order = new Order();
+                    order.setCustomerId(customer.getId());
+                    daoSession.insert(order);
+                    
+                    Listorders2 = customer.getOrders();
+                    // size1 == orders2.size(); // NOT updated
+                    // orders1 == orders; // SAME list object
+				</pre>
+				<p>
+					Because of caching, you should add new relation entities manually to the to-many
+					list of the source entity. This is how to insert new entities that are part of a
+					to-many relation:
+                </p>
+				<div class="itemizedlist">
+                    <ul class="itemizedlist">
+                        <li class="listitem">
+                            <p>
+								Get the to-many Java List (This has to be done this before persisting
+								the new entity, because we do not know if we get a cached for fresh result.
+								Like this, we know it’s cached now.)
+                            </p>
+                        </li>
+                        <li class="listitem">
+                            <p>
+								Create a new entity object (on the many side)
+                            </p>
+                        </li>
+						<li class="listitem">
+                            <p>
+								Set the foreign property of the new entity to the target entity
+                            </p>
+                        </li>
+						<li class="listitem">
+                            <p>
+								Persist the new object using insert
+                            </p>
+                        </li>
+						<li class="listitem">
+                            <p>
+								Add the new object to the to-many Java List
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+				<p>
+					Example code:
+				</p>
+				<pre class="programlisting">
+                    List orders = customer.getOrders();
+                    newOrder.setCustomerId(customer.getId());
+                    daoSession.insert(newOrder);
+                    orders.add(newOrder);
+				</pre>
+				<p>
+					Note that getOrders is called before insert to ensure the list is cached. If
+					getOrders would be called after insert, newOrder would occur in the list twice
+					if the orders are not cached before.
+                </p>
+				<p>
+					Likewise, you can delete related entities:
+				</p>
+				<pre class="programlisting">
+                    List orders = customer.getOrders();
+                    daoSession.delete(newOrder);
+                    orders.remove(newOrder);
+				</pre>
+				<p>
+					Sometimes, it may be cumbersome or even impossible to update all to-many relations
+					manually after related entities were added or removed. To the rescue, greenDAO has
+					reset methods to clear the cached list. If a to-many relation may have changed
+					potentially, you can force greenDAO to reload the list of related entities:
+				</p>
+				<pre class="programlisting">
+                    customer.resetOrders();
+                    List orders2 = customer.getOrders();
+				</pre>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N706A" class="section-anchor"
+                                href="#N706A">
+                                </a>
+                                7.6.&nbsp;Bi-Directional 1:N Relations
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Sometimes you want to navigate 1:N relations in both directions. In greenDAO, you have to
+					add a to-one and a to-many relation to achieve this. The following example shows the complete
+					modelling of the customer and order entities, we used as an example before. This time, we use
+					the customerId property for creating both relations:
+                </p>
+				<pre class="programlisting">
+                    Entity customer = schema.addEntity("Customer");
+                    customer.addIdProperty();
+                    customer.addStringProperty("name").notnull();
+                    
+                    Entity order = schema.addEntity("Order");
+                    order.setTableName("ORDERS"); // "ORDER" is a reserved keyword
+                    order.addIdProperty();
+                    Property orderDate = order.addDateProperty("date").getProperty();
+                    Property customerId = order.addLongProperty("customerId").notnull().getProperty();
+                    order.addToOne(customer, customerId);
+                    
+                    ToMany customerToOrders = customer.addToMany(order, customerId);
+                    customerToOrders.setName("orders");
+                    customerToOrders.orderAsc(orderDate);
+				</pre>
+				<p>
+					Let’s assume we have an order entity. Using both relations, we could get the
+					customer and all orders the customer has ever made:
+                </p>
+				<pre class="programlisting">
+                    List allOrdersofCustomer = order.getCustomer().getOrders();
+				</pre>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N707A" class="section-anchor"
+                                href="#N707A">
+                                </a>
+                                7.7.&nbsp;Many-to-Many Relations (n:m)
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					In databases, n:m relations are modeled using a join table. The join table holds entries
+					having rows with foreign keys to each of the relating tables. While greenDAO does not
+					support n:m relations directly as of now, you can model the join table as a separate
+					entity. In practice, you often have “relation entities” with additional properties,
+					so you might want to do so anyway. In future releases, greenDAO might introduce direct
+					support of n:m relations.
+                </p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N708A" class="section-anchor"
+                                href="#N708A">
+                                </a>
+                                7.8.&nbsp;Modelling Tree Relations (Example)
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					You can model a tree relation by modelling an entity having a to-one and
+					a to-many relation pointing to itself:
+                </p>
+				<pre class="programlisting">
+                    Entity treeEntity = schema.addEntity("TreeEntity");
+                    treeEntity.addIdProperty();
+                    Property parentIdProperty = treeEntity.addLongProperty("parentId").getProperty();
+                    treeEntity.addToOne(treeEntity, parentIdProperty).setName("parent");
+                    treeEntity.addToMany(treeEntity, parentIdProperty).setName("children");
+				</pre>
+				<p>
+					The generated entity lets you navigate to its parent and children:
+				</p>
+				<pre class="programlisting">
+                    TreeEntity parent = child.getParent();
+                    List grandChildren = child.getChildren();
+				</pre>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N709A" class="section-anchor"
+                                href="#N709A">
+                                </a>
+                                7.9.&nbsp;More examples
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Check out the example project for a complete code example. Check out the ExampleDaoGenerator
+					and the CustomerOrderTest classes.
+                </p>
+				<p>
+					Also, the DaoGenerator and DaoTest internal sub projects come with several relation tests,
+					which may serve as further examples.
+				</p>
+            </div>
+        </div>
+        <div class="navfooter">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c06.html" title="Joins - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c08.html" title="Custom Types - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

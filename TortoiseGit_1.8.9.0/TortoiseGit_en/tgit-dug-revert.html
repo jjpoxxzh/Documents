@@ -1,0 +1,40 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2.22. Undo Changes</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-dug.html" title="Chapter 2. TortoiseGit Daily Use Guide"><link rel="prev" href="tgit-dug-rename.html" title="2.21. Deleting, Moving and Renaming"><link rel="next" href="tgit-dug-cleanup.html" title="2.23. Cleanup"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.22. Undo Changes</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-dug-rename.html">Prev</a> </td><th width="60%" align="center">Chapter 2. TortoiseGit Daily Use Guide</th><td width="20%" align="right"> <a accesskey="n" href="tgit-dug-cleanup.html">Next</a></td></tr></table><hr></div><div class="sect1" title="2.22. Undo Changes"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-dug-revert"></a>2.22. Undo Changes</h2></div></div></div><a name="id722951"></a><a name="id723740"></a><p>
+		If you want to undo all changes you made in a file since
+		the last update you need to select the file,
+		<span class="action">right click</span> to pop up the context menu and then select
+		the command
+		<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Revert</span>
+		A dialog will pop up showing you the files that you've changed and
+		can revert. Select those you want to revert and click on
+		<span class="guibutton">OK</span>.
+		</p><div class="figure"><a name="tgit-dug-revert-dia-1"></a><p class="title"><b>Figure 2.33. Revert dialog</b></p><div class="figure-contents"><div><img src="images/Revert.png" alt="Revert dialog"></div></div></div><p><br class="figure-break">
+	</p><p>
+		If you want to undo a deletion or a rename, you need to use
+		Revert on the parent folder as the deleted item does not
+		exist for you to right-click on.
+	</p><p>
+		If you want to undo the addition of an item, this appears in
+		the context menu as
+		<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Delete (keep local)</span>.
+		This is really a revert as well, but the name has been changed
+		to make it more obvious.
+	</p><p>
+		The columns in this dialog can be customized in the same way as the
+		columns in the <span class="guilabel">Check for modifications</span> dialog.
+		Read <a class="xref" href="tgit-dug-wcstatus.html#tgit-dug-wcstatus-2" title="2.6.2. Status">Section 2.6.2, &#8220;Status&#8221;</a> for further details.
+	</p><div class="tip" title="Undoing Changes which have been Committed" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip: Undoing Changes which have been Committed"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Undoing Changes which have been Committed</th></tr><tr><td align="left" valign="top"><p>
+			<span class="guimenuitem">Revert</span>
+			will only undo your local changes. It does <span class="emphasis"><em>not</em></span>
+			undo any changes which have already been committed. If you want to
+			undo all the changes which were committed in a particular revision,
+			read <a class="xref" href="tgit-dug-showlog.html" title="2.13. Revision Log Dialog">Section 2.13, &#8220;Revision Log Dialog&#8221;</a> for further information.
+		</p></td></tr></table></div><div class="tip" title="Revert is Slow" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip: Revert is Slow"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Revert is Slow</th></tr><tr><td align="left" valign="top"><p>
+			When you revert changes you may find that the operation takes a lot
+			longer than you expect. This is because the modified version of the
+			file is sent to the recycle bin, so you can retrieve your changes
+			if you reverted by mistake. However, if your recycle bin is full,
+			Windows takes a long time to find a place to put the file. The
+			solution is simple: either empty the recycle bin or deactivate
+			the <span class="guilabel">Use recycle bin when reverting</span> box
+			in TortoiseGit's settings.
+		</p></td></tr></table></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-dug-rename.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-dug.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-dug-cleanup.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.21. Deleting, Moving and Renaming </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2.23. Cleanup</td></tr></table></div></body></html>

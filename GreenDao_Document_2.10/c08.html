@@ -1,0 +1,244 @@
+<html>
+    
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Custom Types - GreenDao Documentation 2.10
+        </title>
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="base.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="docs.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="userguide.css">
+        <meta content="DocBook XSL Stylesheets V1.75.2" name="generator">
+        <link rel="home" href="userguide.html" title="GreenDao Documentation 2.10">
+        <link rel="up" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+        <link rel="prev" href="c07.html" title="Relations - GreenDao Documentation 2.10">
+    </head>
+    
+    <body>
+        <div class="navheader">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c07.html" title="Relations - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="titlepage">
+                <div>
+                    <div>
+                        <h1 xmlns:xslthl="http://xslthl.sf.net">
+                            <a name="custom_types">
+                            </a>
+                            Chapter&nbsp;8.&nbsp;Custom Types
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="toc">
+                <p>
+                    <b>
+                        目录
+                    </b>
+                </p>
+                <dl>
+                    <dt>
+                        <span class="section">
+                            <a href="c08.html#N801A">
+                                8.1. Step 1: Implement PropertyConverter
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c08.html#N802A">
+                                8.2. Step 2: Schema definition
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c08.html#N803A">
+                                8.3. How to convert Enums correctly
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c08.html#N804A">
+                                8.4. Custom types in Queries
+                            </a>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+			<p>
+				Custom types allow entities to have properties of any type. With greenDAO 2 and
+				the new interface PropertyConverter, entities are no longer limited to primitive
+				types like integers, strings, dates, and booleans. By implementing PropertyConverter,
+				you can define a mapping from entity values to database values and vice versa. This
+				simple but powerful solution gives you full flexibility in your entity. It enables to
+				define properties of meaningful enums and custom classes. For example, you could define
+				a color in your entity using a Color class, not just a integer. Or if you like the Joda
+				Time library, you could use org.joda.time.DateTime directly in your entity.
+			</p>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N801A" class="section-anchor"
+                                href="#N801A">
+                                </a>
+                                8.1.&nbsp;Step 1: Implement PropertyConverter
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+				<p>
+					In your main project, create a converter class for each custom type you want to use. The
+					implementation is usually trivial, as the PropertyConverter interface is very simple:
+				</p>
+				<pre class="programlisting">
+                    public interface PropertyConverter&lt;P, D&gt; {
+                    P convertToEntityProperty(D databaseValue);
+                    D convertToDatabaseValue(P entityProperty);
+                    }
+				</pre>
+				<p>
+					As the method names suggest, you convert either a database value to an property value of
+					an entity (convertToEntityProperty), or vice versa (convertToDatabaseValue). Don’t forget
+					to handle null values correctly – usually you should return null if the input is null.
+				<p>
+				<p>
+					Database types in the sense of the converter are not the SQLite types, but the primitive
+					Java types offered by greenDAO. It’s recommended to use a primitive type that is easily
+					convertible (e.g. int, long, byte array, String, etc.).
+				</p>
+				<div class="note">
+					<p>
+						Notes: For optimal performance, greenDAO will use a single converter instance for all
+						conversions. Make sure the converter does not have any other constructor besides the
+						parameter-less default constructor. Also, make it thread safe, because it might be called
+						concurrently on multiple entities.
+					</p>
+				</div>
+            </div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N802A" class="section-anchor"
+                                href="#N802A">
+                                </a>
+                                8.2.&nbsp;Step 2: Schema definition
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					In your generator project, you define the database schema. Custom typed properties are added
+					using the standard addXXXProperty methods referring to primitive Java type representing the
+					database values. Then you define the custom type and converter using the customType method
+					of the PropertyBuilder as shown in the example:
+                </p>
+				<pre class="programlisting">
+                    entity.addLongProperty("myTimestamp").
+                    customType("com.example.MyTimestamp", "com.example.MyTimestampConverter");
+				</pre>
+				<p>
+					Once you will run the DAO generator, the entity will have a field myTimestamp of type
+					MyTimestamp, along with the corresponding getter and setter.
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N803A" class="section-anchor"
+                                href="#N803A">
+                                </a>
+                                8.3.&nbsp;How to convert Enums correctly
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Enums are popular with data objects like entities. When persisting enums,
+					there are a couple of best practices:
+                </p>
+				<p>
+					Don’t persist the enum’s ordinal or name: Both are unstable, and can easily change the next
+					time you edit your enum definitions.
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            Use stable ids:
+                        </code>
+                    </strong>
+					Define a custom property (integer or string) in your enum that is guaranteed
+					to be stable. Use this for your persistence mapping.
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            Prepare for the unkown:
+                        </code>
+                    </strong>
+					Sometimes it’s a good idea to have a UNKOWN enum from early on. It
+					can serve to handle null or unknown values. Maybe an old enum value was deleted in the current
+					version, and this will be the fallback value preventing your app from failing.
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N804A" class="section-anchor"
+                                href="#N804A">
+                                </a>
+                                8.4.&nbsp;Custom types in Queries
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					One caveat to keep in mind: QueryBuilder is unaware of custom types. At the moment, you
+					have to use the primitive type for queries (e.g. WHERE arguments). This may change in a
+					later version of greenDAO. Also note, that operations done inside the database always
+					refer to the primitive type, e.g. ORDER BY clauses.
+                </p>
+            </div>
+        </div>
+        <div class="navfooter">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c07.html" title="Relations - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,54 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2.28. Merging</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-dug.html" title="Chapter 2. TortoiseGit Daily Use Guide"><link rel="prev" href="tgit-dug-branchtag.html" title="2.27. Branching / Tagging"><link rel="next" href="tgit-dug-rebase.html" title="2.29. Rebase"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.28. Merging</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-dug-branchtag.html">Prev</a> </td><th width="60%" align="center">Chapter 2. TortoiseGit Daily Use Guide</th><td width="20%" align="right"> <a accesskey="n" href="tgit-dug-rebase.html">Next</a></td></tr></table><hr></div><div class="sect1" title="2.28. Merging"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-dug-merge"></a>2.28. Merging</h2></div></div></div><a name="id722996"></a><p>
+		Where branches are used to maintain separate lines of development,
+		at some stage you will want to merge the changes made on one branch
+		back into the other branch, or vice versa.
+	</p><p>
+		It is important to understand how branching and merging works in
+		Git before you start using it, as it can become quite complex.
+		For hints where to find more information about Git and merging see <a class="xref" href="tgit-preface-readingguide.html" title="2. Reading Guide">Section 2, &#8220;Reading Guide&#8221;</a>.
+	</p><p>
+		The next point to note is that merging <span class="emphasis"><em>always</em></span>
+		takes place within a working tree. If you want to merge changes
+		<span class="emphasis"><em>into</em></span> a branch, you have to have a working tree
+		for that branch checked out, and invoke the merge wizard from that
+		working tree using
+		<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Merge...</span>.
+		</p><div class="figure"><a name="tgit-dug-merge-dia-1"></a><p class="title"><b>Figure 2.43. Merge dialog</b></p><div class="figure-contents"><div><img src="images/Merge.png" alt="Merge dialog"></div></div></div><p><br class="figure-break">
+	</p><p>
+		In general it is a good idea to perform a merge into an unmodified
+		working tree. If you have made other changes in your working tree, commit those
+		first. If the merge does not go as you expect, you may want to revert
+		the changes, and the <span class="guilabel">Revert</span> command will discard
+		<span class="emphasis"><em>all</em></span> changes including any you made before the merge.
+	</p><p>
+		You can choose one commit that you want to merge from. 
+		</p><div class="variablelist"><dl><dt><span class="term"><span class="guilabel">HEAD</span></span></dt><dd><p>
+				Current commit checked out.
+			</p></dd><dt><span class="term"><span class="guilabel">Branch</span></span></dt><dd><p>
+				The latest commit of chosen branch.
+			</p></dd><dt><span class="term"><span class="guilabel">Tag</span></span></dt><dd><p>
+				The commit of chosen tag.
+			</p></dd><dt><span class="term"><span class="guilabel">Commit</span></span></dt><dd><p>
+				Any commit, you click <span class="guibutton">...</span> to launch log
+				dialog to choose commit. You also can input commit hash, or 
+				friendly commit name, such as HEAD~4. 
+			</p></dd></dl></div><p> 
+	</p><p>
+		<span class="guilabel">Squash</span> Just merge change from the other branch. Can't
+		recorder Merge information. The new commit will not record merge branch as
+		one parent commit. Log view will not show merge line between two branch. 
+	</p><p>
+		<span class="guilabel">No Fast Forward</span> Generate a merge commit even if the
+		merge resolved as a fast-forward.
+	</p><p>
+		<span class="guilabel">No Commit</span> Do not automatically create a commit after merge.
+	</p><p>
+		<span class="guilabel">Messages</span> Populate the log message with one-line descriptions 
+		from the actual commits that are being merged. Can specify the number of commits 
+		to be included in the merge message.
+	</p><p>
+		You can see more information at <a class="xref" href="git-command.html#git-merge(1)" title="G.3.77. git-merge(1)">Section G.3.77, &#8220;git-merge(1)&#8221;</a>
+	</p><p>
+		Although major merge working is done by git automatically, conflict maybe happen during merge, 
+		please see <a class="xref" href="tgit-dug-conflicts.html" title="2.30. Resolving Conflicts">Section 2.30, &#8220;Resolving Conflicts&#8221;</a> to how to resolve conflict.
+	</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-dug-branchtag.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-dug.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-dug-rebase.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.27. Branching / Tagging </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2.29. Rebase</td></tr></table></div></body></html>

@@ -1,0 +1,276 @@
+<html>
+    
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            How to get started - GreenDao Documentation 2.10
+        </title>
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="base.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="docs.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="userguide.css">
+        <meta content="DocBook XSL Stylesheets V1.75.2" name="generator">
+        <link rel="home" href="userguide.html" title="GreenDao Documentation 2.10">
+        <link rel="up" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+        <link rel="prev" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+        <link rel="next" href="c02.html" title="Introduction - GreenDao Documentation 2.10">
+    </head>
+    
+    <body>
+        <div class="navheader">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="ct02.html" title="Introduction - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="titlepage">
+                <div>
+                    <div>
+                        <h1 xmlns:xslthl="http://xslthl.sf.net">
+                            <a name="how_to_get_started">
+                            </a>
+                            Chapter&nbsp;1.&nbsp;How to get started
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="toc">
+                <p>
+                    <b>
+                        目录
+                    </b>
+                </p>
+                <dl>
+                    <dt>
+                        <span class="section">
+                            <a href="c01.html#N101A">
+                                1.1. Pre-generated code and creating the table
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c01.html#N102A">
+                                1.2. Inserting and deleting notes
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c01.html#N103A">
+                                1.3. Data model and code generation
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c01.html#N104A">
+                                1.4. Next steps
+                            </a>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+			<p>
+				This tutorial will walk you through an simple greenDAO example project. It is available
+				on 
+				<em class="firstterm">
+				https://github.com/greenrobot/greenDAO
+				</em>
+				and consists of two subprojects (folders):
+				DaoExample and DaoExampleGenerator. You can either clone the git repository to get the
+				code and run it, or just view view the files directly on github.
+			</p>
+			<p>
+				If you checked DaoExample out from the git repository, you can run it as an Android
+				Application. As you can see, it’s a simple app for taking notes. You can add new notes 
+				by typing in some text, and delete notes by clicking on an existing note.
+			</p>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N101A" class="section-anchor"
+                                href="#N101A">
+                                </a>
+                                1.1.&nbsp;Pre-generated code and creating the table
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+				<p>
+					Now, let’s look at some code. In the folder src-gen, you’ll find some
+					already generated artifacts:
+				</p>
+				<div class="itemizedlist">
+                    <ul class="itemizedlist">
+                        <li class="listitem">
+                            <p>
+								Note.java is a Java class containing all data a note has
+                            </p>
+                        </li>
+                        <li class="listitem">
+                            <p>
+								NoteDao.java is the DAO class, your interface to work with Note objects
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+				<p>
+					You can always generate Note and NoteDao again using the DaoExampleGenerator project.
+					But let’s stick to DaoExample for a minute. Using the DaoMaster class you can aquire
+					a convenience SQLiteOpenHelper:
+				</p>
+                <pre class="programlisting">
+                    new DaoMaster.DevOpenHelper(this, "notes-db", null)
+                </pre>
+                <p>
+					As you notice, you do not have to code 
+					<strong class="userinput">
+                        <code>
+                            CREATE TABLE
+                        </code>
+                    </strong>
+					SQL scripts. greenDAO does that for you.
+                </p>
+            </div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N102A" class="section-anchor"
+                                href="#N102A">
+                                </a>
+                                1.2.&nbsp;Inserting and deleting notes
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					So once we have a table for our notes, we can put in some notes in the database. This
+					is done in the NoteActivity class. In the onCreate method we prepare a DAO object:
+                </p>
+                <pre class="programlisting">
+                    daoMaster = new DaoMaster(db);
+                    daoSession = daoMaster.newSession();
+                    noteDao = daoSession.getNoteDao();
+				</pre>
+				<p>Now have a look at the addNote method, how you insert a new note in the database:</p>
+				<pre class="programlisting">
+                    Note note = new Note(null, noteText, comment, new Date());
+                    noteDao.insert(note);
+                    Log.d("DaoExample", "Insert new note, ID:" + note.getId());
+				</pre>
+				<p>
+					Just create a Java object and call insert on the DAO. When the insert method returns,
+					the database id of the just inserted note is already assigned to the object, as you can
+					see in the log statment.
+				</p>
+				<p>
+					Deleting a note is also straight forward; have a look at the onListItemClick method:
+				</p>
+				<pre class="programlisting">
+                    noteDao.deleteByKey(id);
+				</pre>
+				<p>If you want, you can explore other DAO methods like loadAll and update.</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N103A" class="section-anchor"
+                                href="#N103A">
+                                </a>
+                                1.3.&nbsp;Data model and code generation
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					In order to extend the note or to create new entities, you should have a look at the
+					DaoExampleGenerator project. It contains a single class containing the data model
+					definition in code:
+                </p>
+                <pre class="programlisting">
+                    Schema schema = new Schema(1, "de.greenrobot.daoexample");
+                    Entity note = schema.addEntity("Note");
+                    note.addIdProperty();
+                    note.addStringProperty("text").notNull();
+                    note.addStringProperty("comment");
+                    note.addDateProperty("date");
+                    new DaoGenerator().generateAll(schema,"../DaoExample/src-gen");
+				</pre>
+				<p>
+					As you can see, you create a Schema object, to which you can add entities. An entitiy is a
+					class tied to a database table. An entity contains properties, which are mapped to database columns.
+				</p>
+				<p>
+					Once the schema is completely defined, you can trigger the code generation. This is
+					how the Note.java and NoteDao.java files where created.
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N104A" class="section-anchor"
+                                href="#N104A">
+                                </a>
+                                1.4.&nbsp;Next steps
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Now, that you got an impression what greenDAO looks like, it’s a good idea to get your
+					hands dirty and try it for yourself. Also, please have a look at the documentation. If
+					you do not find what you are looking for, please use one support options.
+                </p>
+            </div>
+        </div>
+        <div class="navfooter">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c02.html" title="Introduction - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

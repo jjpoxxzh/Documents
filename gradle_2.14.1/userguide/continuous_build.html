@@ -1,0 +1,93 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Continuous build - Gradle User Guide Version 2.14.1</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide Version 2.14.1"><link rel="up" href="pt02.html" title="Part&nbsp;II.&nbsp;Working with existing builds"><link rel="prev" href="intro_multi_project_builds.html" title="Introduction to multi-project builds - Gradle User Guide Version 2.14.1"><link rel="next" href="tutorial_gradle_gui.html" title="Using the Gradle Graphical User Interface - Gradle User Guide Version 2.14.1"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="intro_multi_project_builds.html" title="Introduction to multi-project builds - Gradle User Guide Version 2.14.1">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 2.14.1">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="tutorial_gradle_gui.html" title="Using the Gradle Graphical User Interface - Gradle User Guide Version 2.14.1">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="continuous_build"></a>Chapter&nbsp;9.&nbsp;Continuous build</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="continuous_build.html#continuous_build_start_stop">9.1. How do I start and stop a continuous build?</a></span></dt><dt><span class="section"><a href="continuous_build.html#continuous_build_causes">9.2. What will cause a subsequent build?</a></span></dt><dt><span class="section"><a href="continuous_build.html#continuous_build_limitations">9.3. Limitations and quirks</a></span></dt></dl></div><div class="note"><p>
+            Continuous build is an <a class="link" href="feature_lifecycle.html">incubating</a> feature.
+            This means that it is incomplete and not yet at regular Gradle production quality.
+            This also means that this Gradle User Guide chapter is a work in progress.
+        </p></div><p>
+        Typically, you ask Gradle to perform a single build by way of specifying tasks that Gradle should execute.
+        Gradle will determine the the actual set of tasks that need to be executed to satisfy the request, execute them all, and then stop doing work until the next request.
+        A continuous build differs in that Gradle will keep satisfying the initial build request (until instructed to stop)
+        by executing the build when it is detected that the result of the previous build is now out of date.
+        For example, if your build compiles Java source files to Java class files, a continuous build would automatically initiate a compile when the source files change.
+        Continuous build is useful for many scenarios.
+    </p><p>持续构建是一个孵化中还未完全定型的功能，这表示它还没有完全做好，没法像Gradle产品那样定期发布正式版本。这也意味着Gradle用户指南后续还会修改。</p>
+	<p>当你要执行一次单项目的构建任务时，gradle会判断需要执行哪些元任务才能达到要求，再按元任务序列执行它们，执行完后就停止。下一个任务到来时再重新开始。持续构建不同于此，它在构建完成后会继续保持在构建状态，当检测到内容有更新时则构建更新内容。例如，如果你构建时编译java源码成字节码，当源码有变更时，持续构建会自动来编译源码。持续构建在许多场景下有用。</p>
+	<div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="continuous_build_start_stop" class="section-anchor" href="#continuous_build_start_stop"></a>9.1.&nbsp;How do I start and stop a continuous build?</h2></div></div></div><p>
+            A continuous build can be started by supplying either the <strong class="userinput"><code>--continuous</code></strong> or <strong class="userinput"><code>-t</code></strong> switches to Gradle,
+            along with the list of tasks, switches and arguments that define the work to do.
+            For example, <strong class="userinput"><code>gradle build --continuous</code></strong>.
+            This will have the same effect as running <strong class="userinput"><code>gradle build</code></strong>, but instead of Gradle exiting when done, it will wait for changes to the build inputs.
+            When a change occurs, <strong class="userinput"><code>gradle build</code></strong> will be automatically executed again and the process repeats.
+        </p><p>
+            If Gradle is attached to an interactive input source, such as a terminal, the continuous build can be exited by pressing <strong class="userinput"><code>CTRL-D</code></strong> (On Microsoft Windows, it is required to also press <strong class="userinput"><code>ENTER</code></strong> or <strong class="userinput"><code>RETURN</code></strong> after <strong class="userinput"><code>CTRL-D</code></strong>).
+            If Gradle is not attached to an interactive input source (e.g. is running as part of a script), the build process must be terminated (e.g. using the <strong class="userinput"><code>kill</code></strong> command or similar).
+            If the build is being executed via the Tooling API, the build can be cancelled using the Tooling API's cancellation mechanism.
+        </p><p>任务执行条件是由选项与参数定义的，可通过--continuous或者-t选项开启持续构建。例如“gradle build --continuous” ，它与gradle build的运行结果是一致的，不同的是在任务执行完后它不会停止并退出，它会等待应用代码变更以继续构建。当有变更发生时，构建会再自动运行，重新构建代码。</p>
+		<p>如果gradle是在命令行下进行交互式构建，可能通过按Ctrl+D结束（在windows上，它会向你确定是否要结束构建）。如果不是在命令行的交互式构建，比如配置在脚本中，要终结构建任务则必须结束进程。如果在构建中使用了Tooling API，那构建也可以使用Tooling API的取消机制来结束。</p>
+		</div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="continuous_build_causes" class="section-anchor" href="#continuous_build_causes"></a>9.2.&nbsp;What will cause a subsequent build?</h2></div></div></div><div class="tip"><h3 class="title">Task file inputs</h3><p>
+                Task implementations declare their file system inputs by annotating their properties with
+                <a class="ulink" href="../javadoc/org/gradle/api/tasks/InputFiles.html" target="_top"><code class="classname">InputFiles</code></a> and other similar annotations.
+                Please see <a class="xref" href="more_about_tasks.html#incrementalTask" title="Example&nbsp;17.24.&nbsp;Declaring the inputs and outputs of a task">Example&nbsp;17.24, &ldquo;Declaring the inputs and outputs of a task&rdquo;</a> for more information.
+            </p></div><p>
+            At this time, only changes to task inputs are noticed. Gradle will start watching for changes just before the task starts to execute.
+            No other changes will initiate a build.
+            For example, changes to build scripts and build logic will not initiate build.
+            Likewise, changes to files that are read during the configuration of the build, not the execution, will not initiate a build.
+            In order to incorporate such changes, the continuous build must be restarted manually.
+        </p><p>在进行持续构建时，Gradle只关注任务的输入（如主代码、主资源）的变更。Gradle会开始监控输入的变化，就在任务即将开始执行时。其他内容的变更不会进行构建，如构建脚本与构建逻辑的变更。同样地，构建过程中读取的文件的内容发生变更，而不是在执行任务时读取的，也不会引起构建。为了兼顾这些变更，必须手动重新启动持续构建。</p><p>
+            Consider a typical build using the <a class="link" href="java_plugin.html">Java plugin</a>, using the conventional filesystem layout.
+            The following diagram visualizes the task graph for <strong class="userinput"><code>gradle build</code></strong>:
+        </p><p>考虑到大众通常使用java插件进行构建，项目也是采用传统的文件系统结构。下图勾画出了build任务的任务图。</p><div class="figure"><a xmlns:xslthl="http://xslthl.sf.net" name="N1083F"></a><p class="title"><b>Figure&nbsp;9.1.&nbsp;Java plugin task graph</b></p><div class="figure-contents"><img src="img/javaPluginTasks.png" alt="Java plugin task graph"></div></div><br class="figure-break"><p>
+            The following key tasks of the graph use files in the corresponding directories as inputs:
+        </p><p>图中的以下关键任务与其作为输入所使用的文件目录：</p><div class="variablelist"><dl><dt><span class="term">compileJava</span></dt><dd><code class="filename">src/main/java</code></dd><dt><span class="term">processResources</span></dt><dd><code class="filename">src/main/resources</code></dd><dt><span class="term">compileTestJava</span></dt><dd><code class="filename">src/test/java</code></dd><dt><span class="term">processTestResources</span></dt><dd><code class="filename">src/test/resources</code></dd></dl></div><p>
+            Assuming that the initial build is successful (i.e. the <code class="literal">build</code> task and its dependencies complete without error),
+            changes to files in, or the addition/remove of files from, the locations listed above will initiate a new build.
+            If a change is made to a Java source file in <code class="filename">src/main/java</code>, the build will fire and all tasks will be scheduled.
+            Gradle's incremental build support ensures that only the tasks that are actually affected by the change are executed.
+        </p><p>
+            If the change to the main Java source causes compilation to fail, subsequent changes to the test source in <code class="filename">src/test/java</code> will not initiate a new build.
+            As the test source depends on the main source, there is no point building until the main source has changed, potentially fixing the compilation error.
+            After each build, only the inputs of the tasks that actually executed will be monitored for changes.
+        </p><p>
+            Continuous build is in no way coupled to compilation.
+            It works for all types of tasks.
+            For example, the <code class="literal">processResources</code> task copies and processes the files from <code class="filename">src/main/resources</code> for inclusion in the built JAR.
+            As such, a change to any file in this directory will also initiate a build.
+        </p><p>假定构建正常完成（比如build任务以及它依赖的任务都正常执行完，没有产生错误），若以上对应目录的文件发生变更，或者添加或者删除，则会开启新的构建。如果src/main/java的代码改动了，构建就会启动，相应的元任务会按序列调度执行。gradle的增量构建支持并确保只构建实际上发生变更的部分。<br><br>如果主代码编译失败，则随后的测试代码构建就不会启动。因为测试代码构建依赖于主代码的构建，解决构建主代码遇到的错误，才能构建测试代码。每一次构建后，只有输入内容被监测到了变更，构建才会真正执行。<br><br>持续构建不等于编译，它是针对各种类型的任务的，而编译任务仅仅是处理代码目录。比如，processResources任务复制并处理src/main/resources中的文件以打包到jar文件中。此时，此文件夹下的文件发生任何变更都将引发重新构建。</p>
+		</div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="continuous_build_limitations" class="section-anchor" href="#continuous_build_limitations"></a>9.3.&nbsp;Limitations and quirks</h2></div></div></div><p>
+            There are several issues to be aware with the current implementation of continuous build.
+            These are likely to be addressed in future Gradle releases.
+        </p><p>在当前Gradle的持续构建中还存在一些问题，在后面的版本中有可能会得到解决。</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="N1087B" class="section-anchor" href="#N1087B"></a>9.3.1.&nbsp;Build cycles</h3></div></div></div><p>
+                Gradle starts watching for changes just before a task executes.
+
+                If a task modifies its own inputs while executing, Gradle will detect the change and trigger a new build.
+                If every time the task executes, the inputs are modified again, the build will be triggered again.
+                This isn't unique to continuous build. A task that modifies its own inputs will never be considered up-to-date when run "normally" without continuous build.
+            </p><p>
+                If your build enters a build cycle like this, you can track down the task by looking at the list of files reported changed by Gradle.
+                After identifying the file(s) that are changed during each build, you should look for a task that has that file as an input.
+                In some cases, it may be obvious (e.g., a Java file is compiled with <code class="literal">compileJava</code>).
+                In other cases, you can use <code class="literal">--info</code> logging to find the task that is out-of-date due to the identified files.
+            </p><p>Gradle在任务开始执行时开始监听。如果一个任务在执行过程中修改自身的输入，Gradle会检测到修改并触发新的构建。如果任务执行时每次都修改输入内容，那构建又会被再次触发。这不是持续构建所独有的问题。在gradle正常构建而不是持续构建时，任务对输入的修改不会被当作是过期了需要更新。<br><br>如果你在构建中遇到了这种循环构建的问题，你得停止任务来查找Gradle提示被修改的文件。在找到每次构建被修改的文件后，找出用这个文件作为输入的任务。有时候，会比较明显地找到。找不到的情况下，可以使用--info输出日志来查找由于被修改而过期的文件</p>
+			</div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="continuous_build_limitations_jdk" class="section-anchor" href="#continuous_build_limitations_jdk"></a>9.3.2.&nbsp;Requires Java 7 or later</h3></div></div></div><p>
+                Gradle uses the JDK's <a class="ulink" href="http://docs.oracle.com/javase/7/docs/api/java/nio/file/WatchService.html" target="_top"><code class="literal">WatchService</code></a>
+                to receive notification of changes to files between builds.
+                This API was introduced in Java 7.
+                As such, Gradle's continuous build is not currently supported when building with Java 6.
+            </p><p>在构建时，Gradle使用JDK的WatchService来接收文件的变更通知。而WatchService是在Java 7才引入的。因此，持续构建当前不支持Java 6</p>
+			</div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="N10893" class="section-anchor" href="#N10893"></a>9.3.3.&nbsp;Performance and stability</h3></div></div></div><p>
+                The JDK file watching facility relies on inefficient file system polling on Mac OS X (see: <a class="ulink" href="https://bugs.openjdk.java.net/browse/JDK-7133447" target="_top">JDK-7133447</a>).
+                This can significantly delay notification of changes on large projects with many source files.
+            </p><p>在Mac OSX操作系统上，JDK文件监听功能依赖于低效的文件轮询机制。这会使得大型项目中源代码文件较多时通知明显地延迟</p><p>
+                Additionally, the watching mechanism may deadlock under <span class="emphasis"><em>heavy</em></span> load on Mac OS X (see: <a class="ulink" href="https://bugs.openjdk.java.net/browse/JDK-8079620" target="_top">JDK-8079620</a>).
+                This will manifest as Gradle appearing not to notice file changes.
+                If you suspect this is occurring, exit continuous build and start again.
+            </p><p>
+                On Linux, OpenJDK's implementation of the file watch service can sometimes miss file system events (see: <a class="ulink" href="https://bugs.openjdk.java.net/browse/JDK-8145981" target="_top">JDK-8145981</a>).
+            </p><p>此外，监测机制在Mac OSX工作繁忙负载较大时可能会死锁。这会使得Gradle不再关注变更通知。如果你怀疑你遇到这种情况，退出持续构建再重新启动<br><br>在Linux系统中，OpenJDK的文件监测服务有时候会丢失文件系统事件。</p>
+			</div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="N108AB" class="section-anchor" href="#N108AB"></a>9.3.4.&nbsp;Changes to symbolic links</h3></div></div></div><p>
+                </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Creating or removing symbolic link to files will initiate a build.</p></li><li class="listitem"><p>Modifying the target of a symbolic link will not cause a rebuild.</p></li><li class="listitem"><p>Creating or removing symbolic links to directories will not cause rebuilds.</p></li><li class="listitem"><p>Creating new files in the target directory of a symbolic link will not cause a rebuild.</p></li><li class="listitem"><p>Deleting the target directory will not cause a rebuild.</p></li></ul></div><p>
+            </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="N108C1" class="section-anchor" href="#N108C1"></a>9.3.5.&nbsp;Changes to build logic are not considered</h3></div></div></div><p>
+                The current implementation does not recalculate the build model on subsequent builds.
+                This means that changes to task configuration, or any other change to the build model, are effectively ignored.
+            </p><p>当前的持续构建不会重新构建模型与构建序列。这意味着如果改变任务的配置，或者改变构建模型，持续构建会忽略它。</p>
+			</div></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="intro_multi_project_builds.html" title="Introduction to multi-project builds - Gradle User Guide Version 2.14.1">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 2.14.1">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="tutorial_gradle_gui.html" title="Using the Gradle Graphical User Interface - Gradle User Guide Version 2.14.1">Next</a></div></div></div></body></html>

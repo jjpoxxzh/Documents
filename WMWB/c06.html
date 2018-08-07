@@ -1,0 +1,216 @@
+<html>
+    
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Joins - GreenDao Documentation 2.10
+        </title>
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="base.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="docs.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="userguide.css">
+        <meta content="DocBook XSL Stylesheets V1.75.2" name="generator">
+        <link rel="home" href="userguide.html" title="GreenDao Documentation 2.10">
+        <link rel="up" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+        <link rel="prev" href="c05.html" title="Queries - GreenDao Documentation 2.10">
+        <link rel="next" href="c07.html" title="Relations - GreenDao Documentation 2.10">
+    </head>
+    
+    <body>
+        <div class="navheader">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c05.html" title="Queries - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c07.html" title="Relations - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="titlepage">
+                <div>
+                    <div>
+                        <h1 xmlns:xslthl="http://xslthl.sf.net">
+                            <a name="introduction">
+                            </a>
+                            Chapter&nbsp;6.&nbsp;Joins
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="toc">
+                <p>
+                    <b>
+                        目录
+                    </b>
+                </p>
+                <dl>
+                    <dt>
+                        <span class="section">
+                            <a href="c06.html#N601A">
+                                6.1. QueryBuilder Join API
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c06.html#N602A">
+                                6.2. Chained Joins
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c06.html#N603A">
+                                6.3. Self Join / Tree example
+                            </a>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+			<p>
+				Non-trivial queries often require data of several entity types (tables). In SQL world,
+				you can make that happen by “joining” two or more tables using a join condition. Let’s
+				consider an entity User, which has a one-to-many relation to an Address entity, and
+				let’s say we want to query for users living on “Sesame Street”. We would have to join
+				the Address entity with the User entity using the user ID and define a WHERE condition
+				on the Address entity:
+			</p>
+			<pre class="programlisting">
+				QueryBuilder<User> queryBuilder = userDao.queryBuilder();
+				queryBuilder.join(Properties.addressId, Address.class)
+				  .where(AddressDao.Properties.Street.eq("Sesame street"));
+				List<User> users = queryBuilder.list();
+			</pre>
+			<p>
+				The join requires the target entity class as a parameter and a join property of each entity.
+				In the example, there is just the join property of the Address entity defined, because the
+				primary key property is used by default. In other words, the query results in users, which
+				have a Address entity with a userId equal to the User entity’s ID and also have a specific street.
+			</p>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N601A" class="section-anchor"
+                                href="#N601A">
+                                </a>
+                                6.1.&nbsp;QueryBuilder Join API
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+				<p>
+					Because you can omit the join property when the PK property can be used, there are
+					three overloaded join(…) methods available in QueryBuilder:
+				</p>
+				<div class="figure-contents">
+					<img src="img/join_api_1.png" alt="join_api_1">
+				</div>
+            </div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N602A" class="section-anchor"
+                                href="#N602A">
+                                </a>
+                                6.2.&nbsp;Chained Joins
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					greenDAO also allows to chain joins across multiple tables. Here, you define a join using
+					another join and a destination entity. In this case, the destination entity of the first
+					join becomes the starting entity for the second join.
+                </p>
+				<p>
+					The QueryBuilder API for chained joins looks like this:
+				</p>
+				<div class="figure-contents">
+					<img src="img/join_api_2.png" alt="join_api_2">
+				</div>
+				<p>
+					Let’s look at another example with three entities: City, Country, and Continent. If we want
+					to query all cities in Europe with population of at least a million, it would look like this:
+				</p>
+				<pre class="programlisting">
+                    QueryBuilder qb = cityDao.queryBuilder().where(Properties.Population.ge(1000000));
+                    Join country = qb.join(Properties.CountryId, Country.class);
+                    Join container = qb.join(country, countryDao.Properties.ContinentId, Continent.class, ContinentDao.Properties.Id);
+                    continent.where(ContinentDao.Properties.Name.eq("Europe"));
+                    List<City> bigEuropeanCities = qb.list();
+				</pre>
+            </div>
+
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N603A" class="section-anchor"
+                                href="#N603A">
+                                </a>
+                                6.3.&nbsp;Self Join / Tree example
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					A join can also be used with relations referencing a single entity. For example, we want
+					to find all persons, whose grandfather’s name is “Lincoln”. Let’s assume we have a Person
+					entity with a fatherId property pointing to the same entity. Then, the query is build like this:
+                </p>
+                <pre class="programlisting">
+                    QueryBuilder qb = personDao.queryBuilder();
+                    Join father = qb.join(Person.class, Properties.FatherId);
+                    Join grandfather = qb.join(father, Properties.FatherId, Person.class, Properties.Id);
+                    grandfather.where(Properties.Name.eq("Lincoln"));
+                    List<Person> lincolnDescendants = qb.list();
+				</pre>
+				<p>
+					As you can see, joins are a powerful tool to build queries spanning multiple entity types or relations.
+				</p>
+            </div>
+        </div>
+        <div class="navfooter">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c05.html" title="Queries - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c07.html" title="Relations - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,1122 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2.35. TortoiseGit's Settings</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-dug.html" title="Chapter 2. TortoiseGit Daily Use Guide"><link rel="prev" href="tgit-dug-bugtracker.html" title="2.34. Integration with Bug Tracking Systems / Issue Trackers"><link rel="next" href="tgit-dug-svn-dcommit.html" title="2.36. git svn dcommit"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.35. TortoiseGit's Settings</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-dug-bugtracker.html">Prev</a> </td><th width="60%" align="center">Chapter 2. TortoiseGit Daily Use Guide</th><td width="20%" align="right"> <a accesskey="n" href="tgit-dug-svn-dcommit.html">Next</a></td></tr></table><hr></div><div class="sect1" title="2.35. TortoiseGit's Settings"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-dug-settings"></a>2.35. TortoiseGit's Settings</h2></div></div></div><a name="id662190"></a><p>
+		To find out what the different settings are for, just leave your
+		mouse pointer a second on the editbox/checkbox... and a helpful
+		tooltip will popup.
+	</p><div class="sect2" title="2.35.1. General Settings"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-main"></a>2.35.1. General Settings</h3></div></div></div><a name="id662083"></a><a name="id662642"></a><a name="id662701"></a><p>
+		</p><div class="figure"><a name="tgit-dug-settings-dia-main"></a><p class="title"><b>Figure 2.53. The Settings Dialog, General Page</b></p><div class="figure-contents"><div><img src="images/SettingsMain.png" alt="The Settings Dialog, General Page"></div></div></div><p><br class="figure-break">
+		This dialog allows you to specify your preferred language,
+		and the Git-specific settings.
+	</p><div class="variablelist"><dl><dt><span class="term">Language</span></dt><dd><p>
+					Selects your user interface language.
+					What else did you expect? Only languages of installed LanguagePacks are listed.
+					You can download language packs on the <a class="ulink" href="http://redir.tortoisegit.org/download" target="_top">TortoiseGit download page</a>
+					or <a class="ulink" href="http://redir.tortoisegit.org/translate" target="_top">help translating</a>.
+				</p></dd><dt><span class="term">Automatically check for newer versions every week</span></dt><dd><p>
+					If checked, TortoiseGit will contact its download site once a week 
+					to see if there is a newer version of the program available.
+					Use <span class="guibutton">Check now</span> if you want an answer
+					right away. The new version will not be downloaded; you
+					simply receive an information dialog telling you that the
+					new version is available.
+				</p></dd><dt><span class="term">System sounds</span></dt><dd><p>
+					TortoiseGit has three custom sounds which are installed by default.
+					</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+							Error
+							</p></li><li class="listitem"><p>
+							Notice
+							</p></li><li class="listitem"><p>
+							Warning
+							</p></li></ul></div><p>
+					You can select different sounds (or turn these sounds
+					off completely) using the Windows Control Panel.
+					<span class="guibutton">Configure</span> is a shortcut to the Control Panel.
+				</p></dd><dt><span class="term">Create Library</span></dt><dd><p>
+					On Windows 7 you can create a Library in which to group working copies
+					which are scattered in various places on your system.
+				</p></dd><dt><span class="term">Git.exe Path</span></dt><dd><p>
+					TortoiseGit needs to know which <code class="literal">git.exe</code> to use for it's operations. Enter the full path to <code class="literal">git.exe</code> here.
+				</p><p>
+					</p><div class="caution" title="Caution" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Caution"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Caution]" src="images/caution.png"></td><th align="left">Caution</th></tr><tr><td align="left" valign="top"><p>
+							git.exe must not be marked to be run in elevated mode (i.e. "Run as administrator" or run in any compatibility mode).
+						</p></td></tr></table></div><p>
+					</p><div class="caution" title="Caution" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Caution"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Caution]" src="images/caution.png"></td><th align="left">Caution</th></tr><tr><td align="left" valign="top"><p>
+							There is a <a class="ulink" href="https://github.com/msysgit/msysgit/issues/103" target="_top"><em class="citetitle">known issue in msysGit/Git for Windows</em></a>:
+							Git for Windows provides two <code class="literal">git.exe</code>-files (one in a folder named <code class="literal">bin</code> and one in a folder named <code class="literal">cmd</code>).
+							Make sure <span class="guilabel">Git.exe Path</span> points to the <code class="literal">bin</code>-folder within the Git for Windows installation folder.
+						</p></td></tr></table></div><p>
+				</p><p>
+					</p><div class="tip" title="Tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>
+							In order to debug problems you can open TortoiseGit advanced settings and set "DebugOutputString" to "true" (<a class="xref" href="tgit-dug-settings.html#tgit-dug-settings-registry" title="2.35.9. Advanced Settings">Section 2.35.9, &#8220;Advanced Settings&#8221;</a>). Start capturing the debug output.
+							Then start TortoiseGit settings, click on <span class="guilabel">Check now</span> and observe the debug messages.
+						</p></td></tr></table></div><p>
+				</p></dd><dt><span class="term">Extern DLL Path</span></dt><dd><p>
+					If your git installation needs an extra entry in the PATH environment variable,
+					you can enter it here and it will get added to the PATH environment variable automatically when TortoiseGit starts.
+				</p><p>
+					This is especially needed if you installed the developer version of msysGit ("Full installer (self-contained) if you want to hack on Git" with the filename <code class="literal">msysGit-fullinstall-*.exe</code>),
+					in this case it is necessary that the <code class="literal">[MSYSGIT-INSTALL-PATH]\mingw\bin</code>-folder is on the path (i.e. entered in the <span class="guilabel">Extern DLL Path</span> textbox) in order to execute git.exe.
+				</p><p>
+					Often you can see if you need this when you start git.exe in <code class="literal">[MSYSGIT-INSTALL-PATH]\mingw\bin</code>-folder and you get a messagebox saying that a dll is missing.
+				</p></dd></dl></div><div class="sect3" title="2.35.1.1. Context Menu Settings"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-look-feel"></a>2.35.1.1. Context Menu Settings</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-context"></a><p class="title"><b>Figure 2.54. The Settings Dialog, Context Menu Page</b></p><div class="figure-contents"><div><img src="images/SettingsContext.png" alt="The Settings Dialog, Context Menu Page"></div></div></div><p><br class="figure-break">
+			This page allows you to specify which of the TortoiseGit context menu
+			entries will show up in the main context menu, and which will appear
+			in the TortoiseGit submenu. By default most items are unchecked and
+			appear in the submenu.
+		</p><p>
+			Most of the time, you won't need the TortoiseGit context menu, apart
+			for folders that are under version control by Git. For non-
+			versioned folders, you only really need the context menu when you
+			want to do a checkout. If you check the option <code class="literal">Hide menus
+			for unversioned paths</code>, TortoiseGit will not add its entries
+			to the context menu for unversioned folders. But the entries are
+			added for all items and paths in a versioned folder. And you can
+			get the entries back for unversioned folders by holding the 
+			<span class="keycap"><strong>Shift</strong></span> key down while showing the context menu.
+		</p><p>
+			If there are some paths on your computer where you just don't want
+			TortoiseGit's context menu to appear at all, you can list them in
+			the box at the bottom.
+		</p><p>
+			If you right click and drag folder/file in Windows Explorer, 
+			a context menu will be shown when you drop. It provides some TortoiseGit actions.
+			You can uncheck <span class="guibutton">Enable drag context menu</span>
+			to prevent from carelessly clicking the TortoiseGit actions.
+		</p></div><div class="sect3" title="2.35.1.2. Set Extend Menu Item"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-look-feel-extended"></a>2.35.1.2. Set Extend Menu Item</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-ext-menu"></a><p class="title"><b>Figure 2.55. The Settings Dialog, Set Extend Menu Item</b></p><div class="figure-contents"><div><img src="images/SettingsExtendMenu.png" alt="The Settings Dialog, Set Extend Menu Item"></div></div></div><p><br class="figure-break">
+			This page allows you to specify which of the TortoiseGit context menu
+			entries will show up in the extend context menu (press <span class="keycap"><strong>Shift</strong></span>
+			key on <span class="action">right click</span>), 
+			and which will appear in the normal context menu. 
+			This config will help reduce the context menu number at normal usage case
+			according to your usage module. 
+		</p></div><div class="sect3" title="2.35.1.3. TortoiseGit Dialog Settings"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-dialogs"></a>2.35.1.3. TortoiseGit Dialog Settings</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-dialogs"></a><p class="title"><b>Figure 2.56. The Settings Dialog, Dialogs Page</b></p><div class="figure-contents"><div><img src="images/SettingsDialog.png" alt="The Settings Dialog, Dialogs Page"></div></div></div><p><br class="figure-break">
+			This dialog allows you to configure some of TortoiseGit's
+			dialogs the way you like them.
+		</p><div class="variablelist"><dl><dt><span class="term">Font for log messages</span></dt><dd><p>
+						Selects the font face and size used to display the log
+						message itself in the middle pane of the Revision Log
+						dialog, and when composing log messages in the Commit
+						dialog.
+					</p></dd><dt><span class="term">Short date / time format in log messages</span></dt><dd><p>
+						If the standard long messages use up too much 
+						space on your screen use the short format.
+					</p></dd><dt><span class="term">apply --topo-order</span></dt><dd><p>
+						Normally log entries/commits are ordered in descending order of the commit date.
+						'--topo-order' makes the commits appear in topological order (i.e. descendant
+						commits are shown before their parents). Not using this option, might break
+						the graph in the log dialog. However, this option is slower, because all
+						log entries have to be processed before displaying them.
+					</p></dd><dt><span class="term">Can double-click in log list to compare with previous revision</span></dt><dd><p>
+						If you frequently find yourself comparing revisions in the top
+						pane of the log dialog, you can use this option to allow that
+						action on double-click. It is not enabled by default because
+						fetching the diff is often a long process, and many people
+						prefer to avoid the wait after an accidental double-click,
+						which is why this option is not enabled by default.
+					</p></dd><dt><span class="term">Abbreviate renamings</span></dt><dd><p>
+						Normally renamed files are listed as "long/path/for/file.txt (from long/path/to/file.txt)".
+						If you check this option renamed files will be listed in a shorter format ("long/path/{to =&gt; for}/file.txt"),
+						however, this abbreviated format might be harder to understand.
+					</p></dd><dt><span class="term">Symbolize ref names</span></dt><dd><p>
+						Show symbols on ref labels to substitute part of the ref names.
+						If this option is enabled, the following description and example will apply.
+						If there is only a single remote, a lightning symbol will substitute the remote name part of each remote branch.
+						If the remote branch is the upstream of a local branch, an up triangle symbol will substitute the branch name part of the remote branch.
+						</p><div class="figure"><a name="tgit-dug-settings-symbolizerefname-example"></a><p class="title"><b>Figure 2.57. Example of Symbolize ref names</b></p><div class="figure-contents"><div><img src="images/SymbolizeRefNamesExample.png" alt="Example of Symbolize ref names"></div></div></div><p><br class="figure-break">
+					</p></dd><dt><span class="term">Enable log cache</span></dt><dd><p>
+						Load/saves log cache in .git folder (tortoisegit.data, tortoisegit.index) to boost performance of subsequent use of log list.
+						If this option is disabled, the cache files are not read or written.
+						Default is enabled.
+					</p></dd><dt><span class="term">Enable Gravatar</span></dt><dd><p>
+						Shows the Gravatar image of the author of the commit in Log Dialog.
+						The URL is customizable so you may specify more options supported by the server,
+						or use your own avatar server.
+						The default URL is <code class="literal">http://www.gravatar.com/avatar/%HASH%?d=identicon</code>
+						Currently, the supported parameter is <code class="literal">%HASH%</code>, which is the MD5 email hash.
+						To specify a default image, add <code class="literal">d=</code> parameter, 
+						e.g. <code class="literal">http://www.gravatar.com/avatar/%HASH%?d=identicon</code>
+						See <a class="ulink" href="http://en.gravatar.com/site/implement/images/" target="_top">
+							<em class="citetitle">Gravatar: Image Requests</em>
+						</a> for a list of parameters.
+					</p></dd><dt><span class="term">Draw tag/branch labels on right side</span></dt><dd><p>
+						Shows tag/branch labels after the commit message.
+					</p></dd></dl></div></div><div class="sect3" title="2.35.1.4. TortoiseGit Dialog Settings 2"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-dialogs2"></a>2.35.1.4. TortoiseGit Dialog Settings 2</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-dialogs"></a><p class="title"><b>Figure 2.58. The Settings Dialog, Dialogs Page 2</b></p><div class="figure-contents"><div><img src="images/SettingsDialog2.png" alt="The Settings Dialog, Dialogs Page 2"></div></div></div><p><br class="figure-break">
+			This dialog allows you to configure some more of TortoiseGit's
+			dialogs the way you like them.
+		</p><div class="variablelist"><dl><dt><span class="term">Git.exe Progress Dialog</span></dt><dd><p>
+						TortoiseGit can automatically close all progress dialogs 
+						when the action is finished without error. This setting
+						allows you to select the conditions for closing the
+						dialogs. The default (recommended) setting is
+						<span class="guilabel">Close manually</span>
+						which allows you to review all messages and check what
+						has happened. However, you may decide that you want to
+						ignore some types of message and have the dialog
+						close automatically if there are no critical changes.
+					</p><p>
+						<span class="guilabel">Auto-close if no further options are available</span>
+						will close the dialog if git.exe exited cleanly (i.e. no error occurred)
+						and no further options are presented in the progress dialog.
+					</p><p>
+						<span class="guilabel">Auto-close if no errors</span>
+						always closes the dialog if git.exe exited with 0 error code.
+					</p></dd><dt><span class="term">Use recycle bin when reverting</span></dt><dd><p>
+						When you revert local modifications, your changes are
+						discarded. TortoiseGit gives you an extra safety net by
+						sending the modified file to the recycle bin before
+						bringing back the pristine copy. If you prefer to
+						skip the recycle bin, uncheck this option.
+					</p></dd><dt><span class="term">Confirm to kill running git process</span></dt><dd><p>
+						When enabled, if you close Progress Dialog or Sync Dialog with a running git process,
+						you will be asked for confirmation before killing it.
+						This avoids closing the dialog by accident that kills running git process.
+					</p></dd><dt><span class="term">Randomize Sync Dialog startup position</span></dt><dd><p>
+						When enabled, the startup position of Sync Dialog will be randomized.
+						If you open many Sync Dialogs and press pull button at the same time,
+						you may easily press the pull button in any previous Sync Dialog if it finishes and becomes foreground.
+					</p></dd><dt><span class="term">Hide unchanged refs in Ref Compare List</span></dt><dd><p>
+						When enabled, unchanged refs will not be shown in Ref Compare List, so you can focus on changed refs.
+						Currently, this list is in Sync Dialog Ref List tab.
+					</p></dd><dt><span class="term">Show git.exe execution timings and timestamp</span></dt><dd><p>
+						When enabled, git.exe execution timings and timestamp will be appended at the end of progress message.
+					</p></dd><dt><span class="term">Use auto-completion of file paths and keywords</span></dt><dd><p>
+						The commit dialog includes a facility to parse the list
+						of filenames being committed. When you type the first 3
+						letters of an item in the list, the auto-completion
+						box pops up, and you can press Enter to complete the
+						filename. Check the box to enable this feature.
+					</p></dd><dt><span class="term">Timeout in seconds to stop the auto-completion parsing</span></dt><dd><p>
+						The auto-completion parser can be quite slow if there are a lot
+						of large files to check. This timeout stops the commit dialog
+						being held up for too long. If you are missing important
+						auto-completion information, you can extend the timeout.
+					</p></dd><dt><span class="term">Max. items to keep in the log message history</span></dt><dd><p>
+						When you type in a log message in the commit dialog, TortoiseGit
+						stores it for possible re-use later. By default it will keep the
+						last 25 log messages for each repository, but you can customize
+						that number here.
+						If you have many different repositories, you may wish to
+						reduce this to avoid filling your registry.
+					</p><p>
+						Note that this setting applies only to messages that you type
+						in on this computer. It has nothing to do with the log cache.
+					</p></dd><dt><span class="term">Select items automatically</span></dt><dd><p>
+						The normal behaviour in the commit dialog is for all modified
+						(versioned) items to be selected for commit automatically.
+						If you prefer to start with nothing selected and pick the
+						items for commit manually, uncheck this box.
+					</p></dd></dl></div></div><div class="sect3" title="2.35.1.5. TortoiseGit Dialog Settings 3"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-dialogs3"></a>2.35.1.5. TortoiseGit Dialog Settings 3</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-dialogs"></a><p class="title"><b>Figure 2.59. The Settings Dialog, Dialogs 3 Page</b></p><div class="figure-contents"><div><img src="images/SettingsDialog3.png" alt="The Settings Dialog, Dialogs 3 Page"></div></div></div><p><br class="figure-break">
+			This dialog allows you to configure some of TortoiseGit's
+			dialogs the way you like them.
+			This third page mainly affects the Commit dialog and the settings which are stored in git config files.
+		</p><div class="important" title="Important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.png"></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>
+				If you have problems entering/storing data please see <a class="xref" href="tgit-dug-settings.html#tgit-dug-settings-hierachical" title="2.35.6.1. The hierarchical git configuration">Section 2.35.6.1, &#8220;The hierarchical git configuration&#8221;</a>.
+			</p></td></tr></table></div><div class="variablelist"><dl><dt><span class="term">Language</span></dt><dd><p>
+						TortoiseGit can use spell checker modules which are also
+						used by OpenOffice and Mozilla. If you have those installed
+						this property will determine which spell checker to use, i.e.
+						in which language the log messages for your project should
+						be written.
+						The <code class="literal">tgit.projectlanguage</code> config key sets the language
+						module the spell checking engine should use when you enter
+						a log message. You can find the values for your language
+						on this page:
+						<a class="ulink" href="http://msdn2.microsoft.com/en-us/library/ms776260.aspx" target="_top">
+							<em class="citetitle">MSDN: Language Identifiers</em>
+						</a>.
+					</p><p>
+						Enter this value in decimal. For example English (US) can be entered as <code class="literal">1033</code>.
+					</p><p>
+						Use <code class="literal">-1</code> to disable the spell checker.
+					</p></dd><dt><span class="term">Limit</span></dt><dd><p>
+						<code class="literal">tgit.logminsize</code>
+						sets the minimum length of a log message for a commit.
+						If you enter a shorter message than specified here, the commit button
+						is disabled. This feature is very useful for reminding you to
+						supply a proper descriptive message for every commit.
+						If this property is not set,
+						or the value is zero, empty log messages are allowed.
+					</p></dd><dt><span class="term">Border</span></dt><dd><p>
+						<code class="literal">tgit.logwidthmarker</code> is used with projects which
+						require log messages to be formatted with some maximum width
+						(typically 72 characters) before a line break. Setting this
+						property to a non-zero will place a marker to indicate the maximum width
+						and performs line wrapping. Note: this feature
+						will only work correctly if you have a fixed-width font
+						selected for log messages.
+					</p></dd><dt><span class="term">Warn on Signed-Off-By on commit</span></dt><dd><p>
+						<code class="literal">tgit.warnnosignedoffby</code> is used with projects which
+						require Signed-off-by line in commit messages.
+					</p></dd><dt><span class="term">Overlay Icon</span></dt><dd><p>
+						<code class="literal">tgit.icon</code> is used with projects which wish to show the logo 
+						on the taskbar for easier identification when multiple TortoiseGit application instances
+						of different projects are running at the same time.
+						</p><div><img src="images/TaskbarOverlayIcon.png"></div><p>
+						If icon is not 16x16 px in size, it will be automatically scaled.
+						Supported formats are ico, png, jpg, gif, bmp.
+						If no icon is included by that project, you may find one on you own, 
+						put it in .git folder and set the relative path in local config. e.g. <code class="literal">.git/logo.ico</code>
+						If you want to disable it, you may set <code class="literal">tgit.icon</code> as an empty string in local config.
+						It will fallback to a color block when disabled or load failed.
+						Note that the advanced option <code class="literal">GroupTaskbarIconsPerRepo</code> should be 3 or 4 in order to use this function.
+					</p></dd></dl></div></div><div class="sect3" title="2.35.1.6. TortoiseGit Colour Settings"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-colours"></a>2.35.1.6. TortoiseGit Colour Settings</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-colors"></a><p class="title"><b>Figure 2.60. The Settings Dialog, Colours Page</b></p><div class="figure-contents"><div><img src="images/SettingsColors.png" alt="The Settings Dialog, Colours Page"></div></div></div><p><br class="figure-break">
+			This dialog allows you to configure the text colours
+			used in TortoiseGit's dialogs the way you like them.
+		</p><div class="variablelist"><dl><dt><span class="term">Possible or real conflict / obstructed</span></dt><dd><p>
+						A conflict has occurred during update, or may occur during merge.
+						Update is obstructed by an existing unversioned file/folder of
+						the same name as a versioned one.
+					</p><p>
+						This colour is also used for error messages in the progress dialogs.
+					</p></dd><dt><span class="term">Added files</span></dt><dd><p>
+						Items added to the repository.
+					</p></dd><dt><span class="term">Missing / deleted / replaced</span></dt><dd><p>
+						Items deleted from the repository, missing from the working
+						copy, or deleted from the working tree and replaced with
+						another file of the same name.
+					</p></dd><dt><span class="term">Merged</span></dt><dd><p>
+						Changes from the repository successfully merged into the working tree
+						without creating any conflicts.
+					</p></dd><dt><span class="term">Modified / copied</span></dt><dd><p>
+						Add with history, or paths copied in the repository.
+						Also used in the log dialog for entries which include
+						copied items.
+					</p></dd><dt><span class="term">Note node</span></dt><dd><p>
+						A reference which points to git notes, under refs/notes namespace.
+					</p></dd><dt><span class="term">Use local branch color for current branch</span></dt><dd><p>
+						In revision graph, use local branch color for current branch.
+						You may not want to emphasize current branch of a local
+						repository in revision graph.
+					</p></dd></dl></div></div><div class="sect3" title="2.35.1.7. TortoiseGit Colour Settings 2"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-colours2"></a>2.35.1.7. TortoiseGit Colour Settings 2</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-colors2"></a><p class="title"><b>Figure 2.61. The Settings Dialog, Colours Page</b></p><div class="figure-contents"><div><img src="images/SettingsColors2.png" alt="The Settings Dialog, Colours Page"></div></div></div><p><br class="figure-break">
+			This dialog allows you to configure the text colours
+			used in TortoiseGit's dialogs the way you like them.
+		</p></div><div class="sect3" title="2.35.1.8. TortoiseGit Colour Settings 3"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-colours3"></a>2.35.1.8. TortoiseGit Colour Settings 3</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-colors-3"></a><p class="title"><b>Figure 2.62. The Settings Dialog, Colours Page</b></p><div class="figure-contents"><div><img src="images/SettingsColors3.png" alt="The Settings Dialog, Colours Page"></div></div></div><p><br class="figure-break">
+			This dialog allows you to configure the line colours, line width and node size
+			in the graph column used in TortoiseGit's log dialog the way you like them.
+		</p></div></div><div class="sect2" title="2.35.2. Icon Overlay Settings"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-overlay"></a>2.35.2. Icon Overlay Settings</h3></div></div></div><p>
+		</p><div class="figure"><a name="tgit-dug-settings-dia-overlay"></a><p class="title"><b>Figure 2.63. The Settings Dialog, Icon Overlays Page</b></p><div class="figure-contents"><div><img src="images/SettingsOverlay.png" alt="The Settings Dialog, Icon Overlays Page"></div></div></div><p><br class="figure-break">
+		This page allows you to choose the items for which TortoiseGit will
+		display icon overlays.
+	</p><p>
+		By default, overlay icons and context menus will appear in all open/save
+		dialogs as well as in Windows Explorer. If you want them to appear
+		<span class="emphasis"><em>only</em></span> in Windows Explorer, check the
+		<span class="guilabel">Show overlays and context menu only in explorer</span> box.
+	</p><p>
+		Ignored items and Unversioned items are not usually given an overlay.
+		If you want to show an overlay in these cases, just check the boxes.
+	</p><p>
+		You can also choose to mark folders as
+		modified if they contain unversioned items. This could be useful for
+		reminding you that you have created new files which are not yet versioned.
+		This option is only available when you use the <span class="emphasis"><em>default</em></span>
+		status cache option (see below).
+	</p><p>
+		Since it takes quite a while to fetch the status of a working tree,
+		TortoiseGit uses a cache to store the status so the explorer
+		doesn't get hogged too much when showing the overlays.
+		You can choose which type of cache TortoiseGit should use according
+		to your system and working tree size here:
+		</p><div class="variablelist"><dl><dt><span class="term">Default</span></dt><dd><p>
+						Caches all status information in a separate process
+						(<code class="filename">TGitCache.exe</code>). That process
+						watches all drives for changes and fetches the status
+						again if files inside a working tree get modified.
+						The process runs with the least possible priority so
+						other programs don't get hogged because of it. That 
+						also means that the status information is not
+						<span class="emphasis"><em>real time</em></span> but it can take a few
+						seconds for the overlays to change.
+					</p><p>
+						Advantage: the overlays show the status recursively,
+						i.e. if a file deep inside a working tree is modified,
+						all folders up to the working tree root will also
+						show the modified overlay. And since the process can
+						send notifications to the shell, the overlays on the left
+						tree view usually change too.
+					</p><p>
+						Disadvantage: the process runs constantly, even if you're not 
+						working on your projects. It also uses around 10-50 MB of RAM 
+						depending on number and size of your working trees. From version 1.7.0 to 1.7.12
+						TGitCache did not check the contents of the files,
+						it just checked the last modification time against the time stored
+						in the git index file.
+						Starting from 1.7.13 TGitCache now also checks the contents of the files by default.
+						If you want to restore the old behavior, you can disable checking the contents
+						via the Settings dialog -&gt; Advanced and set TGitCacheCheckContent to "false". 
+					</p></dd><dt><span class="term">Shell Extended</span></dt><dd><p>
+						Caching is done directly inside the shell extension
+						dll.
+						Each time you navigate to another folder, the status
+						information is fetched again (recursively).
+					</p><p>
+						Advantage: can show the status in <span class="emphasis"><em>real time</em></span>.
+					</p><p>
+						Disadvantage: only one folder is cached and for big working trees,
+						it can take much more time to show a folder in explorer than
+						with the default cache or with shell mode. The Shell variant only shows
+						differences of the filesystem to the git index (does not include revision
+						specific information, e.g. if you remove a file from the index the file will
+						show up as unversioned, but with TGitCache the file will show up as deleted
+						until you commit this change).
+					</p></dd><dt><span class="term">Shell</span></dt><dd><p>
+						Caching is done directly inside the shell extension
+						dll, but only for the currently visible folder.
+						Each time you navigate to another folder, the status
+						information is fetched again.
+					</p><p>
+						Advantage: needs only very little memory (around 1 MB of RAM)
+						and can show the status in <span class="emphasis"><em>real time</em></span>.
+					</p><p>
+						Disadvantage: Since only one folder is cached, the overlays
+						don't show the status recursively. For big working trees,
+						it can take more time to show a folder in explorer than
+						with the default cache. The Shell variant only shows
+						differences of the filesystem to the git index (does not include revision
+						specific information, e.g. if you remove a file from the index the file will
+						show up as unversioned, but with TGitCache the file will show up as deleted
+						until you commit this change).
+					</p></dd><dt><span class="term">None</span></dt><dd><p>
+						With this setting, the TortoiseGit does not fetch the status
+						at all in Explorer. Because of that, files don't get an overlay
+						and folders only get a 'normal' overlay if they're versioned.
+						No other overlays are shown, and no extra columns are available
+						either.
+					</p><p>
+						Advantage: uses absolutely no additional memory and does
+						not slow down the Explorer at all while browsing.
+					</p><p>
+						Disadvantage: Status information of files and folders is not
+						shown in Explorer. To see if your working trees are modified,
+						you have to use the <span class="quote">&#8220;<span class="quote">Check for modifications</span>&#8221;</span> dialog.
+					</p></dd></dl></div><p>
+	</p><p>
+		The next group allows you to select which classes of storage should
+		show overlays. By default, only hard drives are selected.
+		You can even disable all icon overlays, but where's the fun in that?
+	</p><p>
+		Network drives can be very slow, so by default
+		icons are not shown for working trees located on network shares.
+	</p><p>
+		USB Flash drives appear to be a special case in that the drive type
+		is identified by the device itself. Some appear as fixed drives,
+		and some as removable drives.
+	</p><p>
+		The <span class="guilabel">Exclude Paths</span> are used to tell TortoiseGit
+		those paths for which it should <span class="emphasis"><em>not</em></span> show icon
+		overlays and status columns.
+		This is useful if you have some very big working trees containing
+		only libraries which you won't change at all and therefore don't
+		need the overlays. For example:
+	</p><p>
+		<code class="filename">f:\development\TortoiseGit</code> will disable
+		the overlays <span class="emphasis"><em>only</em></span> on that specific folder. You
+		still can see the overlays on all files and folder inside that folder.
+	</p><p>
+		<code class="filename">f:\development\TortoiseGit*</code> will disable the
+		overlays on <span class="emphasis"><em>all</em></span> files and folders whose path
+		starts with <code class="filename">f:\development\TortoiseGit</code>. That
+		means you won't see overlays for any files and folders below that
+		path.
+	</p><p>
+		The same applies to the <span class="guilabel">Include Paths</span>. Except that
+		for those paths the overlays are shown even if the overlays are disabled
+		for that specific drive type, or by an exclude path specified above.
+	</p><p>
+		Users sometimes ask how these three settings interact, and the definitive
+		answer is:
+</p><pre class="screen">
+if (path is in include list)
+  show overlays
+if (path is allowed drive type) AND (path is not in exclude list)
+  show overlays
+</pre><p>
+		The include list <span class="emphasis"><em>always</em></span> makes the overlays show.
+		Otherwise, overlays are shown for all marked drive types
+		<span class="emphasis"><em>unless</em></span> the path is excluded.
+	</p><p>
+		TGitCache.exe also uses these paths to restrict its scanning. If you
+		want it to look only in particular folders, disable all drive types
+		and include only the folders you specifically want to be scanned.
+	</p><div class="tip" title="Exclude SUBST Drives" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip: Exclude SUBST Drives"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Exclude <code class="literal">SUBST</code> Drives</th></tr><tr><td align="left" valign="top"><a name="id715782"></a><p>
+			It is often convenient to use a <code class="literal">SUBST</code> drive
+			to access your working trees, e.g. using the command
+</p><pre class="screen">
+subst T: C:\TortoiseGit\doc
+</pre><p>
+			However this can cause the overlays not to update, as
+			<code class="literal">TGitCache</code> will only receive one notification when
+			a file changes, and that is normally for the original path. This means
+			that your overlays on the <code class="literal">subst</code> path may never
+			be updated.
+		</p><p>
+			An easy way to work around this is to exclude the original path
+			from showing overlays, so that the overlays show up on the
+			<code class="literal">subst</code> path instead.
+		</p></td></tr></table></div><p>
+		Sometimes you will exclude areas that contain working trees,
+		which saves TGitCache from scanning and monitoring for changes,
+		but you still want a visual indication that such folders are versioned.
+		The <span class="guilabel">Show excluded folders as 'normal'</span> checkbox
+		allows you to do this. With this option, versioned folders in any
+		excluded area (drive type not checked, or specifically excluded)
+		will show up as normal and up-to-date, with a green check
+		mark. This reminds you that you are looking at a working tree, even
+		though the folder overlays may not be correct. Files do not get an
+		overlay at all. Note that the context menus still work, even though
+		the overlays are not shown.
+	</p><p>
+		As a special exception to this, drives <code class="literal">A:</code>
+		and <code class="literal">B:</code> are never considered for the
+		<span class="guilabel">Show excluded folders as 'normal'</span> option.
+		This is because Windows is forced to look on the drive, which can
+		result in a delay of several seconds when starting Explorer, even
+		if your PC does have a floppy drive.
+	</p><div class="sect3" title="2.35.2.1. Icon Set Selection"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-icon-set"></a>2.35.2.1. Icon Set Selection</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-icons"></a><p class="title"><b>Figure 2.64. The Settings Dialog, Icon Set Page</b></p><div class="figure-contents"><div><img src="images/SettingsOverlayChooser.png" alt="The Settings Dialog, Icon Set Page"></div></div></div><p><br class="figure-break">
+			You can change the overlay icon set to the one you like best. Especially you can disable overlays which you do not need like assume-valid and skip-worktree, however other Tortoise* tools use these two for different purposes.
+			Note that if you change overlay set, you may have to restart
+			your computer for the changes to take effect.
+		</p></div><div class="sect3" title="2.35.2.2. Enabled Overlay Handlers"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-overlay-handlers"></a>2.35.2.2. Enabled Overlay Handlers</h4></div></div></div><p>
+            </p><div class="figure"><a name="tgit-dug-settings-dia-overlay-handlers"></a><p class="title"><b>Figure 2.65. The Settings Dialog, Icon Handlers Page</b></p><div class="figure-contents"><div><img src="images/SettingsOverlayHandlers.png" alt="The Settings Dialog, Icon Handlers Page"></div></div></div><p><br class="figure-break">
+            Because the number of overlays available is severely restricted,
+            you can choose to disable some handlers to ensure that the ones
+            you want will be loaded. Because TortoiseGit uses the common
+            TortoiseOverlays component which is shared with other Tortoise
+            clients (e.g. TortoiseSVN, TortoiseCVS, TortoiseHg) this setting will affect
+            those clients too.
+        </p></div></div><div class="sect2" title="2.35.3. Network Settings"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-network"></a>2.35.3. Network Settings</h3></div></div></div><a name="id717088"></a><p>
+		</p><div class="figure"><a name="tgit-dug-settings-dia-4"></a><p class="title"><b>Figure 2.66. The Settings Dialog, Network Page</b></p><div class="figure-contents"><div><img src="images/SettingsProxy.png" alt="The Settings Dialog, Network Page"></div></div></div><p><br class="figure-break">
+		Here you can configure your proxy server, if you need one to get
+		through your company's firewall.
+	</p><p>
+		If you need to set up per-repository proxy settings, you will
+		need to use the Git <code class="filename">config</code> file to
+		configure this. Consult <a class="xref" href="git-command.html#git-config(1)" title="G.3.25. git-config(1)">Section G.3.25, &#8220;git-config(1)&#8221;</a> for more details.
+	</p><p>
+		You can also specify which program TortoiseGit should use to
+		establish a secure connection to a git repository which is access using ssh.
+		We recommend that you use TortoiseGitPLink.exe. This is a version
+		of the popular Plink program, and is included with TortoiseGit,
+		but it is compiled as a Windowless app, so you don't get a DOS
+		box popping up every time you authenticate.
+	</p><p>
+		You must specify the full path to the executable. For TortoiseGitPLink.exe
+		this is the standard TortoiseGit bin directory. Use the
+		<span class="guibutton">Browse</span> button to help locate it, e.g.:
+</p><pre class="screen">
+"C:\Program Files\TortoiseGit\bin\TortoiseGitPLink.exe"
+</pre><p>
+	</p><div class="tip" title="Tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>
+			If you want to use OpenSSH shipped by Git for Windows/msysGit just enter <code class="filename">ssh.exe</code>.
+		</p></td></tr></table></div><p>
+		One side-effect of not having a window is that there is
+		nowhere for any error messages to go, so if authentication
+		fails you will simply get a message saying something like
+		<span class="quote">&#8220;<span class="quote">Unable to write to standard output</span>&#8221;</span>.
+		For this reason we recommend that you first set up using
+		standard Plink. When everything is working, you can use
+		TortoiseGitPlink with exactly the same parameters.
+	</p><p>
+		TortoiseGitPlink does not have any documentation of its own because it
+		is just a minor variant of Plink. Find out about command line
+		parameters from the
+		<a class="ulink" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_top">
+			<em class="citetitle">PuTTY website</em>
+		</a>
+	</p><p>
+		To avoid being prompted for a password repeatedly, you might also
+		consider using a password caching tool such as Pageant. This is also
+		available for download from the PuTTY website or included in the TortoiseGit package.
+	</p><p>
+		Finally, setting up SSH on clients is a non-trivial process
+		which is beyond the scope of this help file. However, you can find a
+		guide in the TortoiseGit FAQ listed under
+		<a class="xref" href="tgit-ssh-howto.html" title="Appendix F. Tips and tricks for SSH/PuTTY">Appendix F, <i>Tips and tricks for SSH/PuTTY</i></a> or the latest version 
+		<a class="ulink" href="http://code.google.com/p/tortoisegit/wiki/UsingPuTTY" target="_top">
+			<em class="citetitle">Git/TortoiseGit SSH How-To</em>
+		</a>.
+	</p><div class="sect3" title="2.35.3.1. Email settings"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-network-email"></a>2.35.3.1. Email settings</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-network-email"></a><p class="title"><b>Figure 2.67. The Settings Dialog, email settings</b></p><div class="figure-contents"><div><img src="images/SettingsEmail.png" alt="The Settings Dialog, email settings"></div></div></div><p><br class="figure-break">
+			This page allows you to specify configure how mails should be send.
+		</p><div class="variablelist"><dl><dt><span class="term">SMTP, directly to destination server</span></dt><dd><p>
+						When this option is selected, TortoiseGit directly connects to the SMTP server(s) (on port 25)
+						which is/are responsible for the specific destination email-address(es).
+						This is the default for TortoiseGit (unless some different method is configured).
+					</p><div class="important" title="Important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.png"></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>
+							This might be problematic if your ISP blocks outgoing SMTP connections (port 25) or you have a dialup internet connection.
+							In the ladder case some destination MTAs might not accept your mails or mark them as SPAM.
+						</p></td></tr></table></div></dd><dt><span class="term">MIME</span></dt><dd><p>
+						When this option is selected, TortoiseGit uses the Microsoft MIME-API for sending mails.
+						For this, you need a MAPI capable mail client (e.g. Thunderbird or Outlook).
+					</p><div class="important" title="Important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.png"></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>
+							If you don't send patches as attachments, you might need to make sure that no auto line wrapping takes place.
+							For Thunderbird there is an add-on (<a class="ulink" href="https://addons.mozilla.org/de/thunderbird/addon/toggle-word-wrap/" target="_top"><em class="citetitle">Toggle Word Wrap</em></a>) available.
+						</p></td></tr></table></div></dd><dt><span class="term">use configured server</span></dt><dd><p>
+						This is the recommended way for sending mails. Just enter the same data as in your mail tools (MUA).
+					</p></dd></dl></div></div></div><div class="sect2" title="2.35.4. External Program Settings"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-progs"></a>2.35.4. External Program Settings</h3></div></div></div><p>
+		Here you can define your own programs that TortoiseGit
+		should use. The default setting is to use tools
+		which are installed alongside TortoiseGit.
+	</p><p>
+		Read <a class="xref" href="tgit-dug-diff.html#tgit-dug-diff-tools" title="2.17.6. External Diff/Merge Tools">Section 2.17.6, &#8220;External Diff/Merge Tools&#8221;</a> for a list of some of the
+		external diff/merge programs that people are using with TortoiseGit.
+	</p><div class="sect3" title="2.35.4.1. Diff Viewer"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-Diff"></a>2.35.4.1. Diff Viewer</h4></div></div></div><div class="figure"><a name="tgit-dug-settings-dia-5"></a><p class="title"><b>Figure 2.68. The Settings Dialog, Diff Viewer Page</b></p><div class="figure-contents"><div><img src="images/SettingsProgs.png" alt="The Settings Dialog, Diff Viewer Page"></div></div></div><br class="figure-break"><p>
+			An external diff program may be used for comparing different
+			revisions of files. The external program will need to
+			obtain the filenames from the command line, along with
+			any other command line options. TortoiseGit uses
+			substitution parameters prefixed with <code class="literal">%</code>.
+			When it encounters one of these it will substitute the
+			appropriate value. The order of the parameters will depend
+			on the Diff program you use.
+			</p><div class="variablelist"><dl><dt><span class="term">%base</span></dt><dd><p>
+							The original file without your changes
+						</p></dd><dt><span class="term">%bname</span></dt><dd><p>
+							The window title for the base file
+						</p></dd><dt><span class="term">%mine</span></dt><dd><p>
+							Your own file, with your changes
+						</p></dd><dt><span class="term">%yname</span></dt><dd><p>
+							The window title for your file
+						</p></dd><dt><span class="term">%bpath</span></dt><dd><p>
+							Full path to the original file
+						</p></dd><dt><span class="term">%ypath</span></dt><dd><p>
+							Full path to your file
+						</p></dd><dt><span class="term">%brev</span></dt><dd><p>
+							The revision of the original file, if available
+						</p></dd><dt><span class="term">%yrev</span></dt><dd><p>
+							The revision of the second file, if available
+						</p></dd></dl></div><p>
+		</p><p>
+			The window titles are not pure filenames.
+			TortoiseGit treats that as a name to display and creates
+			the names accordingly. So e.g. if you're doing a
+			diff from a file in revision 123 with a file 
+			in your working tree, the names will be
+			<code class="filename">filename: revision 123</code>
+			and
+			<code class="filename">filename: working tree</code>
+		</p><p>
+			For example, with ExamDiff Pro:
+</p><pre class="screen">
+C:\Path-To\ExamDiff.exe %base %mine --left_display_name:%bname
+    --right_display_name:%yname
+</pre><p>
+			or with KDiff3:
+</p><pre class="screen">
+C:\Path-To\kdiff3.exe %base %mine --L1 %bname --L2 %yname
+</pre><p>
+			or with WinMerge:
+</p><pre class="screen">
+C:\Path-To\WinMerge.exe -e -ub -dl %bname -dr %yname %base %mine
+</pre><p>
+			or with Araxis:
+</p><pre class="screen">
+C:\Path-To\compare.exe /max /wait /title1:%bname /title2:%yname
+    %base %mine
+</pre><p>
+		</p><p>
+			You can also specify a different diff tool to use on Git
+			properties. Since these tend to be short simple text strings, you
+			may want to use a simpler more compact viewer.
+		</p><p>
+			If you have configured an alternate diff tool, you can access
+			TortoiseGitMerge <span class="emphasis"><em>and</em></span> the third party tool
+			from the context menus.
+			<span class="guimenu">Context menu</span> &#8594; <span class="guimenuitem">Diff</span>
+			uses the primary diff tool, and
+			<span class="keycap"><strong>Shift</strong></span>+
+			<span class="guimenu">Context menu</span> &#8594; <span class="guimenuitem">Diff</span>
+			uses the secondary diff tool.
+		</p><p>
+			A viewer program for unified-diff files (GNU diff or patch files).
+			No parameters are required.
+			The <span class="guilabel">Default</span> option is to check for
+			a file association for <code class="filename">.diff</code> files,
+			and then for <code class="filename">.txt</code> files.
+			If you don't have a viewer for <code class="filename">.diff</code>
+			files, you will most likely get NotePad.
+		</p><p>
+			The original Windows NotePad program does not behave
+			well on files which do not have standard CR-LF
+			line-endings. Since most unified diff files have pure
+			LF line-endings, they do not view well in NotePad.
+			However, you can use a free NotePad replacement
+			<a class="ulink" href="http://www.flos-freeware.ch/notepad2.html" target="_top">
+				<em class="citetitle">Notepad2</em>
+			</a> (this is also shipped with TortoiseGit)
+			which not only displays the line-endings correctly,
+			but also colour codes the added and removed lines.
+		</p></div><div class="sect3" title="2.35.4.2. Merge Tool"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-Merge"></a>2.35.4.2. Merge Tool</h4></div></div></div><div class="figure"><a name="tgit-dug-settings-dia-5a"></a><p class="title"><b>Figure 2.69. The Settings Dialog, Merge Tool Page</b></p><div class="figure-contents"><div><img src="images/SettingsMergeTool.png" alt="The Settings Dialog, Merge Tool Page"></div></div></div><br class="figure-break"><p>
+			An external merge program used to resolve conflicted
+			files. Parameter substitution is used in the same way
+			as with the Diff Program.
+			</p><div class="variablelist"><dl><dt><span class="term">%base</span></dt><dd><p>
+							the original file without your or
+							the others changes
+						</p></dd><dt><span class="term">%bname</span></dt><dd><p>
+							The window title for the base file
+						</p></dd><dt><span class="term">%mine</span></dt><dd><p>
+							your own file, with your changes
+						</p></dd><dt><span class="term">%yname</span></dt><dd><p>
+							The window title for your file
+						</p></dd><dt><span class="term">%theirs</span></dt><dd><p>
+							the file as it is in the repository
+						</p></dd><dt><span class="term">%tname</span></dt><dd><p>
+							The window title for the file in the repository
+						</p></dd><dt><span class="term">%merged</span></dt><dd><p>
+							the conflicted file, the result of
+							the merge operation
+						</p></dd><dt><span class="term">%mname</span></dt><dd><p>
+							The window title for the merged file
+						</p></dd></dl></div><p>
+		</p><p>
+			For example, with Perforce Merge:
+</p><pre class="screen">
+C:\Path-To\P4Merge.exe %base %theirs %mine %merged
+</pre><p>
+			or with KDiff3:
+</p><pre class="screen">
+C:\Path-To\kdiff3.exe %base %mine %theirs -o %merged
+    --L1 %bname --L2 %yname --L3 %tname
+</pre><p>
+			or with Araxis:
+</p><pre class="screen">
+C:\Path-To\compare.exe /max /wait /3 /title1:%tname /title2:%bname
+    /title3:%yname %theirs %base %mine %merged /a2
+</pre><p>
+			or with WinMerge (2.8 or later):
+</p><pre class="screen">
+C:\Path-To\WinMerge.exe %merged
+</pre><p>
+		</p></div><div class="sect3" title="2.35.4.3. Diff/Merge Advanced Settings"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-Progs-Adv"></a>2.35.4.3. Diff/Merge Advanced Settings</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-6"></a><p class="title"><b>Figure 2.70. The Settings Dialog, Diff/Merge Advanced Dialog</b></p><div class="figure-contents"><div><img src="images/SettingsProgsAdv.png" alt="The Settings Dialog, Diff/Merge Advanced Dialog"></div></div></div><p><br class="figure-break">
+			In the advanced settings, you can define a different diff and merge
+			program for every file extension. For instance you could associate
+			Photoshop as the <span class="quote">&#8220;<span class="quote">Diff</span>&#8221;</span> Program for <code class="filename">.jpg</code> files :-)
+		</p><p>
+			To associate using a file extension, you need to specify the extension.
+			Use <code class="literal">.bmp</code> to describe Windows bitmap files.
+		</p></div><div class="sect3" title="2.35.4.4. Alternative editor"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-alternativeeditor"></a>2.35.4.4. Alternative editor</h4></div></div></div><div class="figure"><a name="tgit-dug-settings-dia-6b"></a><p class="title"><b>Figure 2.71. The Settings Dialog, Alternative editor Page</b></p><div class="figure-contents"><div><img src="images/SettingsAlternativeEditor.png" alt="The Settings Dialog, Alternative editor Page"></div></div></div><br class="figure-break"><p>
+			The original Windows NotePad program does not behave
+			well on files which do not have standard CR-LF
+			line-endings. However, a lot of git configuration files do not have
+			a standard CR-LF line-ending. Because of this TortoiseGit uses a free
+			(shipped) NotePad replacement
+			<a class="ulink" href="http://www.flos-freeware.ch/notepad2.html" target="_top">
+				<em class="citetitle">Notepad2</em>
+			</a>
+			which displays the line-endings correctly by default.
+		</p></div></div><div class="sect2" title="2.35.5. Saved Data Settings"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-saved-data"></a>2.35.5. Saved Data Settings</h3></div></div></div><p>
+		</p><div class="figure"><a name="tgit-dug-settings-dia-saved-data"></a><p class="title"><b>Figure 2.72. The Settings Dialog, Saved Data Page</b></p><div class="figure-contents"><div><img src="images/SettingsSavedData.png" alt="The Settings Dialog, Saved Data Page"></div></div></div><p><br class="figure-break">
+		For your convenience, TortoiseGit saves many of the settings
+		you use, and remembers where you have been lately. If you
+		want to clear out that cache of data, you can do it here.
+	</p><div class="variablelist"><dl><dt><span class="term">URL history</span></dt><dd><p>
+					Whenever you checkout a working tree, merge changes
+					or use the repository browser, TortoiseGit keeps a record
+					of recently used URLs and offers them in a combo box.
+					Sometimes that list gets cluttered with outdated URLs
+					so it is useful to flush it out periodically.
+				</p><p>
+					If you want to remove a single item from one of the combo
+					boxes you can do that in-place. Just click on the arrow
+					to drop the combo box down, move the mouse over the item
+					you want to remove and type <span class="keycap"><strong>Shift+Del</strong></span>.
+				</p></dd><dt><span class="term">Log messages (Input dialog)</span></dt><dd><p>
+					TortoiseGit stores recent commit log messages that you
+					enter. These are stored per repository, so if you access many
+					repositories this list can grow quite large.
+				</p></dd><dt><span class="term">Log messages (Show log dialog)</span></dt><dd><p>
+					TortoiseGit caches log messages fetched by the Show Log
+					dialog to save time when you next show the log. If someone
+					else edits a log message and you already have that message
+					cached, you will not see the change until you clear the
+					cache. Log message caching is enabled on the
+					<span class="guilabel">Log Cache</span> tab.
+				</p></dd><dt><span class="term">Dialog sizes and positions</span></dt><dd><p>
+					Many dialogs remember the size and screen position that you
+					last used.
+				</p></dd><dt><span class="term">Action log</span></dt><dd><p>
+					TortoiseGit keeps a log of everything written to its progress
+					dialogs. This can be useful when, for example, you want to check
+					what happened in a recent update command.
+				</p><p>
+					The log file is limited in length and when it grows too big the
+					oldest content is discarded. By default 4000 lines are kept, but
+					you can customize that number.
+				</p><p>
+					From here you can view the log file content, and also clear it.
+				</p></dd></dl></div></div><div class="sect2" title="2.35.6. Git"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-git"></a>2.35.6. Git</h3></div></div></div><div class="sect3" title="2.35.6.1. The hierarchical git configuration"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-hierachical"></a>2.35.6.1. The hierarchical git configuration</h4></div></div></div><p>
+			Git uses the concept of a hierarchical configuration (cf. <a class="xref" href="git-command.html#git-config(1)" title="G.3.25. git-config(1)">Section G.3.25, &#8220;git-config(1)&#8221;</a>). I.e. there are multiple levels; settings in higher levels override values in lower levels. The <span class="guilabel">Effective</span> tab shows you the effective values for the current scope (read-only).
+		</p><p>
+			Select any level (e.g. <span class="guilabel">Local</span> - the current repository settings stored locally in .git/config, <span class="guilabel">Project</span> - settings for the current repository stored within the repository in /.tgitconfig, <span class="guilabel">Global</span> - settings for the current user, <span class="guilabel">System</span> - settings for all users of the system) to see the values stored there.
+		</p><p>
+			In order to change settings select a level, enter the values, select where to store to and click on <span class="guibutton">Apply</span>.
+		</p><div class="caution" title="Caution" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Caution"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Caution]" src="images/caution.png"></td><th align="left">Caution</th></tr><tr><td align="left" valign="top"><p>
+				If you want to inherit a value of a higher level don't leave a textbox empty (this means than an empty string will be stored, which might evaluate to <code class="literal">true</code>), select <span class="guilabel">Inherit</span> instead.
+			</p></td></tr></table></div></div><div class="sect3" title="2.35.6.2. Git Config"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-config"></a>2.35.6.2. Git Config</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-git-config"></a><p class="title"><b>Figure 2.73. The Settings Dialog, Git</b></p><div class="figure-contents"><div><img src="images/SettingsGitConfig.png" alt="The Settings Dialog, Git"></div></div></div><p><br class="figure-break">
+		</p><p> Set git basic configuration </p><p><span class="guilabel">Name</span> and <span class="guilabel">Email</span> are required for git to operate correctly.</p><p> <span class="guilabel">AutoCrlf</span>
+			If true, makes git convert CRLF at the end of lines in text files
+			to LF when reading from the filesystem, and convert in reverse when
+			writing to the filesystem. The variable can be set to input,
+			in which case the conversion happens only while reading from
+			the filesystem but files are written out with LF at the end of lines. 
+			A file is considered "text" (i.e. be subjected to the autocrlf mechanism) 
+			based on the file's crlf attribute, or if crlf is unspecified, 
+			based on the file's contents.
+		</p><p> <span class="guilabel">SafeCrlf</span>
+			If true, makes git check if converting CRLF as controlled by core.autocrlf is reversible.
+			Git will verify if a command modifies a file in the work tree either directly or indirectly. 
+			For example, committing a file followed by checking out the same file should yield the original file in the work tree. 
+			If this is not the case for the current setting of core.autocrlf, git will reject the file. 
+			The variable can be set to "warn", 
+			in which case git will only warn about an irreversible conversion but continue the operation.
+		</p><p> <span class="guilabel">QuotePath</span> Controls the <code class="literal">core.quotepath</code> setting which might be interesting when you have non ASCII filenames: See <a class="xref" href="git-command.html#git-config(1)" title="G.3.25. git-config(1)">Section G.3.25, &#8220;git-config(1)&#8221;</a>.</p><div class="important" title="Important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.png"></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>
+				If you have problems entering/storing data please see <a class="xref" href="tgit-dug-settings.html#tgit-dug-settings-hierachical" title="2.35.6.1. The hierarchical git configuration">Section 2.35.6.1, &#8220;The hierarchical git configuration&#8221;</a>.
+			</p></td></tr></table></div></div><div class="sect3" title="2.35.6.3. Remote"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-remote"></a>2.35.6.3. Remote</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-git-remote"></a><p class="title"><b>Figure 2.74. The Settings Dialog, Git, Remote</b></p><div class="figure-contents"><div><img src="images/SettingsGitRemote.png" alt="The Settings Dialog, Git, Remote"></div></div></div><p><br class="figure-break">
+		</p><p> Set git remote configuration </p><p>
+			<span class="guilabel">Remote</span>
+			The name of the remote, usually the default one is called 'origin'.
+		</p><p>
+			<span class="guilabel">URL</span>
+			The URL of the remote. It can be http / https / ssh / git protocol or local file system.
+			Note that for local file system, the path should use forward slash '/'; and
+			for absolute path, use /C/Project1 for C:\Project1.
+		</p><p>
+			<span class="guilabel">Push URL</span>
+			The Push URL of the remote.
+			It is for some cases you cannot use the same url to fetch and push
+			(for example, fetch via passwordless git protocol but push via ssh). Otherwise, leave it empty.
+			Note: This is not designed for forking workflow. For forking workflow, you should have 2 remotes.
+			The format is the same as URL.
+		</p><p>
+			<span class="guilabel">Putty Key</span>
+			The putty key file to load when performing network operations.
+		</p><p>
+			<span class="guilabel">Tag</span>
+			This sets remote.name.tagopt config, which controls the default tag fetching behaviour of the specified remote.
+			Reachable: Download tags that are reachable from remote branch heads (default behaviour).
+			None: No tags are downloaded (--no-tags).
+			(git 1.9 and later) All: All tags as well as branches are downloaded (--tags).
+			(prior to git 1.9) All tags only: Only all tags are downloaded but no branches are downloaded (--tags).
+			Use case of All: Always fetch tags from a git-svn mirror. 
+			Subversion tags never exist on trunk, so such tags are not reachable from branch heads.
+		</p><p>
+			<span class="guilabel">Prune</span>
+			This sets remote.name.prune config, which controls the default prune option of remote tracking branches of the specified remote.
+			Default is false.
+		</p></div><div class="sect3" title="2.35.6.4. Credential"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-credential"></a>2.35.6.4. Credential</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-git-credential"></a><p class="title"><b>Figure 2.75. The Settings Dialog, Git, Credential</b></p><div class="figure-contents"><div><img src="images/SettingsGitCredential.png" alt="The Settings Dialog, Git, Credential"></div></div></div><p><br class="figure-break">
+		</p><p>Set simple credential helper configuration</p><p>
+			<span class="guilabel">Advanced</span>
+			This is used if the credential helper configuration does not match any simple settings.
+			If you choose other than Advanced, except the corrsponding credential.helper, all other config keys credential.* or credential.*.* are removed.
+		</p><p>
+			<span class="guilabel">None</span>
+			No credential config keys are in all config levels.
+		</p><p>
+			<span class="guilabel">wincred - this repository only</span>
+			wincred is enabled in local config.
+			This option is visible only if wincred is installed.
+		</p><p>
+			<span class="guilabel">winstore - this repository only</span>
+			winstore is enabled in local config.
+			This option is visible only if winstore is installed for current Windows user.
+		</p><p>
+			<span class="guilabel">wincred - current Windows user</span>
+			wincred is enabled in global config.
+			This option is visible only if wincred is installed.
+		</p><p>
+			<span class="guilabel">winstore - current Windows user</span>
+			winstore is enabled in global config.
+			This option is visible only if winstore is installed for current Windows user.
+		</p><p>
+			<span class="guilabel">wincred - all Windows users</span>
+			wincred is enabled in system config.
+			This option is visible only if wincred is installed.
+		</p><p>Advanced credential helper configuration</p><p>
+			<span class="guilabel">Config type</span>
+			Either Local, Global or System config.
+		</p><p>
+			<span class="guilabel">URL</span>
+			Define a context-specific configuration based on URL pattern. By default, the path component is not considered as a different context.
+		</p><p>
+			<span class="guilabel">Helper</span>
+			Select a credential helper program.
+			wincred and winstore are predefined in TortoiseGit.
+			It is possible to use other credential helpers or with extra options.
+		</p><p>
+			<span class="guilabel">Username</span>
+			A default username, if one is not provided in the URL. 
+		</p><p>
+			<span class="guilabel">Use HTTP path component</span>
+			Also considers the path component of URL to match the configuration context.
+		</p><p>
+			You can find more information at <a class="xref" href="git-misc.html#gitcredentials(7)" title="G.4.3. gitcredentials(7)">Section G.4.3, &#8220;gitcredentials(7)&#8221;</a>.
+		</p></div></div><div class="sect2" title="2.35.7. Client Side Hook Scripts"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-hooks"></a>2.35.7. Client Side Hook Scripts</h3></div></div></div><div class="sect3" title="2.35.7.1. Issue Tracker Integration"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-hooks-issuetracker"></a>2.35.7.1. Issue Tracker Integration</h4></div></div></div><p>
+			TortoiseGit can use a COM plugin to query issue trackers when in the
+			commit dialog. The use of such plugins is described in
+			<a class="xref" href="tgit-dug-bugtracker.html#tgit-dug-bugtracker-ref" title="2.34.2. Getting Information from the Issue Tracker">Section 2.34.2, &#8220;Getting Information from the Issue Tracker&#8221;</a>.
+			If your system administrator has provided you with a plugin, which
+			you have already installed and registered, this is the place to
+			specify how it integrates with your working tree.
+		</p><div class="tip" title="Tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top">
+			There is also a hierarchical git configuration to associate issue tracker plugin with your project,
+			rather than with to a specific directory path. Such settings are more portable.
+			See <a class="xref" href="tgit-dug-bugtracker.html" title="2.34. Integration with Bug Tracking Systems / Issue Trackers">Section 2.34, &#8220;Integration with Bug Tracking Systems / Issue Trackers&#8221;</a> to configure these settings.
+		</td></tr></table></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-dia-issuetracker"></a><p class="title"><b>Figure 2.76. The Settings Dialog, Issue Tracker Integration Page</b></p><div class="figure-contents"><div><img src="images/SettingsIssueTrackerIntegration.png" alt="The Settings Dialog, Issue Tracker Integration Page"></div><div><img src="images/SettingsIssueTracker.png" alt="The Settings Dialog, Issue Tracker Integration Page"></div></div></div><p><br class="figure-break">
+			Click on <span class="guibutton">Add...</span> to use the plugin with
+			a particular working tree. Here you can specify the working tree
+			path, choose which plugin to use from a drop down list of all
+			registered issue tracker plugins, and any parameters to pass.
+			The parameters will be specific to the plugin, but might include
+			your user name on the issue tracker so that the plugin can
+			query for issues which are assigned to you.
+		</p></div><div class="sect3" title="2.35.7.2. Config"><div class="titlepage"><div><div><h4 class="title"><a name="tgit-dug-settings-hooks-issuetracker-config"></a>2.35.7.2. Config</h4></div></div></div><p>
+			</p><div class="figure"><a name="tgit-dug-settings-hooks-issuetrack-config"></a><p class="title"><b>Figure 2.77. The Settings Dialog, Issue Tracker Config</b></p><div class="figure-contents"><div><img src="images/SettingsIssueTrackerConfig.png" alt="The Settings Dialog, Issue Tracker Config"></div></div></div><p><br class="figure-break">
+			See  <a class="xref" href="tgit-dug-bugtracker.html" title="2.34. Integration with Bug Tracking Systems / Issue Trackers">Section 2.34, &#8220;Integration with Bug Tracking Systems / Issue Trackers&#8221;</a> for a descriptions of the different options.
+		</p><div class="important" title="Important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.png"></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>
+				If you have problems entering/storing data please see <a class="xref" href="tgit-dug-settings.html#tgit-dug-settings-hierachical" title="2.35.6.1. The hierarchical git configuration">Section 2.35.6.1, &#8220;The hierarchical git configuration&#8221;</a>.
+			</p></td></tr></table></div></div></div><div class="sect2" title="2.35.8. TortoiseGitBlame Settings"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-tortoiseblame"></a>2.35.8. TortoiseGitBlame Settings</h3></div></div></div><p>
+		</p><div class="figure"><a name="tgit-dug-settings-dia-blame"></a><p class="title"><b>Figure 2.78. The Settings Dialog, TortoiseGitBlame Page</b></p><div class="figure-contents"><div><img src="images/SettingsBlame.png" alt="The Settings Dialog, TortoiseGitBlame Page"></div></div></div><p><br class="figure-break">
+		The settings used by TortoiseGitBlame are controlled from the
+		main context menu, not directly with TortoiseGitBlame itself.
+		Details for the parameters for the blame algorithm are described in <a class="xref" href="git-command.html#git-blame(1)" title="G.3.9. git-blame(1)">Section G.3.9, &#8220;git-blame(1)&#8221;</a>.
+	</p><div class="variablelist"><dl><dt><span class="term">Colors</span></dt><dd><p>
+					TortoiseGitBlame can use the background colour to indicate the age
+					of lines in a file. You set the endpoints by specifying the
+					colours for the newest and oldest revisions, and TortoiseGitBlame
+					uses a linear interpolation between these colours according to
+					the repository revision indicated for each line.
+				</p></dd><dt><span class="term">Font</span></dt><dd><p>
+					You can select the font used to display the text, and the point
+					size to use. This applies both to the file content, and to the
+					author and revision information shown in the left pane.
+				</p></dd><dt><span class="term">Tab size</span></dt><dd><p>
+					Defines how many spaces to use for expansion when a tab character
+					is found in the file content.
+				</p></dd><dt><span class="term">Detect moved or copied lines</span></dt><dd><p>
+					<span class="guilabel">Disabled</span>
+					Traditional blame algorithm, the search for parents is limited
+					to the file and will follow renames.
+				</p><p>
+					<span class="guilabel">Within file</span>
+					Extra passes of inspection are applied to detect moved and
+					copied lines within the file (<code class="literal">git blame -M</code>). 
+				</p><p>
+					<span class="guilabel">From modified files</span>
+					In addition to the annotated file detect moved or copied lines 
+					from all modified files within a commit (<code class="literal">git blame -C</code>). 
+				</p><p>
+					<span class="guilabel">At file creation</span>
+					In addition to the annotated file and the modified files
+					within a commit detect moved or copied lines from other files
+					in the commit that creates the file (<code class="literal">git blame -C -C</code>).
+				</p><p>
+					<span class="guilabel">From existing files</span>
+					In addition detect moved or modified lines from other files in any commit
+					(<code class="literal">git blame -C -C -C</code>).
+				</p></dd><dt><span class="term">Number of characters required for moved or copied line detection</span></dt><dd><p>
+					Lower bound on the number of alphanumeric characters that Git must detect 
+					as moving/copying between files for it to associate those lines with the parent commit.
+				</p><p>
+					<span class="guilabel">Within a file</span>
+					Number of alphanumeric characters required to detect moving lines within a file 
+					(<code class="literal">git blame -M|&lt;num&gt;|</code>). 
+				</p><p>
+					<span class="guilabel">Between files</span>
+					Number of alphanumeric characters required to detect moved or copied lines between files
+					(<code class="literal">git blame -C|&lt;num&gt;|</code>). 
+				</p></dd><dt><span class="term">Ignore whitespace</span></dt><dd><p>
+					Defines if whitespace is ignored when comparing the parent's version and the child's version
+					to find where the lines came from (<code class="literal">git blame -w</code>).
+				</p></dd><dt><span class="term">Show complete log</span></dt><dd><p>
+					Defines if the log should be complete, i.e. the log contains all changes for a file,
+					even the changes have no impact on the file content of the annotated revision.
+					If deactivated the log contains only revisions which last modified a line for the
+					annotated revision.
+				</p></dd><dt><span class="term">Follow renames</span></dt><dd><p>
+					Defines if the log should follow renames, i.e. if the log does not
+					stop when a file was renamed in the past, but include all changes
+					before the rename.
+				</p></dd></dl></div></div><div class="sect2" title="2.35.9. Advanced Settings"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-registry"></a>2.35.9. Advanced Settings</h3></div></div></div><a name="id741536"></a><p>
+        A few infrequently used settings are available only in the advanced
+        page of the settings dialog. These settings modify the registry directly
+        and you have to know what each of these settings is used for and what
+        it does. Do not modify these settings unless you are sure you need to
+        change them.
+    </p><div class="variablelist"><dl><dt><span class="term">AutoCompleteMinChars</span></dt><dd><p>
+                    The minimum amount of chars from which the editor
+                    shows an auto-completion popup. The default value
+                    is <code class="literal">3</code>.
+                </p></dd><dt><span class="term">AutocompleteRemovesExtensions</span></dt><dd><p>
+                    The auto-completion list shown in the commit message editor
+                    displays the names of files listed for commit.
+                    To also include these names with extensions removed,
+                    set this value to <code class="literal">true</code>.
+                </p></dd><dt><span class="term">BlockStatus</span></dt><dd><p>
+                    If you don't want the explorer to update the status overlays
+                    while another TortoiseGit command is running
+                    (e.g. Update, Commit, ...) then set this value to
+                    <code class="literal">true</code>.
+                </p></dd><dt><span class="term">CacheTrayIcon</span></dt><dd><p>
+                    To add a cache tray icon for the TGitCache program, set
+                    this value to <code class="literal">true</code>.
+                    This is really only useful for developers as it allows
+                    you to terminate the program gracefully.
+                </p></dd><dt><span class="term">Debug</span></dt><dd><p>
+                    Set this to <code class="literal">true</code> if you want a dialog to
+                    pop up for every command showing the command line used to
+                    start TortoiseGitProc.exe.
+                </p></dd><dt><span class="term">DebugOutputString</span></dt><dd><p>
+                    Set this to <code class="literal">true</code> if you want TortoiseGit
+                    to print out debug messages during execution. The messages
+                    can be captured with special debugging tools only (like
+                    <a class="ulink" href="http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx" target="_top"><em class="citetitle">Debug View</em></a>
+                    from the SysInternals Suite).
+                </p></dd><dt><span class="term">FullRowSelect</span></dt><dd><p>
+                    The status list control which is used in various dialogs
+                    (e.g., commit, check-for-modifications, add, revert, ...)
+                    uses full row selection (i.e., if you select an entry, the
+                    full row is selected, not just the first column).
+                    This is fine, but the selected row then also covers the
+                    background image on the bottom right, which can look ugly.
+                    To disable full row select, set this value to
+                    <code class="literal">false</code>.
+                </p></dd><dt><span class="term">GroupTaskbarIconsPerRepo</span></dt><dd><p>
+                    This option determines how the Win7 taskbar icons of the various
+                    TortoiseGit dialogs and windows are grouped together. This
+                    option has no effect on Windows XP or Vista!
+                </p><p>
+                    </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+                                The default value is 3. With this setting, the
+                                icons are grouped together by application type per working tree.
+                                All dialogs from TortoiseGit of one working tree are grouped together,
+                                all windows from TortoiseGitMerge of one working tree are grouped together, ...
+                                For example, if you have
+                                a log dialog and a push dialog open for working tree
+                                <code class="literal">C:\A</code>, and a check-for-modifications
+                                dialog and a log dialog for working tree <code class="literal">C:\B</code>,
+                                then there are two application icon groups shown
+                                in the Win7 taskbar, one group for each working tree.
+                                But TortoiseGitMerge windows are not grouped together
+                                with TortoiseGit dialogs.
+                                </p><div class="figure"><a name="tgit-dug-settings-registry-task1-1"></a><p class="title"><b>Figure 2.79. Taskbar with default grouping</b></p><div class="figure-contents"><div><img src="images/TaskbarGroup1.png" alt="Taskbar with default grouping"></div></div></div><p><br class="figure-break">
+                            </p></li><li class="listitem"><p>
+                                If set to 4, then the grouping works as with
+                                the setting set to 3, except that TortoiseGit, TortoiseGitMerge,
+                                TortoiseGitBlame, TortoiseGitIDiff and TortoiseGitUDiff windows
+                                of one working tree
+                                are all grouped together. For example, if you have
+                                the log dialog open and then double click on
+                                a modified file, the opened TortoiseGitMerge diff window
+                                will be put in the same icon group on the taskbar
+                                as the log dialog icon.
+                                </p><div class="figure"><a name="tgit-dug-settings-registry-task2-1"></a><p class="title"><b>Figure 2.80. Taskbar with repository grouping</b></p><div class="figure-contents"><div><img src="images/TaskbarGroup2.png" alt="Taskbar with repository grouping"></div></div></div><p><br class="figure-break">
+                            </p></li><li class="listitem"><p>
+                                If set to 1, then the grouping works as with
+                                the setting set to 3 (grouping by application),
+                                except that grouping takes place
+                                independently of the working tree. This was the default
+                                before TGit 1.8.1.2.
+                            </p></li><li class="listitem"><p>
+                                If set to 2, then the grouping works as with
+                                the setting set to 4, except that grouping takes place
+                                independently of the working tree. Thus all TortoiseGit
+                                icons are grouped to only show one icon.
+                            </p></li></ol></div><p>
+                </p></dd><dt><span class="term">GroupTaskbarIconsPerRepoOverlay</span></dt><dd><p>
+                    This has no effect if the option <code class="literal">GroupTaskbarIconsPerRepo</code>
+                    is set to 0 (see above).
+                </p><p>
+                    If this option is set to <code class="literal">true</code>, then every
+                    icon on the Win7 taskbar shows a small colored rectangle overlay,
+                    indicating the working tree the dialogs/windows are used for.
+                    </p><div class="figure"><a name="tgit-dug-settings-registry-overlay-1"></a><p class="title"><b>Figure 2.81. Taskbar grouping with repository color overlays</b></p><div class="figure-contents"><div><img src="images/TaskbarGroupOverlay.png" alt="Taskbar grouping with repository color overlays"></div></div></div><p><br class="figure-break">
+                </p></dd><dt><span class="term">MaxRefHistoryItems</span></dt><dd><p>
+                    This options sets the maximum browse ref history (Right click ref hyperlink to find it).
+                    The default is 5.
+                </p></dd><dt><span class="term">NoSortLocalBranchesFirst</span></dt><dd><p>
+                    This option toggles if the branches are sorted fully by name (<code class="literal">true</code>) or if local branches should appear above remote ones (git default, <code class="literal">false</code>).
+                    The default value is <code class="literal">false</code>.
+                </p></dd><dt><span class="term">NumDiffWarning</span></dt><dd><p>
+                    If you want to show the diff at once for more items
+                    than specified with this settings, a warning dialog
+                    is shown first. The default is 10.
+                </p></dd><dt><span class="term">ReaddUnselectedAddedFilesAfterCommit</span></dt><dd><p>
+                    This option toggles the re-adding of unselected added files after a commit. Up to
+                    TortoiseGit 1.7.10 added files which were not checked on a commit, were removed from
+                    the index and unversioned after the commit. Set this value to <code class="literal">false</code>
+                    to restore the old behavior.
+                    Set this value to <code class="literal">true</code> to readd these files again after the commit (default).
+                </p></dd><dt><span class="term">ScintillaDirect2D</span></dt><dd><p>
+                    This option enables the use of Direct2D accelerated
+                    drawing in the Scintilla control which is used
+                    as the edit box in e.g. the commit dialog (also for the attached patch window), the
+                    unified diff viewer and TortoiseGitBlame.
+                    With some graphic cards, however, this sometimes
+                    doesn't work properly so that the cursor to enter
+                    text isn't always visible, the redraw does not work
+                    or the background is flashing. It's disabled by default. You
+                    can turn this feature on by setting this value
+                    to <code class="literal">true</code>.
+                </p></dd><dt><span class="term">ShellMenuAccelerators</span></dt><dd><p>
+                    TortoiseGit uses accelerators for its explorer context menu
+                    entries. Since this can lead to doubled accelerators (e.g.
+                    the <code class="literal">Git Commit</code> has the <span class="keycap"><strong>Alt-C</strong></span>
+                    accelerator, but so does the <code class="literal">Copy</code> entry
+                    of explorer).
+                    If you don't want or need the accelerators of the TortoiseGit
+                    entries, set this value to <code class="literal">false</code>.
+                </p></dd><dt><span class="term">ShowContextMenuIcons</span></dt><dd><p>
+                    This can be useful if you use something other than the windows explorer
+                    or if you get problems with the context menu displaying incorrectly.
+                    Set this value to <code class="literal">false</code>
+                    if you don't want TortoiseGit to show icons for the
+                    shell context menu items.
+                    Set this value to <code class="literal">true</code> to show the icons again.
+                </p></dd><dt><span class="term">ShowAppContextMenuIcons</span></dt><dd><p>
+                    If you don't want TortoiseGit to show icons for the context menus
+                    in its own dialogs, set this value to <code class="literal">false</code>.
+                </p></dd><dt><span class="term">ShowListBackgroundImage</span></dt><dd><p>
+                    If you do not want to have a small background image in list controls (e.g. Commit Dialog)
+                    set this value to <code class="literal">false</code>.
+                    Set this value to <code class="literal">true</code> to show the images again (default).
+                </p></dd><dt><span class="term">TGitCacheCheckContent</span></dt><dd><p>
+                    This makes TGitCache check file contents if timestamps (to index) mismatch in order to
+                    calculate the file status.
+                    TortoiseGit 1.7.0 up to 1.7.12 calculated the file status based on the timestamp only.
+                    If do not you want TGitCache to check the file contents (this lowers disk access and CPU time), set this value to <code class="literal">false</code>.
+                </p></dd><dt><span class="term">UseLibgit2</span></dt><dd><p>
+                    This makes TortoiseGit to use libgit2 as much as possible (e.g. for
+                    adding files to the index).
+                    If you do not want TortoiseGit to use libgit2 for file operations, set this value to <code class="literal">false</code>.
+                </p></dd><dt><span class="term">VersionCheck</span></dt><dd><p>
+                    TortoiseGit checks whether there's a new version available
+                    about once a week. If you don't want TortoiseGit to do this
+                    check, set this value to <code class="literal">false</code>.
+                </p></dd><dt><span class="term">VersionCheckPreview</span></dt><dd><p>
+                    Set this to <code class="literal">true</code> to make TortoiseGit also check for new preview releases.
+                    The default in all stable releases is <code class="literal">false</code>.
+                </p></dd></dl></div></div><div class="sect2" title="2.35.10. Exporting TortoiseGit Settings"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-settings-export"></a>2.35.10. Exporting TortoiseGit Settings</h3></div></div></div><p>
+        If you want to export all your client settings to use on another computer
+        you can do so using the Windows registry editor <code class="filename">regedt32.exe</code>.
+        Go to the registry key <code class="literal">HKCU\Software\TortoiseGit</code> and export it
+        to a reg file. On the other computer, just import that file again (usually, a
+        double click on the reg file will do that).
+    </p><p>
+        Remember to save Git's general settings, which you can find in the Git
+        configuration file <code class="literal">.gitconfig</code> and/or the folder <code class="literal">.config/git</code>
+        which both are located in your userprofile directory.
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-dug-bugtracker.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-dug.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-dug-svn-dcommit.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.34. Integration with Bug Tracking Systems / Issue Trackers </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2.36. git svn dcommit</td></tr></table></div></body></html>

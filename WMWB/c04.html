@@ -1,0 +1,187 @@
+<html>
+    
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Sessions - GreenDao Documentation 2.10
+        </title>
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="base.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="docs.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="userguide.css">
+        <meta content="DocBook XSL Stylesheets V1.75.2" name="generator">
+        <link rel="home" href="userguide.html" title="GreenDao Documentation 2.10">
+        <link rel="up" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+        <link rel="prev" href="c03.html" title="Modelling entities - GreenDao Documentation 2.10">
+        <link rel="next" href="c05.html" title="Queries - GreenDao Documentation 2.10">
+    </head>
+    
+    <body>
+        <div class="navheader">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c03.html" title="Modelling entities - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c05.html" title="Queries - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="titlepage">
+                <div>
+                    <div>
+                        <h1 xmlns:xslthl="http://xslthl.sf.net">
+                            <a name="gradle_daemon">
+                            </a>
+                            Chapter&nbsp;4.&nbsp;Sessions
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="toc">
+                <p>
+                    <b>
+                        目录
+                    </b>
+                </p>
+                <dl>
+                    <dt>
+                        <span class="section">
+                            <a href="c04.html#N401A">
+                                4.1. DaoMaster and DaoSession
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c04.html#N402A">
+                                4.2. Identity scope and session “cache”
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c04.html#N403A">
+                                4.3. Concepts
+                            </a>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+			<p>
+				The (generated) DaoSession class is one of the central interface to greenDAO. As a start,
+				DaoSession provides developers access to basic entity operations and DAOs for a more
+				complete set of operations. Sessions also mange an identity scope for entities.
+			</p>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N401A" class="section-anchor"
+                                href="#N401A">
+                                </a>
+                                4.1.&nbsp;DaoMaster and DaoSession
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+				<p>
+					As documented in the Getting Started section, you will need to create a DaoMaster
+					to get a DaoSession:
+				</p>
+                <pre class="programlisting">
+                    daoMaster = new DaoMaster(db);
+                    daoSession = daoMaster.newSession();
+                    noteDao = daoSession.getNoteDao();
+                </pre>
+                <p>
+					Notice that the database connection belongs to the DaoMaster, so multiple sessions
+					refer to the same database connection. New sessions can be created quite quickly.
+					However, each session allocates memory, typically an session “cache” for entities.
+                </p>
+            </div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N402A" class="section-anchor"
+                                href="#N402A">
+                                </a>
+                                4.2.&nbsp;Identity scope and session “cache”
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					If you have two queries returning the same database object, how many Java objects to work
+					with; one or two? It depends on the identity scope. The default in greenDAO (the behavior
+					is configurable) is that multiple queries return the same Java objects. For example, loading
+					an User object in the USER table with ID 42 will result in the same Java object for each query.
+                </p>
+				<p>
+					A side effect of this is some kind of “caching” entities. If an entity is still around in
+					memory (greenDAO uses weak references here), the entity will not be constructed again with
+					values from the database. For example, if you load an entity by its ID and you have loaded
+					the entity before, greenDAO does not need query the database. Instead, it will return the
+					object “immediately” from the session cache, which is one or two magnitudes faster.
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N403A" class="section-anchor"
+                                href="#N403A">
+                                </a>
+                                4.3.&nbsp;Concepts
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					This documentation page will be extended in the future. For now please refer to Hibernate’s
+					session to grasp the concept of sessions and identity scopes.
+                </p>
+            </div>
+        </div>
+        <div class="navfooter">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c03.html" title="Modelling entities - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c05.html" title="Queries - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

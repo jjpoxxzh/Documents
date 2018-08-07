@@ -1,0 +1,155 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2.5. Committing Your Changes To The Repository</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-dug.html" title="Chapter 2. TortoiseGit Daily Use Guide"><link rel="prev" href="tgit-dug-checkout.html" title="2.4. Checking Out A Working Tree (Switch to commit)"><link rel="next" href="tgit-dug-wcstatus.html" title="2.6. Getting Status Information"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.5. Committing Your Changes To The Repository</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-dug-checkout.html">Prev</a> </td><th width="60%" align="center">Chapter 2. TortoiseGit Daily Use Guide</th><td width="20%" align="right"> <a accesskey="n" href="tgit-dug-wcstatus.html">Next</a></td></tr></table><hr></div><div class="sect1" title="2.5. Committing Your Changes To The Repository"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-dug-commit"></a>2.5. Committing Your Changes To The Repository</h2></div></div></div><a name="id698614"></a><a name="id698033"></a><a name="id699276"></a><p>
+		Sending the changes you made to your working tree is known as
+		<em class="firstterm">committing</em> the changes. you can use
+		<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Check for Modifications</span>
+		first, to see which files have changed locally.
+	</p><div class="sect2" title="2.5.1. The Commit Dialog"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-commit-basics"></a>2.5.1. The Commit Dialog</h3></div></div></div><p>
+			If there are no conflicts,
+			you are ready to commit your changes. Select any file
+			and/or folders you want to commit, then
+			<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Commit...</span>.
+			</p><div class="figure"><a name="tgit-dug-commit-dia-1"></a><p class="title"><b>Figure 2.6. The Commit dialog</b></p><div class="figure-contents"><div><img src="images/Commit.png" alt="The Commit dialog"></div></div></div><p><br class="figure-break">
+		</p><p>
+			The commit dialog will show you every changed file,
+			including added, deleted and unversioned files. If you don't
+			want a changed file to be committed, just uncheck that
+			file. If you want to include an unversioned file,
+			just check that file to add it to the commit.
+		</p><p>
+			Default commit dialog just list select paths and their child directory files. 
+			If you want to list all files of project, you can just click <span class="guilabel">
+			Whole Project</span>
+		</p><div class="tip" title="Many unversioned files in the commit dialog" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip: Many unversioned files in the commit dialog"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Many unversioned files in the commit dialog</th></tr><tr><td align="left" valign="top"><p>
+				If you think that the commit dialog shows you too
+				many unversioned (e.g. compiler generated or editor backup)
+				files, there are several ways to handle this. You can:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+							add the file to the <code class="literal">.gitignore</code> list
+							using
+							<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Add to ignore list</span>
+						</p></li></ul></div><p>
+				Read <a class="xref" href="tgit-dug-ignore.html" title="2.20. Ignoring Files And Directories">Section 2.20, &#8220;Ignoring Files And Directories&#8221;</a> for more information. 
+			</p></td></tr></table></div><p>
+			<span class="action">Double clicking</span> on any modified file in the commit
+			dialog will launch the external diff tool to show your changes.
+			The context menu will give you more options, as shown in the screenshot.
+			You can also drag files from here into another application such as a
+			text editor or an IDE.
+		</p><p>
+			You can select or deselect items by clicking on the checkbox to the
+			left of the item.
+		</p><p>
+			The columns displayed in the bottom pane are customizable. If you
+			<span class="action">right click</span> on any column header you will see a
+			context menu allowing you to select which columns are displayed.
+			You can also change column width by using the drag handle which
+			appears when you move the mouse over a column boundary. These
+			customizations are preserved, so you will see the same headings
+			next time.
+		</p></div><div class="sect2" title="2.5.2. Commit only parts of files"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-commit-restore"></a>2.5.2. Commit only parts of files</h3></div></div></div><p>
+			Sometimes you want to only commit parts of the changes
+			you made to a file. Such a situation usually happens when
+			you're working on something but then an urgent fix needs
+			to be committed, and that fix happens to be in the same file
+			you're working on.
+		</p><p>
+			<span class="action">right click</span> on the file and use
+			<span class="guimenu">Context Menu</span> &#8594; <span class="guimenuitem">Restore after commit</span>.
+			This will create a copy of the file as it is. Then you
+			can edit the file, e.g. in TortoiseGitMerge and undo all
+			the changes you don't want to commit. After saving those
+			changes you can commit the file.
+			</p><div class="tip" title="Using TortoiseGitMerge" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip: Using TortoiseGitMerge"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Using TortoiseGitMerge</th></tr><tr><td align="left" valign="top"><p>
+					If you use TortoiseGitMerge to edit the file, you can either edit
+					the changes as you're used to, or mark
+					all the changes that you want to include. <span class="action">right click</span>
+					on a modified block and use
+					<span class="guimenu">Context Menu</span> &#8594; <span class="guimenuitem">Mark this block</span>
+					to include that change.
+					Finally <span class="action">right click</span>
+					and use
+					<span class="guimenu">Context Menu</span> &#8594; <span class="guimenuitem">Use left file except marked blocks</span>
+					which will invert your changes (unmarked blocks) that you
+					don't want to them to appear in current commit.
+				</p></td></tr></table></div><p>
+		</p><p>
+			After the commit is done, the copy of the file is restored
+			automatically, and you have the file with all your modifications
+			that were not committed back.
+		</p></div><div class="sect2" title="2.5.3. Commit Log Messages"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-commit-log"></a>2.5.3. Commit Log Messages</h3></div></div></div><p>
+			Be sure to enter a log message which describes the changes you are
+			committing. This will help you to see what happened and when, as you
+			browse through the project log messages at a later date. The message
+			can be as long or as brief as you like; many projects have guidelines
+			for what should be included, the language to use, and sometimes even
+			a strict format.
+		</p><p>
+			You can apply simple formatting to your log messages using a convention
+			similar to that used within emails.
+			To apply styling to <code class="literal">text</code>, use
+			<code class="literal">*text*</code> for bold,
+			<code class="literal">_text_</code> for underlining, and
+			<code class="literal">^text^</code> for italics.
+		</p><p>
+			</p><div class="figure"><a name="tgit-dug-commit-dia-2"></a><p class="title"><b>Figure 2.7. The Commit Dialog Spellchecker</b></p><div class="figure-contents"><div><img src="images/CommitSpellcheck.png" alt="The Commit Dialog Spellchecker"></div></div></div><p><br class="figure-break">
+			TortoiseGit includes a spellchecker to help you get your log messages
+			right. This will highlight any mis-spelled words. Use the context menu
+			to access the suggested corrections. Of course, it doesn't know
+			<span class="emphasis"><em>every</em></span> technical term that you do, so correctly
+			spelt words will sometimes show up as errors. But don't worry. You can
+			just add them to your personal dictionary using the context menu.
+		</p><p>
+			The log message window also includes a filename and function auto-completion
+			facility. This uses regular expressions to extract class and function names
+			from the (text) files you are committing, as well as the filenames themselves.
+			If a word you are typing matches anything in the list (after you have typed at
+			least 3 characters, or pressed <span class="keycap"><strong>Ctrl+Space</strong></span>),
+			a drop-down appears allowing you to select the full name.
+			The regular expressions supplied with TortoiseGit are held in the TortoiseGit
+			installation <code class="filename">bin</code> folder. You can also define your own
+			regexes and store them in <code class="filename">%APPDATA%\TortoiseGit\autolist.txt</code>.
+			Of course your private autolist will not be overwritten when you update your
+			installation of TortoiseGit. If you are unfamiliar with regular expressions,
+			take a look at the introduction at
+			<a class="ulink" href="http://en.wikipedia.org/wiki/Regular_expression" target="_top">
+				<em class="citetitle">http://en.wikipedia.org/wiki/Regular_expression</em>
+			</a>,
+			and the online documentation and tutorial at
+			<a class="ulink" href="http://www.regular-expressions.info/" target="_top">
+				<em class="citetitle">http://www.regular-expressions.info/</em>
+			</a>.
+		</p><p>
+			Getting the regex just right can be tricky, so to help you sort out a
+			suitable expression there is a test dialog which allows you to enter
+			an expression and then type in filenames to test it against.
+			Start it from the command prompt using the command
+			<code class="literal">TortoiseGitProc.exe /command:autotexttest</code>.
+		</p><p>
+			You can re-use previously entered log messages. Just use the command
+			<span class="guimenu">Context Menu</span> &#8594; <span class="guimenuitem">Paste Recent messages</span>
+			to view a list of the last few
+			messages you entered for this working tree. The number of stored messages
+			can be customized in the TortoiseGit settings dialog.
+		</p><p>
+			You can add your name and email address to end of log message by click
+			<span class="guibutton">Sign</span>
+		</p><p>
+			You can clear all stored commit messages from the <span class="guilabel">Saved data</span>
+			page of TortoiseGit's settings, or you can clear individual messages from
+			within the <span class="guilabel">Recent messages</span> dialog using the
+			<span class="keycap"><strong>Delete</strong></span> key.
+		</p><p>
+			If you want to include the checked paths in your log message, you can use
+			the command
+			<span class="guimenu">Context Menu</span> &#8594; <span class="guimenuitem">Paste filename list</span>
+			in the edit control.
+		</p><div class="tip" title="Using keyboard" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip: Using keyboard"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Using keyboard</th></tr><tr><td align="left" valign="top"><p>
+				You can access the <span class="guilabel">OK</span> button from keyboard by pressing <span class="keycap"><strong>Ctrl+return</strong></span>.
+			</p></td></tr></table></div><div class="tip" title="Integration with Bug Tracking Tools" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip: Integration with Bug Tracking Tools"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Integration with Bug Tracking Tools</th></tr><tr><td align="left" valign="top"><p>
+				If you have activated the bug tracking system, you can set one or more 
+				Issues in the <span class="guilabel">Bug-ID / Issue-Nr:</span> text box. Multiple
+				issues should be comma separated. Alternatively, if you are using
+				regex-based bug tracking support, just add your issue references
+				as part of the log message.
+				Learn more in <a class="xref" href="tgit-dug-bugtracker.html" title="2.34. Integration with Bug Tracking Systems / Issue Trackers">Section 2.34, &#8220;Integration with Bug Tracking Systems / Issue Trackers&#8221;</a>.
+			</p></td></tr></table></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-dug-checkout.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-dug.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-dug-wcstatus.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.4. Checking Out A Working Tree (Switch to commit) </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2.6. Getting Status Information</td></tr></table></div></body></html>

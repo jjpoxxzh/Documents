@@ -1,0 +1,185 @@
+---步骤
+<div class="itemizedlist">
+	<ul class="itemizedlist">
+		<li class="listitem">
+			<p>
+				帮助我们学会安装Gradle。
+			</p>
+		</li>
+		<li class="listitem">
+			<p>
+				介绍一些基本概念，这有助于我们进一步理解本教程的后面章节。
+			</p>
+		</li>
+	</ul>
+</div>
+---文字加黑（段落前的描述）
+<p>
+	<span class="command">
+		<strong>
+			gradle
+		</strong>
+	</span>
+</p>
+---文字加黑（段落内）
+<p>
+	<strong class="userinput">
+		<code>
+			gradle compile test
+		</code>
+	</strong>
+</p>
+
+---图表
+<table cellpadding="0" cellspacing="0" summary="manufactured viewport for HTML img" border="0" width="903">
+	<tr height="477">
+		<td>
+			<img src="img/profile.png" height="477">
+		</td>
+	</tr>
+</table>
+
+---图样例
+<div class="figure">
+	<a xmlns:xslthl="http://xslthl.sf.net" name="N10169"></a>
+	<p class="title">
+		<b>Figure&nbsp;4.1.&nbsp;Task dependencies</b>
+	</p>
+	<div class="figure-contents">
+		<img src="img/commandLineTutorialTasks.png" alt="Task dependencies">
+	</div>
+</div>
+<br class="figure-break">
+
+---代码样例
+<div class="example">
+	<a xmlns:xslthl="http://xslthl.sf.net" name="projectListReport">
+	</a>
+	<p class="title">
+		<b>
+			Example&nbsp;4.9.&nbsp;Providing a description for a project
+		</b>
+	</p>
+	<div class="example-contents">
+		<p>
+			<code class="filename">
+				build.gradle
+			</code>
+		</p>
+		<pre class="programlisting">
+			description =
+			<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">
+				'The shared API for the application'
+			</span>
+		</pre>
+	</div>
+</div>
+<br class="example-break">
+
+---输出一段样例
+<div class="example">
+	<a xmlns:xslthl="http://xslthl.sf.net" name="excludeTask"></a>
+	<p class="title">
+		<b>Example&nbsp;4.2.&nbsp;Excluding tasks</b>
+	</p>
+	<div class="example-contents">
+		<p>
+			Output of
+			<strong class="userinput">
+				<code>
+					gradle dist -x test
+				</code>
+			</strong>
+		</p>
+		<pre class="screen">
+			&gt; gradle dist -x test :compile compiling source :dist building the
+			distribution BUILD SUCCESSFUL Total time: 1 secs
+		</pre>
+	</div>
+</div>
+<br class="example-break">
+
+---输出二段样例
+<div class="example">
+	<a xmlns:xslthl="http://xslthl.sf.net" name="rerunTasks"></a>
+	<p class="title">
+		<b>Example&nbsp;4.7.&nbsp;Forcing tasks to run</b>
+	</p>
+	<div class="example-contents">
+		<p>
+			Output of
+			<strong class="userinput">
+				<code>
+					gradle doIt
+				</code>
+			</strong>
+		</p>
+		<pre class="screen">
+			&gt; gradle doIt :doIt UP-TO-DATE
+		</pre>
+		<p>
+			Output of
+			<strong class="userinput">
+				<code>
+					gradle --rerun-tasks doIt
+				</code>
+			</strong>
+		</p>
+		<pre class="screen">
+			&gt; gradle --rerun-tasks doIt :doIt
+		</pre>
+	</div>
+</div>
+<br class="example-break">
+
+
+---代码及输出样例
+<div class="example">
+	<a xmlns:xslthl="http://xslthl.sf.net" name="multipleTasksFromCommandLine">
+	</a>
+	<p class="title">
+		<b>
+			Example&nbsp;4.1.&nbsp;Executing multiple tasks
+		</b>
+	</p>
+	<div class="example-contents">
+		<p>
+			<code class="filename">
+				build.gradle
+			</code>
+		</p>
+		<pre class="programlisting">
+			task compile &lt;&lt; { println
+			<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">
+				'compiling source'
+			</span>
+			} task compileTest(dependsOn: compile) &lt;&lt; { println
+			<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">
+				'compiling unit tests'
+			</span>
+			} task test(dependsOn: [compile, compileTest]) &lt;&lt; { println
+			<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">
+				'running unit tests'
+			</span>
+			} task dist(dependsOn: [compile, test]) &lt;&lt; { println
+			<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">
+				'building the distribution'
+			</span>
+			}
+		</pre>
+		<p>
+			Output of
+			<strong class="userinput">
+				<code>
+					gradle dist test
+				</code>
+			</strong>
+		</p>
+		<pre class="screen">
+			&gt; gradle dist test :compile compiling source :compileTest compiling
+			unit tests :test running unit tests :dist building the distribution BUILD
+			SUCCESSFUL Total time: 1 secs
+		</pre>
+	</div>
+</div>
+<br class="example-break">

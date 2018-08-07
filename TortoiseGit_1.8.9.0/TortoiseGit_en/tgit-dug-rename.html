@@ -1,0 +1,74 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2.21. Deleting, Moving and Renaming</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-dug.html" title="Chapter 2. TortoiseGit Daily Use Guide"><link rel="prev" href="tgit-dug-ignore.html" title="2.20. Ignoring Files And Directories"><link rel="next" href="tgit-dug-revert.html" title="2.22. Undo Changes"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.21. Deleting, Moving and Renaming</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-dug-ignore.html">Prev</a> </td><th width="60%" align="center">Chapter 2. TortoiseGit Daily Use Guide</th><td width="20%" align="right"> <a accesskey="n" href="tgit-dug-revert.html">Next</a></td></tr></table><hr></div><div class="sect1" title="2.21. Deleting, Moving and Renaming"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-dug-rename"></a>2.21. Deleting, Moving and Renaming</h2></div></div></div><p>
+		Unlike CVS, Git allows renaming and moving of files and
+		folders. So there are menu entries for delete and rename
+		in the TortoiseGit submenu.
+		</p><div class="figure"><a name="tgit-dug-renaming-dia-1"></a><p class="title"><b>Figure 2.32. Explorer context menu for versioned files</b></p><div class="figure-contents"><div><img src="images/ContextMenuFileControl.png" alt="Explorer context menu for versioned files"></div></div></div><p><br class="figure-break">
+	</p><div class="sect2" title="2.21.1. Deleting files and folders"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-rename-delete"></a>2.21.1. Deleting files and folders</h3></div></div></div><a name="id732126"></a><a name="id732109"></a><p>
+			Use
+			<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Delete</span>
+			to remove files or folders from Git.
+		</p><p>
+			When you 
+			<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Delete</span>
+			a file, it is removed from your working tree immediately as well
+			as being marked for deletion in the repository on next commit.
+
+			Up until you commit the change, you can get the file back using
+			<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Revert</span>
+			on the parent folder.
+		</p><p>
+			If you want to delete an item from the repository, but keep it
+			locally as an unversioned file/folder, use
+			<span class="guimenu">Extended Context Menu</span> &#8594; <span class="guimenuitem">Delete (keep local)</span>.
+			You might have to hold the <span class="keycap"><strong>Shift</strong></span> key while right clicking on
+			the item in the explorer list pane (right pane) in order to see this
+			in the extended context menu.
+		</p><div class="tip" title="Getting a deleted file or folder back" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip: Getting a deleted file or folder back"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Getting a deleted file or folder back</th></tr><tr><td align="left" valign="top"><p>
+				If you have deleted a file or a folder and already committed
+				that delete operation to the repository, then a normal 
+				<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Revert</span>
+				can't bring it back anymore. But the file or folder is not
+				lost at all. If you know the revision the file or folder got
+				deleted (if you don't, use the log dialog to find out) open
+				the repository browser and switch to that revision. Then select
+				the file or folder you deleted, right-click and select
+				<span class="guimenu">Context Menu</span> &#8594; <span class="guimenuitem">Revert to this revision</span>
+			</p></td></tr></table></div></div><div class="sect2" title="2.21.2. Moving files and folders"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-rename-move"></a>2.21.2. Moving files and folders</h3></div></div></div><a name="id723644"></a><a name="id722695"></a><p>
+			If you want to do a simple in-place rename of a file or
+			folder, use
+			<span class="guimenu">Context Menu</span> &#8594; <span class="guimenuitem">Rename...</span>
+			Enter the new name for the item and you're done.
+		</p><p>
+			If you want to move files around inside your working tree,
+			perhaps to a different sub-folder, you can
+			use the right-mouse drag-and-drop handler:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+						select the files or directories you want to move
+					</p></li><li class="listitem"><p>
+						<span class="action">right-drag</span> them to the
+						new location inside the working tree
+					</p></li><li class="listitem"><p>
+						release the right mouse button
+					</p></li><li class="listitem"><p>
+						in the popup menu select
+						<span class="guimenu">Context Menu</span> &#8594; <span class="guimenuitem">Git Move versioned files here</span>
+					</p></li></ol></div><p>
+		</p><div class="caution" title="Do Not Git Move Submodule" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Caution: Do Not Git Move Submodule"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Caution]" src="images/caution.png"></td><th align="left">Do Not Git Move Submodule</th></tr><tr><td align="left" valign="top"><p>
+				You should <span class="emphasis"><em>not</em></span> use the TortoiseGit
+				<span class="guilabel">Move</span> or <span class="guilabel">Rename</span>
+				commands on a folder which has been created using
+				<code class="literal">git submodule</code>.
+			</p></td></tr></table></div></div><div class="sect2" title="2.21.3. Deleting Unversioned Files"><div class="titlepage"><div><div><h3 class="title"><a name="tgit-dug-rename-del-unversioned"></a>2.21.3. Deleting Unversioned Files</h3></div></div></div><p>
+			Usually you set your ignore list such that all generated files are ignored
+			in Git. But what if you want to clear all those ignored items to produce
+			a clean build? Usually you would set that in your makefile, but if you are
+			debugging the makefile, or changing the build system it is useful to have a way
+			of clearing the decks.
+		</p><p>
+			TortoiseGit provides just such an option using
+			<span class="guimenu">Extended Context Menu</span> &#8594; <span class="guimenuitem">Clean up...</span>.
+			You may have to hold the <span class="keycap"><strong>Shift</strong></span> while right clicking on a folder
+			in the explorer list pane (right pane) in order to see this in the
+			context menu.
+			This will produce a dialog which lists all possible clean up options: <a class="xref" href="tgit-dug-cleanup.html" title="2.23. Cleanup">Section 2.23, &#8220;Cleanup&#8221;</a>
+		</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-dug-ignore.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-dug.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-dug-revert.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.20. Ignoring Files And Directories </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2.22. Undo Changes</td></tr></table></div></body></html>

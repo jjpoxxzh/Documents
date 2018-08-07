@@ -1,0 +1,72 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2.30. Resolving Conflicts</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-dug.html" title="Chapter 2. TortoiseGit Daily Use Guide"><link rel="prev" href="tgit-dug-rebase.html" title="2.29. Rebase"><link rel="next" href="tgit-dug-patch.html" title="2.31. Creating and Applying Patches and Pull Requests"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.30. Resolving Conflicts</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-dug-rebase.html">Prev</a> </td><th width="60%" align="center">Chapter 2. TortoiseGit Daily Use Guide</th><td width="20%" align="right"> <a accesskey="n" href="tgit-dug-patch.html">Next</a></td></tr></table><hr></div><div class="sect1" title="2.30. Resolving Conflicts"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-dug-conflicts"></a>2.30. Resolving Conflicts</h2></div></div></div><a name="id722945"></a><a name="id723492"></a><p>
+		Once in a while, you will get a <span class="emphasis"><em>conflict</em></span> when
+		you update your files from the repository. A conflict
+		occurs when two or more developers have changed the same
+		few lines of a file. As Git knows nothing of your
+		project, it leaves resolving the conflicts to the developers.
+		Whenever a conflict is reported, you should open the file in
+		question, and search for lines starting with the string
+		<code class="literal">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>.
+		The conflicting area is marked like this:
+</p><pre class="screen">
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; filename
+    your changes
+=======
+    code merged from repository
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; revision
+</pre><p>
+	</p><p>
+		You can launch an external merge tool / conflict
+		editor with
+		<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Edit Conflicts</span>
+		or you can use any other editor to manually
+		resolve the conflict. You should decide what the code
+		should look like, do the necessary changes and save the file.
+
+		For this, Git places three additional files in your directory for the selected conflicted file:
+		</p><div class="variablelist"><dl><dt><span class="term">filename.ext.LOCAL.ext</span></dt><dd><p>
+						This is your file as it existed in your
+						working tree before you updated your working tree
+						- that is, without conflict markers. This file has
+						your latest changes in it and nothing else.
+					</p></dd><dt><span class="term">filename.ext.BASE.ext</span></dt><dd><p>
+						This is the file that was the BASE
+						revision before you updated your working tree. That is,
+						it the file that you checked out before you made
+						your latest edits.
+					</p></dd><dt><span class="term">filename.ext.REMOTE.ext</span></dt><dd><p>
+						This is the file that your Git
+						client just received from the server when you updated
+						your working tree. This file corresponds to the HEAD
+						revision of the repository.
+					</p></dd></dl></div><p>
+	</p><p>
+		Afterwards execute the command
+		<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Resolved</span>
+		and commit your modifications to the repository.
+		Please note that the Resolve command does not really
+		resolve the conflict. 
+		It uses "git add" to mark file status as resolved
+		to allow you to commit your changes
+		and it removes the
+		<code class="filename">filename.ext.BASE.ext</code>,
+		<code class="filename">filename.ext.LOCAL.ext</code> and
+		<code class="filename">filename.ext.REMOTE.ext</code> files.
+	</p><p>
+		If you have conflicts with binary files, Git does
+		not attempt to merge the files itself. The local file remains
+		unchanged (exactly as you last changed it) and you have
+		<code class="filename">filename.ext.BASE|LOCAL|REMOTE.ext</code> files.
+		If you want to discard your changes and keep the repository
+		version, just use the Revert command. If you want to keep
+		your version and overwrite the repository version, use the
+		<span class="guimenuitem">Resolved</span> command, then commit your version.
+	</p><p>
+		You can use the <span class="guimenuitem">Resolved</span> command for multiple files
+		if you right click on the parent folder and select
+		<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Resolve...</span>
+		This will bring up a dialog listing all conflicted files
+		in that folder, and you can select which ones to mark
+		as resolved.
+		</p><div class="figure"><a name="tgit-dug-conflicts-dia-1"></a><p class="title"><b>Figure 2.44. The resolve conflicts dialog</b></p><div class="figure-contents"><div><img src="images/ResolveConflict.png" alt="The resolve conflicts dialog"></div></div></div><p><br class="figure-break">
+	</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-dug-rebase.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-dug.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-dug-patch.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.29. Rebase </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2.31. Creating and Applying Patches and Pull Requests</td></tr></table></div></body></html>

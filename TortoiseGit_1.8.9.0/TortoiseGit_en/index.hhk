@@ -1,0 +1,1228 @@
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;meta name="GENERATOR" content="Microsoft&amp;reg; HTML Help Workshop 4.1"&gt;
+&lt;!-- Sitemap 1.0 --&gt;
+&lt;/HEAD&gt;&lt;BODY&gt;
+&lt;OBJECT type="text/site properties"&gt;
+&lt;/OBJECT&gt;
+&lt;UL&gt;
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="version control">
+<param name="Name" value="Introduction">
+<param name="Local" value="tgit-introduction.html#id551714">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Windows shell">
+<param name="Name" value="TortoiseGit's Features">
+<param name="Local" value="tgit-intro-features.html#id551832">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="explorer">
+<param name="Name" value="TortoiseGit's Features">
+<param name="Local" value="tgit-intro-features.html#id551840">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="install">
+<param name="Name" value="Installation">
+<param name="Local" value="tgit-intro-install.html#id552046">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="language packs">
+<param name="Name" value="Language Packs">
+<param name="Local" value="tgit-intro-install.html#id552073">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="translations">
+<param name="Name" value="Language Packs">
+<param name="Local" value="tgit-intro-install.html#id552082">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="spellchecker">
+<param name="Name" value="Spellchecker">
+<param name="Local" value="tgit-intro-install.html#id552124">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="dictionary">
+<param name="Name" value="Spellchecker">
+<param name="Local" value="tgit-intro-install.html#id552132">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="context menu">
+<param name="Name" value="Context Menus">
+<param name="Local" value="tgit-dug.html#id698134">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="right-click">
+<param name="Name" value="Context Menus">
+<param name="Local" value="tgit-dug.html#id698230">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="drag handler">
+<param name="Name" value="Drag and Drop">
+<param name="Local" value="tgit-dug.html#id698098">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="drag-n-drop">
+<param name="Name" value="Drag and Drop">
+<param name="Local" value="tgit-dug.html#id698196">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="right drag">
+<param name="Name" value="Drag and Drop">
+<param name="Local" value="tgit-dug.html#id697430">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="maximize">
+<param name="Name" value="Maximizing Windows">
+<param name="Local" value="tgit-dug.html#id697589">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Create Repository">
+<param name="Name" value="Create Repository">
+<param name="Local" value="tgit-dug-create.html#id698012">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Repository">
+<param name="Name" value="Create Repository">
+<param name="Local" value="tgit-dug-create.html#id699326">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Clone Repository">
+<param name="Name" value="Clone Repository">
+<param name="Local" value="tgit-dug-clone.html#id697513">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Repository">
+<param name="Name" value="Clone Repository">
+<param name="Local" value="tgit-dug-clone.html#id699330">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="checkout">
+<param name="Name" value="Checking Out A Working Tree (Switch to commit)">
+<param name="Local" value="tgit-dug-checkout.html#id697627">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Switch">
+<param name="Name" value="Checking Out A Working Tree (Switch to commit)">
+<param name="Local" value="tgit-dug-checkout.html#id698365">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="create working tree">
+<param name="Name" value="Checking Out A Working Tree (Switch to commit)">
+<param name="Local" value="tgit-dug-checkout.html#id698084">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="commit">
+<param name="Name" value="Committing Your Changes To The Repository">
+<param name="Local" value="tgit-dug-commit.html#id698614">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="send changes">
+<param name="Name" value="Committing Your Changes To The Repository">
+<param name="Local" value="tgit-dug-commit.html#id698033">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="check in">
+<param name="Name" value="Committing Your Changes To The Repository">
+<param name="Local" value="tgit-dug-commit.html#id699276">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="status">
+<param name="Name" value="Getting Status Information">
+<param name="Local" value="tgit-dug-wcstatus.html#id778502">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="view changes">
+<param name="Name" value="Getting Status Information">
+<param name="Local" value="tgit-dug-wcstatus.html#id779571">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="working tree status">
+<param name="Name" value="Getting Status Information">
+<param name="Local" value="tgit-dug-wcstatus.html#id778745">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="overlays">
+<param name="Name" value="Icon Overlays">
+<param name="Local" value="tgit-dug-wcstatus.html#id779314">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="icons">
+<param name="Name" value="Icon Overlays">
+<param name="Local" value="tgit-dug-wcstatus.html#id779294">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="status">
+<param name="Name" value="Status">
+<param name="Local" value="tgit-dug-wcstatus.html#id778448">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="modifications">
+<param name="Name" value="Status">
+<param name="Local" value="tgit-dug-wcstatus.html#id778583">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="diffing">
+<param name="Name" value="Viewing Diffs">
+<param name="Local" value="tgit-dug-wcstatus.html#id778400">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Pull">
+<param name="Name" value="Pull and Fetch change">
+<param name="Local" value="tgit-dug-pull.html#id777944">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Fetch">
+<param name="Name" value="Pull and Fetch change">
+<param name="Local" value="tgit-dug-pull.html#id778736">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Push">
+<param name="Name" value="Push">
+<param name="Local" value="tgit-dug-push.html#id778433">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Sync">
+<param name="Name" value="Sync">
+<param name="Local" value="tgit-dug-sync.html#id778631">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="daemon">
+<param name="Name" value="Daemon">
+<param name="Local" value="tgit-dug-daemon.html#id779500">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Daemon">
+<param name="Name" value="Daemon">
+<param name="Local" value="tgit-dug-daemon.html#id779290">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Browse All Refs">
+<param name="Name" value="Browse All Refs">
+<param name="Local" value="tgit-dug-browse-ref.html#id777873">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="refs">
+<param name="Name" value="Browse All Refs">
+<param name="Local" value="tgit-dug-browse-ref.html#id778809">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Delete remote tags">
+<param name="Name" value="Browse All Refs">
+<param name="Local" value="tgit-dug-browse-ref.html#id777465">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="log">
+<param name="Name" value="Revision Log Dialog">
+<param name="Local" value="tgit-dug-showlog.html#id778552">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="history">
+<param name="Name" value="Revision Log Dialog">
+<param name="Local" value="tgit-dug-showlog.html#id778709">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="commit messages">
+<param name="Name" value="Revision Log Dialog">
+<param name="Local" value="tgit-dug-showlog.html#id778996">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="log messages">
+<param name="Name" value="Revision Log Dialog">
+<param name="Local" value="tgit-dug-showlog.html#id779176">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="filter">
+<param name="Name" value="Filtering Log Messages">
+<param name="Local" value="tgit-dug-showlog.html#id690851">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="statistics">
+<param name="Name" value="Statistical Information">
+<param name="Local" value="tgit-dug-showlog.html#id690792">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="revision">
+<param name="Name" value="Revision Graphs">
+<param name="Local" value="tgit-dug-revgraph.html#id692086">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="graph">
+<param name="Name" value="Revision Graphs">
+<param name="Local" value="tgit-dug-revgraph.html#id691637">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="revision graph">
+<param name="Name" value="Revision Graphs">
+<param name="Local" value="tgit-dug-revgraph.html#id691105">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="RefLog">
+<param name="Name" value="Reference Log">
+<param name="Local" value="tgit-dug-update.html#id758455">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="repo-browser">
+<param name="Name" value="The Repository Browser">
+<param name="Local" value="tgit-dug-repobrowser.html#id758362">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="diff">
+<param name="Name" value="Viewing Differences">
+<param name="Local" value="tgit-dug-diff.html#id758256">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="compare">
+<param name="Name" value="Viewing Differences">
+<param name="Local" value="tgit-dug-diff.html#id758374">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="compare revisions">
+<param name="Name" value="Comparing Version">
+<param name="Local" value="tgit-dug-diff.html#id732254">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="export changes">
+<param name="Name" value="Comparing Version">
+<param name="Local" value="tgit-dug-diff.html#id733605">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Submodule Diff Dialog">
+<param name="Name" value="Diffing submodules using Submodule Diff Dialog">
+<param name="Local" value="tgit-dug-diff.html#id733337">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="image diff">
+<param name="Name" value="Diffing Images Using TortoiseGitIDiff">
+<param name="Local" value="tgit-dug-diff.html#id732831">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="TortoiseGitIDiff">
+<param name="Name" value="Diffing Images Using TortoiseGitIDiff">
+<param name="Local" value="tgit-dug-diff.html#id732770">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="diff tools">
+<param name="Name" value="External Diff/Merge Tools">
+<param name="Local" value="tgit-dug-diff.html#id732155">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="merge tools">
+<param name="Name" value="External Diff/Merge Tools">
+<param name="Local" value="tgit-dug-diff.html#id732230">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="add">
+<param name="Name" value="Adding New Files">
+<param name="Local" value="tgit-dug-add.html#id733535">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="version new files">
+<param name="Name" value="Adding New Files">
+<param name="Local" value="tgit-dug-add.html#id732932">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="copy files">
+<param name="Name" value="Copying/Moving/Renaming Files and Folders">
+<param name="Local" value="tgit-dug-copy.html#id733698">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="rename files">
+<param name="Name" value="Copying/Moving/Renaming Files and Folders">
+<param name="Local" value="tgit-dug-copy.html#id732187">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="move files">
+<param name="Name" value="Copying/Moving/Renaming Files and Folders">
+<param name="Local" value="tgit-dug-copy.html#id732912">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="branch">
+<param name="Name" value="Copying/Moving/Renaming Files and Folders">
+<param name="Local" value="tgit-dug-copy.html#id732583">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="tag">
+<param name="Name" value="Copying/Moving/Renaming Files and Folders">
+<param name="Local" value="tgit-dug-copy.html#id733587">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="ignore">
+<param name="Name" value="Ignoring Files And Directories">
+<param name="Local" value="tgit-dug-ignore.html#id732245">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="unversioned files/folders">
+<param name="Name" value="Ignoring Files And Directories">
+<param name="Local" value="tgit-dug-ignore.html#id733674">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="globbing">
+<param name="Name" value="Pattern Matching in Ignore Lists">
+<param name="Local" value="tgit-dug-ignore.html#id732330">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="pattern matching">
+<param name="Name" value="Pattern Matching in Ignore Lists">
+<param name="Local" value="tgit-dug-ignore.html#id732529">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="delete">
+<param name="Name" value="Deleting files and folders">
+<param name="Local" value="tgit-dug-rename.html#id732126">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="remove">
+<param name="Name" value="Deleting files and folders">
+<param name="Local" value="tgit-dug-rename.html#id732109">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="rename">
+<param name="Name" value="Moving files and folders">
+<param name="Local" value="tgit-dug-rename.html#id723644">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="move">
+<param name="Name" value="Moving files and folders">
+<param name="Local" value="tgit-dug-rename.html#id722695">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="revert">
+<param name="Name" value="Undo Changes">
+<param name="Local" value="tgit-dug-revert.html#id722951">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="undo">
+<param name="Name" value="Undo Changes">
+<param name="Local" value="tgit-dug-revert.html#id723740">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="cleanup">
+<param name="Name" value="Cleanup">
+<param name="Local" value="tgit-dug-cleanup.html#id723840">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Reset">
+<param name="Name" value="Reset">
+<param name="Local" value="tgit-dug-reset.html#id722641">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="stash">
+<param name="Name" value="Stash Changes">
+<param name="Local" value="tgit-dug-stash.html#id722568">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Bisect">
+<param name="Name" value="Bisect">
+<param name="Local" value="tgit-dug-bisect.html#id722759">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="branch">
+<param name="Name" value="Branching / Tagging">
+<param name="Local" value="tgit-dug-branchtag.html#id723678">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="tag">
+<param name="Name" value="Branching / Tagging">
+<param name="Local" value="tgit-dug-branchtag.html#id723086">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="mark release">
+<param name="Name" value="Branching / Tagging">
+<param name="Local" value="tgit-dug-branchtag.html#id723083">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="merge">
+<param name="Name" value="Merging">
+<param name="Local" value="tgit-dug-merge.html#id722996">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Rebase">
+<param name="Name" value="Rebase">
+<param name="Local" value="tgit-dug-rebase.html#id722856">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="conflict">
+<param name="Name" value="Resolving Conflicts">
+<param name="Local" value="tgit-dug-conflicts.html#id722945">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="resolve">
+<param name="Name" value="Resolving Conflicts">
+<param name="Local" value="tgit-dug-conflicts.html#id723492">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="patch">
+<param name="Name" value="Creating and Applying Patches and Pull Requests">
+<param name="Local" value="tgit-dug-patch.html#id681010">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="diff">
+<param name="Name" value="Creating and Applying Patches and Pull Requests">
+<param name="Local" value="tgit-dug-patch.html#id681276">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="unified diff">
+<param name="Name" value="Creating and Applying Patches and Pull Requests">
+<param name="Local" value="tgit-dug-patch.html#id681445">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="pull request">
+<param name="Name" value="Creating and Applying Patches and Pull Requests">
+<param name="Local" value="tgit-dug-patch.html#id680287">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="request pull">
+<param name="Name" value="Creating and Applying Patches and Pull Requests">
+<param name="Local" value="tgit-dug-patch.html#id679816">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="blame">
+<param name="Name" value="Who Changed Which Line?">
+<param name="Local" value="tgit-dug-blame.html#id680461">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="annotate">
+<param name="Name" value="Who Changed Which Line?">
+<param name="Local" value="tgit-dug-blame.html#id681860">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="praise">
+<param name="Name" value="Who Changed Which Line?">
+<param name="Local" value="tgit-dug-blame.html#id681560">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="export">
+<param name="Name" value="Exporting a Git Working Tree">
+<param name="Local" value="tgit-dug-export.html#id681252">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="unversioned 'working tree'">
+<param name="Name" value="Exporting a Git Working Tree">
+<param name="Local" value="tgit-dug-export.html#id679828">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="bug tracking">
+<param name="Name" value="Integration with Bug Tracking Systems / Issue Trackers">
+<param name="Local" value="tgit-dug-bugtracker.html#id662654">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="bug tracker">
+<param name="Name" value="Integration with Bug Tracking Systems / Issue Trackers">
+<param name="Local" value="tgit-dug-bugtracker.html#id662681">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="issue tracker">
+<param name="Name" value="Integration with Bug Tracking Systems / Issue Trackers">
+<param name="Local" value="tgit-dug-bugtracker.html#id662548">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="bugtracker">
+<param name="Name" value="Integration with Bug Tracking Systems / Issue Trackers">
+<param name="Local" value="tgit-dug-bugtracker.html#id662629">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="settings">
+<param name="Name" value="TortoiseGit's Settings">
+<param name="Local" value="tgit-dug-settings.html#id662190">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="sounds">
+<param name="Name" value="General Settings">
+<param name="Local" value="tgit-dug-settings.html#id662083">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git.exe path">
+<param name="Name" value="General Settings">
+<param name="Local" value="tgit-dug-settings.html#id662642">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Extern DLL Path">
+<param name="Name" value="General Settings">
+<param name="Local" value="tgit-dug-settings.html#id662701">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="SUBST drives">
+<param name="Name" value="Exclude SUBST Drives">
+<param name="Local" value="tgit-dug-settings.html#id715782">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="proxy server">
+<param name="Name" value="Network Settings">
+<param name="Local" value="tgit-dug-settings.html#id717088">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="registry">
+<param name="Name" value="Advanced Settings">
+<param name="Local" value="tgit-dug-settings.html#id741536">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="dcommit">
+<param name="Name" value="git svn dcommit">
+<param name="Local" value="tgit-dug-svn-dcommit.html#id742189">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="svn">
+<param name="Name" value="git svn dcommit">
+<param name="Local" value="tgit-dug-svn-dcommit.html#id742197">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="svn commit">
+<param name="Name" value="git svn dcommit">
+<param name="Local" value="tgit-dug-svn-dcommit.html#id742206">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="FAQ">
+<param name="Name" value="Frequently Asked Questions (FAQ)">
+<param name="Local" value="tgit-faq.html#id698557">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="plugin">
+<param name="Name" value="IBugtraqProvider interface">
+<param name="Local" value="tgit-ibugtraqprovider.html#id778612">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="IBugtraqProvider">
+<param name="Name" value="IBugtraqProvider interface">
+<param name="Local" value="tgit-ibugtraqprovider.html#id777501">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="COM">
+<param name="Name" value="IBugtraqProvider interface">
+<param name="Local" value="tgit-ibugtraqprovider.html#id779205">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="issue tracker">
+<param name="Name" value="IBugtraqProvider interface">
+<param name="Local" value="tgit-ibugtraqprovider.html#id777455">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="group policies">
+<param name="Name" value="Deploy TortoiseGit via group policies">
+<param name="Local" value="tgit-admins.html#id698208">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="GPO">
+<param name="Name" value="Deploy TortoiseGit via group policies">
+<param name="Local" value="tgit-admins.html#id698381">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="msi">
+<param name="Name" value="Deploy TortoiseGit via group policies">
+<param name="Local" value="tgit-admins.html#id698585">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="domain controller">
+<param name="Name" value="Deploy TortoiseGit via group policies">
+<param name="Local" value="tgit-admins.html#id698474">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="deploy">
+<param name="Name" value="Deploy TortoiseGit via group policies">
+<param name="Local" value="tgit-admins.html#id697429">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="upgrade check">
+<param name="Name" value="Redirect the upgrade check">
+<param name="Local" value="tgit-admins-upgradecheck.html#id733403">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="check new version">
+<param name="Name" value="Redirect the upgrade check">
+<param name="Local" value="tgit-admins-upgradecheck.html#id733200">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="version">
+<param name="Name" value="Redirect the upgrade check">
+<param name="Local" value="tgit-admins-upgradecheck.html#id733069">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="context menu entries">
+<param name="Name" value="Disable context menu entries">
+<param name="Local" value="tgit-admins-disablemenus.html#id733416">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="disable functions">
+<param name="Name" value="Disable context menu entries">
+<param name="Local" value="tgit-admins-disablemenus.html#id732192">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="group policies">
+<param name="Name" value="Disable context menu entries">
+<param name="Local" value="tgit-admins-disablemenus.html#id732235">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="automation">
+<param name="Name" value="TortoiseGit Commands">
+<param name="Local" value="tgit-automation.html#id705865">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="command line">
+<param name="Name" value="TortoiseGit Commands">
+<param name="Local" value="tgit-automation.html#id705868">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="automation">
+<param name="Name" value="TortoiseGitIDiff Commands">
+<param name="Local" value="tgit-automation-idiff.html#id698720">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="command line">
+<param name="Name" value="TortoiseGitIDiff Commands">
+<param name="Local" value="tgit-automation-idiff.html#id698771">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="overlay priority">
+<param name="Name" value="Icon Overlays">
+<param name="Local" value="tgit-app-internals.html#id672805">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="overlays">
+<param name="Name" value="Icon Overlays">
+<param name="Local" value="tgit-app-internals.html#id673511">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gittutorial(7)">
+<param name="Name" value="gittutorial(7)">
+<param name="Local" value="Git-Tutorial.html#id914687">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gittutorial-2(7)">
+<param name="Name" value="gittutorial-2(7)">
+<param name="Local" value="Git-Tutorial.html#id916865">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitcore-tutorial(7)">
+<param name="Name" value="gitcore-tutorial(7)">
+<param name="Local" value="Git-Tutorial.html#id917337">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitcvs-migration(7)">
+<param name="Name" value="gitcvs-migration(7)">
+<param name="Local" value="Git-Tutorial.html#id920817">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Everyday GIT With 20 Commands Or So">
+<param name="Name" value="Everyday GIT With 20 Commands Or So">
+<param name="Local" value="Git-Tutorial.html#id921187">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git(1)">
+<param name="Name" value="git(1)">
+<param name="Local" value="git-command.html#id922554">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-add(1)">
+<param name="Name" value="git-add(1)">
+<param name="Local" value="git-command.html#id928874">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-am(1)">
+<param name="Name" value="git-am(1)">
+<param name="Local" value="git-command.html#id930056">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-annotate(1)">
+<param name="Name" value="git-annotate(1)">
+<param name="Local" value="git-command.html#id930715">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-apply(1)">
+<param name="Name" value="git-apply(1)">
+<param name="Local" value="git-command.html#id931160">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-archimport(1)">
+<param name="Name" value="git-archimport(1)">
+<param name="Local" value="git-command.html#id933908">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-archive(1)">
+<param name="Name" value="git-archive(1)">
+<param name="Local" value="git-command.html#id934213">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-bisect(1)">
+<param name="Name" value="git-bisect(1)">
+<param name="Local" value="git-command.html#id934892">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-blame(1)">
+<param name="Name" value="git-blame(1)">
+<param name="Local" value="git-command.html#id935488">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-branch(1)">
+<param name="Name" value="git-branch(1)">
+<param name="Local" value="git-command.html#id937281">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-bundle(1)">
+<param name="Name" value="git-bundle(1)">
+<param name="Local" value="git-command.html#id938264">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-cat-file(1)">
+<param name="Name" value="git-cat-file(1)">
+<param name="Local" value="git-command.html#id938650">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-check-attr(1)">
+<param name="Name" value="git-check-attr(1)">
+<param name="Local" value="git-command.html#id939946">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-check-ref-format(1)">
+<param name="Name" value="git-check-ref-format(1)">
+<param name="Local" value="git-command.html#id940343">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-checkout-index(1)">
+<param name="Name" value="git-checkout-index(1)">
+<param name="Local" value="git-command.html#id940833">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-checkout(1)">
+<param name="Name" value="git-checkout(1)">
+<param name="Local" value="git-command.html#id941323">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-cherry-pick(1)">
+<param name="Name" value="git-cherry-pick(1)">
+<param name="Local" value="git-command.html#id942806">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-cherry(1)">
+<param name="Name" value="git-cherry(1)">
+<param name="Local" value="git-command.html#id943542">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-citool(1)">
+<param name="Name" value="git-citool(1)">
+<param name="Local" value="git-command.html#id943739">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-clean(1)">
+<param name="Name" value="git-clean(1)">
+<param name="Local" value="git-command.html#id943833">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-clone(1)">
+<param name="Name" value="git-clone(1)">
+<param name="Local" value="git-command.html#id944080">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-column(1)">
+<param name="Name" value="git-column(1)">
+<param name="Local" value="git-command.html#id945465">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-commit-tree(1)">
+<param name="Name" value="git-commit-tree(1)">
+<param name="Local" value="git-command.html#id945678">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-commit(1)">
+<param name="Name" value="git-commit(1)">
+<param name="Local" value="git-command.html#id946182">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-config(1)">
+<param name="Name" value="git-config(1)">
+<param name="Local" value="git-command.html#id948660">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-count-objects(1)">
+<param name="Name" value="git-count-objects(1)">
+<param name="Local" value="git-command.html#id962880">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-credential(1)">
+<param name="Name" value="git-credential(1)">
+<param name="Local" value="git-command.html#id962992">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-credential-cache--daemon(1)">
+<param name="Name" value="git-credential-cache--daemon(1)">
+<param name="Local" value="git-command.html#id963366">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-credential-cache(1)">
+<param name="Name" value="git-credential-cache(1)">
+<param name="Local" value="git-command.html#id963459">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-credential-store(1)">
+<param name="Name" value="git-credential-store(1)">
+<param name="Local" value="git-command.html#id963631">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-cvsexportcommit(1)">
+<param name="Name" value="git-cvsexportcommit(1)">
+<param name="Local" value="git-command.html#id963799">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-cvsimport(1)">
+<param name="Name" value="git-cvsimport(1)">
+<param name="Local" value="git-command.html#id964168">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-cvsserver(1)">
+<param name="Name" value="git-cvsserver(1)">
+<param name="Local" value="git-command.html#id965868">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-daemon(1)">
+<param name="Name" value="git-daemon(1)">
+<param name="Local" value="git-command.html#id966924">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-describe(1)">
+<param name="Name" value="git-describe(1)">
+<param name="Local" value="git-command.html#id968235">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-diff-files(1)">
+<param name="Name" value="git-diff-files(1)">
+<param name="Local" value="git-command.html#id968624">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-diff-index(1)">
+<param name="Name" value="git-diff-index(1)">
+<param name="Local" value="git-command.html#id971622">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-diff-tree(1)">
+<param name="Name" value="git-diff-tree(1)">
+<param name="Local" value="git-command.html#id975201">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-diff(1)">
+<param name="Name" value="git-diff(1)">
+<param name="Local" value="git-command.html#id979544">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-difftool(1)">
+<param name="Name" value="git-difftool(1)">
+<param name="Local" value="git-command.html#id983246">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-fast-export(1)">
+<param name="Name" value="git-fast-export(1)">
+<param name="Local" value="git-command.html#id983808">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-fast-import(1)">
+<param name="Name" value="git-fast-import(1)">
+<param name="Local" value="git-command.html#id984210">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-fetch-pack(1)">
+<param name="Name" value="git-fetch-pack(1)">
+<param name="Local" value="git-command.html#id988449">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-fetch(1)">
+<param name="Name" value="git-fetch(1)">
+<param name="Local" value="git-command.html#id990450">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-filter-branch(1)">
+<param name="Name" value="git-filter-branch(1)">
+<param name="Local" value="git-command.html#id991654">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-fmt-merge-msg(1)">
+<param name="Name" value="git-fmt-merge-msg(1)">
+<param name="Local" value="git-command.html#id993461">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-for-each-ref(1)">
+<param name="Name" value="git-for-each-ref(1)">
+<param name="Local" value="git-command.html#id993732">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-format-patch(1)">
+<param name="Name" value="git-format-patch(1)">
+<param name="Local" value="git-command.html#id994296">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-fsck-objects(1)">
+<param name="Name" value="git-fsck-objects(1)">
+<param name="Local" value="git-command.html#id999415">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-fsck(1)">
+<param name="Name" value="git-fsck(1)">
+<param name="Local" value="git-command.html#id999496">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-gc(1)">
+<param name="Name" value="git-gc(1)">
+<param name="Local" value="git-command.html#id999970">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-get-tar-commit-id(1)">
+<param name="Name" value="git-get-tar-commit-id(1)">
+<param name="Local" value="git-command.html#id1000376">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-grep(1)">
+<param name="Name" value="git-grep(1)">
+<param name="Local" value="git-command.html#id1000472">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-gui(1)">
+<param name="Name" value="git-gui(1)">
+<param name="Local" value="git-command.html#id1003574">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-hash-object(1)">
+<param name="Name" value="git-hash-object(1)">
+<param name="Local" value="git-command.html#id1004029">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-help(1)">
+<param name="Name" value="git-help(1)">
+<param name="Local" value="git-command.html#id1004214">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-http-backend(1)">
+<param name="Name" value="git-http-backend(1)">
+<param name="Local" value="git-command.html#id1004768">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-http-fetch(1)">
+<param name="Name" value="git-http-fetch(1)">
+<param name="Local" value="git-command.html#id1009491">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-http-push(1)">
+<param name="Name" value="git-http-push(1)">
+<param name="Local" value="git-command.html#id1009713">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-imap-send(1)">
+<param name="Name" value="git-imap-send(1)">
+<param name="Local" value="git-command.html#id1010016">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-index-pack(1)">
+<param name="Name" value="git-index-pack(1)">
+<param name="Local" value="git-command.html#id1010379">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-init-db(1)">
+<param name="Name" value="git-init-db(1)">
+<param name="Local" value="git-command.html#id1010641">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-init(1)">
+<param name="Name" value="git-init(1)">
+<param name="Local" value="git-command.html#id1010723">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-instaweb(1)">
+<param name="Name" value="git-instaweb(1)">
+<param name="Local" value="git-command.html#id1011189">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-log(1)">
+<param name="Name" value="git-log(1)">
+<param name="Local" value="git-command.html#id1012165">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-lost-found(1)">
+<param name="Name" value="git-lost-found(1)">
+<param name="Local" value="git-command.html#id1019827">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-ls-files(1)">
+<param name="Name" value="git-ls-files(1)">
+<param name="Local" value="git-command.html#id1019974">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-ls-remote(1)">
+<param name="Name" value="git-ls-remote(1)">
+<param name="Local" value="git-command.html#id1021165">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-ls-tree(1)">
+<param name="Name" value="git-ls-tree(1)">
+<param name="Local" value="git-command.html#id1021379">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-mailinfo(1)">
+<param name="Name" value="git-mailinfo(1)">
+<param name="Local" value="git-command.html#id1021765">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-mailsplit(1)">
+<param name="Name" value="git-mailsplit(1)">
+<param name="Local" value="git-command.html#id1022068">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-merge-base(1)">
+<param name="Name" value="git-merge-base(1)">
+<param name="Local" value="git-command.html#id1022272">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-merge-file(1)">
+<param name="Name" value="git-merge-file(1)">
+<param name="Local" value="git-command.html#id1022728">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-merge-index(1)">
+<param name="Name" value="git-merge-index(1)">
+<param name="Local" value="git-command.html#id1023075">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-merge-one-file(1)">
+<param name="Name" value="git-merge-one-file(1)">
+<param name="Local" value="git-command.html#id1023289">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-merge-tree(1)">
+<param name="Name" value="git-merge-tree(1)">
+<param name="Local" value="git-command.html#id1023373">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-merge(1)">
+<param name="Name" value="git-merge(1)">
+<param name="Local" value="git-command.html#id1023459">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-mergetool--lib(1)">
+<param name="Name" value="git-mergetool--lib(1)">
+<param name="Local" value="git-command.html#id1026158">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-mergetool(1)">
+<param name="Name" value="git-mergetool(1)">
+<param name="Local" value="git-command.html#id1026350">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-mktag(1)">
+<param name="Name" value="git-mktag(1)">
+<param name="Local" value="git-command.html#id1026655">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-mktree(1)">
+<param name="Name" value="git-mktree(1)">
+<param name="Local" value="git-command.html#id1026766">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-mv(1)">
+<param name="Name" value="git-mv(1)">
+<param name="Local" value="git-command.html#id1026912">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-name-rev(1)">
+<param name="Name" value="git-name-rev(1)">
+<param name="Local" value="git-command.html#id1027087">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-notes(1)">
+<param name="Name" value="git-notes(1)">
+<param name="Local" value="git-command.html#id1027324">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-p4(1)">
+<param name="Name" value="git-p4(1)">
+<param name="Local" value="git-command.html#id1028602">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-pack-objects(1)">
+<param name="Name" value="git-pack-objects(1)">
+<param name="Local" value="git-command.html#id1030370">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-pack-redundant(1)">
+<param name="Name" value="git-pack-redundant(1)">
+<param name="Local" value="git-command.html#id1031213">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-pack-refs(1)">
+<param name="Name" value="git-pack-refs(1)">
+<param name="Local" value="git-command.html#id1031381">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-parse-remote(1)">
+<param name="Name" value="git-parse-remote(1)">
+<param name="Local" value="git-command.html#id1031566">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-patch-id(1)">
+<param name="Name" value="git-patch-id(1)">
+<param name="Local" value="git-command.html#id1031643">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-peek-remote(1)">
+<param name="Name" value="git-peek-remote(1)">
+<param name="Local" value="git-command.html#id1031758">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-prune-packed(1)">
+<param name="Name" value="git-prune-packed(1)">
+<param name="Local" value="git-command.html#id1031903">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-prune(1)">
+<param name="Name" value="git-prune(1)">
+<param name="Local" value="git-command.html#id1032060">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-pull(1)">
+<param name="Name" value="git-pull(1)">
+<param name="Local" value="git-command.html#id1032327">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-push(1)">
+<param name="Name" value="git-push(1)">
+<param name="Local" value="git-command.html#id1035510">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-quiltimport(1)">
+<param name="Name" value="git-quiltimport(1)">
+<param name="Local" value="git-command.html#id1038071">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-read-tree(1)">
+<param name="Name" value="git-read-tree(1)">
+<param name="Local" value="git-command.html#id1038219">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-rebase(1)">
+<param name="Name" value="git-rebase(1)">
+<param name="Local" value="git-command.html#id1039090">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-receive-pack(1)">
+<param name="Name" value="git-receive-pack(1)">
+<param name="Local" value="git-command.html#id1041840">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-reflog(1)">
+<param name="Name" value="git-reflog(1)">
+<param name="Local" value="git-command.html#id1042119">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-relink(1)">
+<param name="Name" value="git-relink(1)">
+<param name="Local" value="git-command.html#id1043138">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-remote-ext(1)">
+<param name="Name" value="git-remote-ext(1)">
+<param name="Local" value="git-command.html#id1043259">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-remote-fd(1)">
+<param name="Name" value="git-remote-fd(1)">
+<param name="Local" value="git-command.html#id1043675">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-remote-helpers(1)">
+<param name="Name" value="git-remote-helpers(1)">
+<param name="Local" value="git-command.html#id1043886">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-remote-testgit(1)">
+<param name="Name" value="git-remote-testgit(1)">
+<param name="Local" value="git-command.html#id1045114">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-remote(1)">
+<param name="Name" value="git-remote(1)">
+<param name="Local" value="git-command.html#id1047416">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-repack(1)">
+<param name="Name" value="git-repack(1)">
+<param name="Local" value="git-command.html#id1048114">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-replace(1)">
+<param name="Name" value="git-replace(1)">
+<param name="Local" value="git-command.html#id1048522">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-repo-config(1)">
+<param name="Name" value="git-repo-config(1)">
+<param name="Local" value="git-command.html#id1048794">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-request-pull(1)">
+<param name="Name" value="git-request-pull(1)">
+<param name="Local" value="git-command.html#id1048877">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-rerere(1)">
+<param name="Name" value="git-rerere(1)">
+<param name="Local" value="git-command.html#id1049026">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-reset(1)">
+<param name="Name" value="git-reset(1)">
+<param name="Local" value="git-command.html#id1049450">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-rev-list(1)">
+<param name="Name" value="git-rev-list(1)">
+<param name="Local" value="git-command.html#id1051313">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-rev-parse(1)">
+<param name="Name" value="git-rev-parse(1)">
+<param name="Local" value="git-command.html#id1056454">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-revert(1)">
+<param name="Name" value="git-revert(1)">
+<param name="Local" value="git-command.html#id1059101">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-rm(1)">
+<param name="Name" value="git-rm(1)">
+<param name="Local" value="git-command.html#id1059513">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-send-email(1)">
+<param name="Name" value="git-send-email(1)">
+<param name="Local" value="git-command.html#id1060010">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-send-pack(1)">
+<param name="Name" value="git-send-pack(1)">
+<param name="Local" value="git-command.html#id1061356">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-sh-i18n--envsubst(1)">
+<param name="Name" value="git-sh-i18n--envsubst(1)">
+<param name="Local" value="git-command.html#id1061740">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-sh-i18n(1)">
+<param name="Name" value="git-sh-i18n(1)">
+<param name="Local" value="git-command.html#id1061843">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-sh-setup(1)">
+<param name="Name" value="git-sh-setup(1)">
+<param name="Local" value="git-command.html#id1061991">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-shell(1)">
+<param name="Name" value="git-shell(1)">
+<param name="Local" value="git-command.html#id1062286">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-shortlog(1)">
+<param name="Name" value="git-shortlog(1)">
+<param name="Local" value="git-command.html#id1062393">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-show-branch(1)">
+<param name="Name" value="git-show-branch(1)">
+<param name="Local" value="git-command.html#id1062771">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-show-index(1)">
+<param name="Name" value="git-show-index(1)">
+<param name="Local" value="git-command.html#id1063269">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-show-ref(1)">
+<param name="Name" value="git-show-ref(1)">
+<param name="Local" value="git-command.html#id1064056">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-show(1)">
+<param name="Name" value="git-show(1)">
+<param name="Local" value="git-command.html#id1064490">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-stage(1)">
+<param name="Name" value="git-stage(1)">
+<param name="Local" value="git-command.html#id1066087">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-stash(1)">
+<param name="Name" value="git-stash(1)">
+<param name="Local" value="git-command.html#id1066169">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-status(1)">
+<param name="Name" value="git-status(1)">
+<param name="Local" value="git-command.html#id1068771">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-stripspace(1)">
+<param name="Name" value="git-stripspace(1)">
+<param name="Local" value="git-command.html#id1069413">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-submodule(1)">
+<param name="Name" value="git-submodule(1)">
+<param name="Local" value="git-command.html#id1069629">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-svn(1)">
+<param name="Name" value="git-svn(1)">
+<param name="Local" value="git-command.html#id1071102">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-symbolic-ref(1)">
+<param name="Name" value="git-symbolic-ref(1)">
+<param name="Local" value="git-command.html#id1074670">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-tag(1)">
+<param name="Name" value="git-tag(1)">
+<param name="Local" value="git-command.html#id1074906">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-tar-tree(1)">
+<param name="Name" value="git-tar-tree(1)">
+<param name="Local" value="git-command.html#id1075742">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-unpack-file(1)">
+<param name="Name" value="git-unpack-file(1)">
+<param name="Local" value="git-command.html#id1076042">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-unpack-objects(1)">
+<param name="Name" value="git-unpack-objects(1)">
+<param name="Local" value="git-command.html#id1076457">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-update-index(1)">
+<param name="Name" value="git-update-index(1)">
+<param name="Local" value="git-command.html#id1076624">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-update-ref(1)">
+<param name="Name" value="git-update-ref(1)">
+<param name="Local" value="git-command.html#id1077680">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-update-server-info(1)">
+<param name="Name" value="git-update-server-info(1)">
+<param name="Local" value="git-command.html#id1077875">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-upload-archive(1)">
+<param name="Name" value="git-upload-archive(1)">
+<param name="Local" value="git-command.html#id1078018">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-upload-pack(1)">
+<param name="Name" value="git-upload-pack(1)">
+<param name="Local" value="git-command.html#id1078133">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-var(1)">
+<param name="Name" value="git-var(1)">
+<param name="Local" value="git-command.html#id1078296">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-verify-pack(1)">
+<param name="Name" value="git-verify-pack(1)">
+<param name="Local" value="git-command.html#id1078556">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-verify-tag(1)">
+<param name="Name" value="git-verify-tag(1)">
+<param name="Local" value="git-command.html#id1079579">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-web--browse(1)">
+<param name="Name" value="git-web--browse(1)">
+<param name="Local" value="git-command.html#id1079705">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-whatchanged(1)">
+<param name="Name" value="git-whatchanged(1)">
+<param name="Local" value="git-command.html#id1080115">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="git-write-tree(1)">
+<param name="Name" value="git-write-tree(1)">
+<param name="Local" value="git-command.html#id1081570">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitcli(7)">
+<param name="Name" value="gitcli(7)">
+<param name="Local" value="git-misc.html#id1082270">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitattributes(5)">
+<param name="Name" value="gitattributes(5)">
+<param name="Local" value="git-misc.html#id1082824">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitcredentials(7)">
+<param name="Name" value="gitcredentials(7)">
+<param name="Local" value="git-misc.html#id1086765">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitdiffcore(7)">
+<param name="Name" value="gitdiffcore(7)">
+<param name="Local" value="git-misc.html#id1087189">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitignore(5)">
+<param name="Name" value="gitignore(5)">
+<param name="Local" value="git-misc.html#id1087662">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="githooks(5)">
+<param name="Name" value="githooks(5)">
+<param name="Local" value="git-misc.html#id1088043">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitk(1)">
+<param name="Name" value="gitk(1)">
+<param name="Local" value="git-misc.html#id1090458">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitmodules(5)">
+<param name="Name" value="gitmodules(5)">
+<param name="Local" value="git-misc.html#id1090877">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitnamespaces(7)">
+<param name="Name" value="gitnamespaces(7)">
+<param name="Local" value="git-misc.html#id1091129">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitrepository-layout(5)">
+<param name="Name" value="gitrepository-layout(5)">
+<param name="Local" value="git-misc.html#id1091336">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitrevisions(7)">
+<param name="Name" value="gitrevisions(7)">
+<param name="Local" value="git-misc.html#id1094005">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitweb(1)">
+<param name="Name" value="gitweb(1)">
+<param name="Local" value="git-misc.html#id1095137">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitweb.conf(5)">
+<param name="Name" value="gitweb.conf(5)">
+<param name="Local" value="git-misc.html#id1097166">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitworkflows(7)">
+<param name="Name" value="gitworkflows(7)">
+<param name="Local" value="git-misc.html#id1099726">
+</OBJECT></LI><LI><OBJECT type="text/sitemap">
+<param name="Name" value="gitglossary(7)">
+<param name="Name" value="gitglossary(7)">
+<param name="Local" value="git-misc.html#id1100790">
+</OBJECT></LI>&lt;/UL&gt;
+&lt;/BODY&gt;&lt;/HTML&gt;
+

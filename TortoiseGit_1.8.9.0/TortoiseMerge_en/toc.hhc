@@ -1,0 +1,106 @@
+<HTML>
+<HEAD><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></HEAD>
+<BODY>
+<OBJECT type="text/site properties">
+<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="TortoiseGitMerge">
+<param name="Local" value="index.html"></OBJECT></LI>
+<UL><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Preface">
+<param name="Local" value="tme-preface.html"></OBJECT></LI>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="TortoiseGitMerge is free!">
+<param name="Local" value="tme-preface.html#tme-preface-source"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Acknowledgments">
+<param name="Local" value="tme-preface-acknowledgements.html"></OBJECT></LI>
+</UL><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Introduction">
+<param name="Local" value="tmerge-intro.html"></OBJECT></LI>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Overview">
+<param name="Local" value="tmerge-intro.html#tmerge-intro-overview"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="TortoiseGitMerge's History">
+<param name="Local" value="tmerge-intro-history.html"></OBJECT></LI>
+</UL><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Basic Concepts">
+<param name="Local" value="tmerge-basics.html"></OBJECT></LI>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Viewing and Merging Differences">
+<param name="Local" value="tmerge-basics.html#tmerge-basics-diff"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Editing Conflicts">
+<param name="Local" value="tmerge-basics-conflicts.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Applying Patches">
+<param name="Local" value="tmerge-basics-patch.html"></OBJECT></LI>
+</UL><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Using TortoiseGitMerge">
+<param name="Local" value="tmerge-dug.html"></OBJECT></LI>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Viewing Modes">
+<param name="Local" value="tmerge-dug.html#tmerge-dug-views"></OBJECT></LI>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Viewing / Merging">
+<param name="Local" value="tmerge-dug.html#tmerge-dug-view-merge"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Applying Patches">
+<param name="Local" value="tmerge-dug.html#tmerge-dug-view-patch"></OBJECT></LI>
+</UL><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Buttons and Other Controls">
+<param name="Local" value="tmerge-dug-toolbar.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Line Status Icons">
+<param name="Local" value="tmerge-dug-icons.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Merging / Editing Conflicts">
+<param name="Local" value="tmerge-dug-conflicts.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Open Files">
+<param name="Local" value="tmerge-dug-open.html"></OBJECT></LI>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Viewing / Merging">
+<param name="Local" value="tmerge-dug-open.html#tmerge-dug-open-view"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Applying Patches">
+<param name="Local" value="tmerge-dug-open.html#tmerge-dug-open-patch"></OBJECT></LI>
+</UL><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Settings">
+<param name="Local" value="tmerge-dug-settings.html"></OBJECT></LI>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Main Settings Page">
+<param name="Local" value="tmerge-dug-settings.html#tmerge-dug-settings-main"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Colour Settings Page">
+<param name="Local" value="tmerge-dug-settings.html#tmerge-dug-settings-color"></OBJECT></LI>
+</UL></UL><LI><OBJECT type="text/sitemap">
+<param name="Name" value="keyboard shortcuts">
+<param name="Local" value="tme-keyboard.html"></OBJECT></LI>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="Keyboard shortcuts">
+<param name="Local" value="tme-keyboard.html#tme-keyboard-shortcuts"></OBJECT></LI>
+</UL><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Automating TortoiseGitMerge">
+<param name="Local" value="tme-automation.html"></OBJECT></LI>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="TortoiseGitMerge Command Line Switches">
+<param name="Local" value="tme-automation.html#tme-automation-basics"></OBJECT></LI>
+</UL><LI><OBJECT type="text/sitemap">
+<param name="Name" value="Glossary">
+<param name="Local" value="tgit-glossary.html"></OBJECT></LI>
+</UL>
+</UL>
+</BODY></HTML>

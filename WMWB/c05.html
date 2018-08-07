@@ -1,0 +1,475 @@
+<html>
+    
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Queries - GreenDao Documentation 2.10
+        </title>
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="base.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="docs.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="userguide.css">
+        <meta content="DocBook XSL Stylesheets V1.75.2" name="generator">
+        <link rel="home" href="userguide.html" title="GreenDao Documentation 2.10">
+        <link rel="up" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+        <link rel="prev" href="c04.html" title="Sessions - GreenDao Documentation 2.10">
+        <link rel="next" href="c06.html" title=" Joins - GreenDao Documentation 2.10">
+    </head>
+    
+    <body>
+        <div class="navheader">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c04.html" title="Sessions - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c06.html" title="Joins - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="titlepage">
+                <div>
+                    <div>
+                        <h1 xmlns:xslthl="http://xslthl.sf.net">
+                            <a name="query">
+                            </a>
+                            Chapter&nbsp;5.&nbsp;Queries
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="toc">
+                <p>
+                    <b>
+                        目录
+                    </b>
+                </p>
+                <dl>
+                    <dt>
+                        <span class="section">
+                            <a href="c05.html#N501A">
+                                5.1. QueryBuilder
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c05.html#N502A">
+                                5.2. Limit, Offset, and Pagination
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c05.html#N503A">
+                                5.3. Query and LazyList
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c05.html#N504A">
+                                5.4. Executing Queries multiple times
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c05.html#N505A">
+                                5.5. Executing queries in multiple threads
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c05.html#N506A">
+                                5.6. Raw queries
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c05.html#N507A">
+                                5.7. Delete queries
+                            </a>
+                        </span>
+                    </dt>
+					<dt>
+                        <span class="section">
+                            <a href="c05.html#N508A">
+                                5.8. Troubleshooting queries
+                            </a>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+			<p>
+				Queries return entities matching certain criteria. You can formulate queries with
+				raw SQL, or, the preferred way, using the QueryBuilder API of greenDAO. Queries
+				also support lazy-loading results, which may save memory and performance when
+				operating on large result sets.
+			</p>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N501A" class="section-anchor"
+                                href="#N501A">
+                                </a>
+                                5.1.&nbsp;QueryBuilder
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+				<p>
+					The QueryBuilder class lets you build custom queries for your entities without touching SQL.
+					Writing SQL is not everyone’s favorite and it is also prone to errors, which you will only
+					notice at run time. QueryBuilder is easier to use and saves you from writing SQL. Also,
+					getting bugs in your query code gets much harder, as the syntax is checked at compile time.
+					The compile time checks include even references to properties, which is made possible by
+					the code generator approach behind greenDAO.
+				</p>
+				<p>
+					Example: Query for all users with the first name “Joe” ordered by their last name.
+				</p>
+				<pre class="programlisting">
+                    List joes = userDao.queryBuilder()
+                    .where(Properties.FirstName.eq("Joe"))
+                    .orderAsc(Properties.LastName)
+                    .list();
+                </pre>
+				<p>
+					Nested conditions example: Get users with the first name “Joe” that are born in October 1970 or later.
+				</p>
+				<p>
+					Let’s say we have a user’s birthday as separate properties for year, month, and day.
+					Then, we could express the the condition in a more formal way: First name is “Joe”
+					AND (year of birth is greater than 1970 OR (year of birth is 1970 AND month of birth
+					is equal to or greater than 10 (October).
+				</p>
+				<pre class="programlisting">
+                    QueryBuilder qb = userDao.queryBuilder();
+                    qb.where(Properties.FirstName.eq("Joe"),
+                    qb.or(Properties.YearOfBirth.gt(1970),
+                    qb.and(Properties.YearOfBirth.eq(1970),Properties.MonthOfBirth.ge(10))));
+                    List youngJoes = qb.list();
+                </pre>
+            </div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N502A" class="section-anchor"
+                                href="#N502A">
+                                </a>
+                                5.2.&nbsp;Limit, Offset, and Pagination
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Sometimes you only need a subset of a query, for example the first 10 elements to
+					display in the UI. This is especially helpful (and resourceful) when you have a
+					high number of entities and you cannot limit the result using “where” statements
+					only. QueryBuilder has methods to define a limit and an offset:
+                </p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            limit(int)：
+                        </code>
+                    </strong>
+					Limits the number of results returned by queries.
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            offset(int)：
+                        </code>
+                    </strong>
+					Sets the offset for query results in combination with limit(int).
+					The first limit results are skipped and the total number of results will be limited
+					by limit(int). You cannot use offset without limit(int).
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N503A" class="section-anchor"
+                                href="#N503A">
+                                </a>
+                                5.3.&nbsp;Query and LazyList
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					The Query class represents a query that can be executed multiple times. When you use one
+					of the methods in QueryBuilder to fetch a result (like list()), QueryBuilder internally
+					uses the Query class. If you want to run the same query more than one, you should call
+					build() on the QueryBuilder to create the Query without executing it.
+                </p>
+				<p>
+					greenDAO supports unique results (0 or 1 result) and result lists. If you expect a unique
+					result call unique() on the Query (or QueryBuilder), which will give you a single result
+					or null, if no matching entity was found. If your use case prohibits null as an outcome,
+					call uniqueOrThrow() which will guarantee to return an non-null entity (otherwise it
+					will throw a DaoException).
+				</p>
+				<p>
+					If you expect multiple entities as a query result, you use one of the list… methods:
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            list()
+                        </code>
+                    </strong>
+					All entities are loaded into memory. The result is typically an ArrayList with no magic
+					involved. Easiest to use.
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            listLazy()
+                        </code>
+                    </strong>
+					Entities are loaded into memory on-demand. Once an element in the list is accessed for
+					the first time, it is loaded and cached for future use. Must be closed.
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            listLazyUncached()
+                        </code>
+                    </strong>
+					A “virtual” list of entities: any access to a list element results in loading its
+					data from the database. Must be closed.
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            listIterator()
+                        </code>
+                    </strong>
+					Let’s you iterate through results by loading the data on-demand (lazily).
+					Data is not cached. Must be closed.
+				</p>
+				<p>
+					The methods listLazy, listLazyUncached, and listIterator make use of greenDAO’s LazyList
+					class. To load data on-demand, it holds a reference to a database cursor. This is the
+					reason must ensure to close the lazy lists and iterators (typically in a try/finally block).
+					The cached lazy list from listLazy() and the lazy iterator from listIterator() closes the
+					cursor automatically, once all elements are accessed or traversed. However, it’s your job
+					to call close() if the list processing stops prematurely.
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N504A" class="section-anchor"
+                                href="#N504A">
+                                </a>
+                                5.4.&nbsp;Executing Queries multiple times
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Once you built a query using the QueryBuilder, the Query object can be reused to execute the
+					query later. This is more efficient than always creating new Query objects. If the query
+					parameters don’t change you can just call one of the list/unique methods again. If there may
+					be changed parameters, you have to call the setParameter method for each changed parameter.
+					Currently, individual parameters are addressed by the zero-based parameter index. The index
+					is based on the order you pass the parameter to QueryBuilder.
+                </p>
+				<p>
+					The following example uses a Query object to fetch users with Joe as a first name born in 1970:
+				</p>
+				<pre class="programlisting">
+                    Query query = userDao.queryBuilder().where(
+                    Properties.FirstName.eq("Joe"), Properties.YearOfBirth.eq(1970))
+                    .build();
+                    List joesOf1970 = query.list();
+				</pre>
+				<p>
+					Using this Query object, we can search for Marias born in 1977 later:
+				</p>
+				<pre class="programlisting">
+                    query.setParameter(0, "Maria");
+                    query.setParameter(1, 1977);
+                    List mariasof1977 = query.list();
+				</pre>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N505A" class="section-anchor"
+                                href="#N505A">
+                                </a>
+                                5.5.&nbsp;Executing queries in multiple threads
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					If you use queries in multiple threads, you must call forCurrentThread() on the query to get
+					a Query instance for the current thread. Object instances of Query are bound to their owning
+					thread that build the query. This lets you safely set parameters on the Query object while
+					other threads cannot interfere. If other threads try to set parameters on the query or execute
+					the query bound to another thread, an exception will be thrown. Like this, you don’t need a
+					synchronized statement. In fact you should avoid locking because this may lead to deadlocks
+					if concurrent transactions use the same Query object.
+                </p>
+				<p>
+					To avoid those potential deadlocks completely, greenDAO offers the method forCurrentThread().
+					This will return a thread-local instance of the Query, which is safe to use in the current
+					thread. Every time, forCurrentThread() is called, the parameters are set to the initial
+					parameters at the time the query was built using its builder.
+                </p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N506A" class="section-anchor"
+                                href="#N506A">
+                                </a>
+                                5.6.&nbsp;Raw queries
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					In case QueryBuilder does not provide the feature you need, raw queries are your fall
+					back solution. There are two approaches to execute raw SQL resulting in entities. The
+					preferred way is using QueryBuilder and WhereCondition.StringCondition. Using this you
+					can pass any SQL fragments for the WHERE clause to the query builder. The following code
+					is a theoretical example how you could run a sub select (using a join would be the better solution):
+                </p>
+				<pre class="programlisting">
+                    Query query = userDao.queryBuilder().where(
+                    new StringCondition("_ID IN " + "(SELECT USER_ID FROM USER_MESSAGE WHERE READ_FLAG = 0)").build();
+				</pre>
+				<p>
+					Another approach outside of QueryBuilder are the queryRaw or queryRawCreate methods. They allow
+					you to pass a raw SQL string, which is appended after the SELECT and the entities columns. This
+					way, you can have any WHERE and ORDER BY clause you want to select entities. The entity table
+					can be referred using the alias “T”:
+                </p>
+				<p>
+					The following example shows how to create a query that retrieves users of the group called
+					“admin” using a join (again, greenDAO supports joins natively, this is just to demonstrate):
+                </p>
+				<pre class="programlisting">
+                    Query query = userDao.queryRawCreate(
+                      ",GROUP G WHERE G.NAME = ? AND T.GROUP_ID = G._ID", "admin");
+				</pre>
+				<p>
+					Note: You can refer to table and column names using generated constants. This is recommended
+					to avoid typos because the compiler will check the names. In an entity’s DAO, you will find
+					TABLENAME holding the name of the database table, and an inner class Properties with constants
+					for all properties (field columnName).
+				</p>
+            </div>
+
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N507A" class="section-anchor"
+                                href="#N507A">
+                                </a>
+                                5.7.&nbsp;Delete queries
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Bulk deletes do not delete individual entities, but all entities matching some criteria.
+					To perform bulk deletes, create a QueryBuilder, call its buildDelete method, and execute
+					the returned DeleteQuery. This part of the API may change in the future, e.g. convenience
+					methods may be added etc. Keep in mind, that bulk deletes currently do not affect entities
+					in the identity scope, e.g. you could “resurrect” deleted entities if they have been cached
+					before and are accessed by their ID (load method). Consider clearing the identity scope for
+					now, if that may cause issues for your use case.
+                </p>
+            </div>
+
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N508A" class="section-anchor"
+                                href="#N508A">
+                                </a>
+                                5.8.&nbsp;Troubleshooting queries
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Your query does not return the result you expected? There are two static flags to enable
+					SQL and parameter logging on the QueryBuilder:
+                </p>
+				<pre class="programlisting">
+                    QueryBuilder.LOG_SQL = true;
+                    QueryBuilder.LOG_VALUES = true;
+				</pre>
+				<p>
+					Those will log the resulting SQL command and the passed values when calling one of the build
+					methods. Like this you can compare if you actually get what you expected. It might also help
+					to copy generated SQL into some SQLite database explorer and execute it with the values.
+				</p>
+            </div>
+
+        </div>
+        <div class="navfooter">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c04.html" title="Sessions - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c06.html" title="Joins - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

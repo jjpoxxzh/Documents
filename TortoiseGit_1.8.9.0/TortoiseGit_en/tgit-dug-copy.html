@@ -1,0 +1,31 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2.19. Copying/Moving/Renaming Files and Folders</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-dug.html" title="Chapter 2. TortoiseGit Daily Use Guide"><link rel="prev" href="tgit-dug-add.html" title="2.18. Adding New Files"><link rel="next" href="tgit-dug-ignore.html" title="2.20. Ignoring Files And Directories"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.19. Copying/Moving/Renaming Files and Folders</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-dug-add.html">Prev</a> </td><th width="60%" align="center">Chapter 2. TortoiseGit Daily Use Guide</th><td width="20%" align="right"> <a accesskey="n" href="tgit-dug-ignore.html">Next</a></td></tr></table><hr></div><div class="sect1" title="2.19. Copying/Moving/Renaming Files and Folders"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-dug-copy"></a>2.19. Copying/Moving/Renaming Files and Folders</h2></div></div></div><a name="id733698"></a><a name="id732187"></a><a name="id732912"></a><a name="id732583"></a><a name="id733587"></a><p>
+		It often happens that you already have the files you need in another
+		project in your repository, and you simply want to copy them across.
+		You could simply copy the files and add them as described above, but
+		that would not give you any history. And if you subsequently fix a bug
+		in the original files, you can only merge the fix automatically if the
+		new copy is related to the original in Git.
+	</p><p>
+		You can copy files and folders from your working tree to another
+		location in the repository using
+		<span class="guimenu">TortoiseGit</span> &#8594; <span class="guimenuitem">Branch/Tag</span>.
+		Refer to <a class="xref" href="tgit-dug-branchtag.html#tgit-dug-branch-1" title="2.27.1. Creating a Branch or Tag">Section 2.27.1, &#8220;Creating a Branch or Tag&#8221;</a> to find out more.
+	</p><p>
+		You can locate an older version of a file or folder in the log
+		dialog and copy it to a new location in the repository directly
+		from the log dialog using
+		<span class="guimenu">Context menu</span> &#8594; <span class="guimenuitem">Create branch/tag from revision</span>.
+		Refer to <a class="xref" href="tgit-dug-showlog.html#tgit-dug-showlog-2" title="2.13.3. Getting Additional Information">Section 2.13.3, &#8220;Getting Additional Information&#8221;</a> to find out more.
+	</p><p>
+		You can also use the repository browser to locate content you want,
+		and copy it into your working tree directly from the repository,
+		or copy between two locations within the repository.
+		Refer to <a class="xref" href="tgit-dug-repobrowser.html" title="2.16. The Repository Browser">Section 2.16, &#8220;The Repository Browser&#8221;</a> to find out more.
+	</p><div class="tip" title="Cannot copy between repositories" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip: Cannot copy between repositories"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td><th align="left">Cannot copy between repositories</th></tr><tr><td align="left" valign="top"><p>
+			Whilst you can copy and files and folders <span class="emphasis"><em>within</em></span>
+			a repository, you <span class="emphasis"><em>cannot</em></span> copy or move from one
+			repository to another while preserving history using TortoiseGit.
+			Not even if the repositories live on the same server. All you can
+			do is copy the content in its current state and add it as new
+			content to the second repository.
+		</p></td></tr></table></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-dug-add.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-dug.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-dug-ignore.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.18. Adding New Files </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2.20. Ignoring Files And Directories</td></tr></table></div></body></html>

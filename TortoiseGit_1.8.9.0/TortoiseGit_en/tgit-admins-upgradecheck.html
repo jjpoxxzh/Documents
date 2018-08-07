@@ -1,0 +1,47 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>C.2. Redirect the upgrade check</title><link rel="stylesheet" href="styles_chm.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="TortoiseGit"><link rel="up" href="tgit-admins.html" title="Appendix C. Useful Tips For Administrators"><link rel="prev" href="tgit-admins.html" title="Appendix C. Useful Tips For Administrators"><link rel="next" href="tgit-admins-disablemenus.html" title="C.3. Disable context menu entries"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">C.2. Redirect the upgrade check</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="tgit-admins.html">Prev</a> </td><th width="60%" align="center">Appendix C. Useful Tips For Administrators</th><td width="20%" align="right"> <a accesskey="n" href="tgit-admins-disablemenus.html">Next</a></td></tr></table><hr></div><div class="sect1" title="C.2. Redirect the upgrade check"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tgit-admins-upgradecheck"></a>C.2. Redirect the upgrade check</h2></div></div></div><a name="id733403"></a><a name="id733200"></a><a name="id733069"></a><p>
+			TortoiseGit checks if there's a new version available every week (or daily in a preview release).
+			If there is a newer version available, a dialog shows up informing
+			the user about that and allows to download/install a new version.
+		</p><div class="figure"><a name="tgit-admins-dia1"></a><p class="title"><b>Figure C.1. The upgrade dialog</b></p><div class="figure-contents"><div><img src="images/upgradecheck.png" alt="The upgrade dialog"></div></div></div><br class="figure-break"><p>
+			If you're responsible for a lot of users in your domain, you might want
+			your users to use only versions you have approved and not have them install
+			always the latest version (or to save bandwidth or want to add some further notes for installation). You probably don't want that upgrade dialog
+			to show up so your users don't go and upgrade immediately (to disable update checking at all (e.g. because you use group policies to deploy TortoiseGit, see <a class="xref" href="tgit-admins.html#tgit-admins-grouppolicies" title="C.1. Deploy TortoiseGit via group policies">Section C.1, &#8220;Deploy TortoiseGit via group policies&#8221;</a> and/or <span class="emphasis"><em>VersionCheck</em></span> in <a class="xref" href="tgit-dug-settings.html#tgit-dug-settings-registry" title="2.35.9. Advanced Settings">Section 2.35.9, &#8220;Advanced Settings&#8221;</a>).
+		</p><p>
+			TortoiseGit allow you to redirect that upgrade
+			check to your intranet server. You can set the registry key
+			<code class="filename">HKCU\Software\TortoiseGit\UpdateCheckURL</code> OR <code class="filename">HKLM\Software\TortoiseGit\UpdateCheckURL</code> (string value, HKCU overrides HKLM)
+			to an URL pointing to a text file in your intranet (default is <a class="ulink" href="http://version.tortoisegit.googlecode.com/git/version.txt" target="_top">http://version.tortoisegit.googlecode.com/git/version.txt</a>).
+			When the default version.txt file is used, it is checked by verifying a digital signature (<a class="ulink" href="http://version.tortoisegit.googlecode.com/git/version.txt.asc" target="_top">http://version.tortoisegit.googlecode.com/git/version.txt.asc</a>) that it has not been altered (since TortoiseGit 1.8.5).
+			The check for the digital signature of the version.txt file is omitted if the location is overridden in registry.
+			That text file must have the following format:
+</p><pre class="screen">
+X.X.X.X
+A new version of TortoiseGit is available for you to download!
+http://192.168.2.1/downloads/TortoiseGit/info.htm
+http://192.168.2.1/downloads/TortoiseGit/TortoiseGit-1.4.1.6000-changelog.txt
+http://192.168.2.1/downloads/TortoiseGit/
+1029;cs
+1031;de
+</pre><p>
+			The first line in that file is the version string. You must make sure that
+			it matches the exact version string of the TortoiseGit installation package.
+			The second line is a custom text, shown in the upgrade dialog. You can write
+			there whatever you want (can also be left empty). Just note that the space in the upgrade dialog is
+			limited. Too long messages will get truncated!
+			The third line is the URL which is opened when
+			when the user clicks on the (custom) message label in the upgrade dialog.
+			The URL is opened with the default web browser, so if you specify a web page,
+			that page is opened and shown to the user.
+			The fourth line contains the URL to the Changelog or release notes which are displayed in the upgrade dialog (if empty it defaults to <a class="ulink" href="http://tortoisegit.googlecode.com/git/src/Changelog.txt" target="_top">http://tortoisegit.googlecode.com/git/src/Changelog.txt</a>)
+			The fifth line is used to override the base path to the installation packages (if empty it defaults to http://tortoisegit.googlecode.com/files/).
+			The filenames are generated as follows: TortoiseGit-(version)-(32|64)bit.msi for the main installer
+			and TortoiseGit-LanguagePack-(version)-(32|64)bit-(cs|de|...).msi for the language packs.
+			Starting from this line, one can advertise language packs (one per line: Four digit country code;ISO Country code).
+		</p><p>
+			Clicking on <span class="guibutton">Download</span> downloads the selected files as well as their digital signature files (filename.asc) to <code class="filename"><a class="ulink" href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd378457%28v=vs.85%29.aspx" target="_top">FOLDERID_Downloads</a></code> (Vista or later) or
+			<code class="filename"><a class="ulink" href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb762494%28v=vs.85%29.aspx" target="_top">CSIDL_PERSONAL</a>\Downloads</code> or <code class="filename">CSIDL_PERSONAL</code>.
+			After downloading the digital signature is verified - the file is only kept if the file is digitally signed and could be verified correctly.
+		</p><p>
+			If you want to distribute your own modified TortoiseGit packages in your network, you have to put your own GPG key into TortoiseGit and sign the .msi-files with this key or deactivate the signature verification completely.
+		</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="tgit-admins.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="tgit-admins.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="tgit-admins-disablemenus.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Appendix C. Useful Tips For Administrators </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> C.3. Disable context menu entries</td></tr></table></div></body></html>

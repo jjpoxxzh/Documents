@@ -1,0 +1,237 @@
+<html>
+    
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Introduction - GreenDao Documentation 2.10
+        </title>
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="base.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="docs.css">
+        <link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet"
+        href="userguide.css">
+        <meta content="DocBook XSL Stylesheets V1.75.2" name="generator">
+        <link rel="home" href="userguide.html" title="GreenDao Documentation 2.10">
+        <link rel="up" href="pt01.html" title="Part&nbsp;I.&nbsp;GreenDao Documentation">
+        <link rel="prev" href="c01.html" title="How to get started - GreenDao Documentation 2.10">
+        <link rel="next" href="c03.html" title="Modelling entities - GreenDao Documentation 2.10">
+    </head>
+    
+    <body>
+        <div class="navheader">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c01.html" title="How to get started - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c03.html" title="Modelling entities - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="titlepage">
+                <div>
+                    <div>
+                        <h1 xmlns:xslthl="http://xslthl.sf.net">
+                            <a name="introduction">
+                            </a>
+                            Chapter&nbsp;2.&nbsp;Introduction
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="toc">
+                <p>
+                    <b>
+                        目录
+                    </b>
+                </p>
+                <dl>
+                    <dt>
+                        <span class="section">
+                            <a href="c02.html#N201A">
+                                2.1. DAO Code Generation Project
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c02.html#N202A">
+                                2.2. Core Classes
+                            </a>
+                        </span>
+                    </dt>
+                    <dt>
+                        <span class="section">
+                            <a href="c02.html#N203A">
+                                2.3. Core Initialization
+                            </a>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+			<div class="figure-contents">
+				<img src="img/introduction.png" alt="introduction">
+            </div>
+			<p>
+				greenDAO is an object/relational mapping (ORM) tool for Android. It offers an
+				object oriented interface to the relational database SQLite. ORM tools like
+				greenDAO do many repetitive tasks for you and offer a simple interface to your data.
+			</p>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N201A" class="section-anchor"
+                                href="#N201A">
+                                </a>
+                                2.1.&nbsp;DAO Code Generation Project
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+				<div class="figure-contents">
+					<img src="img/generation.png" alt="generation">
+				</div>
+				<p>
+					In order to use greenDAO in your Android project (usually an Eclipse project), you need to
+					create a second project, the “generator project”. Its task is to generate code specific
+					to your project domain. The generator project is an normal Java (not Android!) project.
+					Make sure the greenDAO generator library (greenDAO-generator.jar) and the Freemarker
+					library (freemarker.jar) are in its classpath. Create an executable Java class, model your
+					entities and trigger the code generation. For details, have a look at the modelling documentation.
+				</p>
+            </div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N202A" class="section-anchor"
+                                href="#N202A">
+                                </a>
+                                2.2.&nbsp;Core Classes
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					Once you generated your project specific code, you can start using greenDAO in your
+					Android project. Don’t forget to include the greenDAO core library (greenDAO.jar) in
+					your Android project.
+                </p>
+				<p>
+					The following core classes are the essential interface to greenDAO:
+				</p>
+				<div class="figure-contents">
+					<img src="img/core_classes.png" alt="core_classes">
+				</div>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            DaoMaster:
+                        </code>
+                    </strong>
+					 The entry point for using greenDAO. DaoMaster holds the database object (SQLiteDatabase)
+					 and manages DAO classes (not objects) for a specific schema. It has static methods to
+					 create the tables or drop them. Its inner classes OpenHelper and DevOpenHelper are
+					 SQLiteOpenHelper implementations that create the schema in the SQLite database.
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            DaoSession:
+                        </code>
+                    </strong>
+					Manages all available DAO objects for a specific schema, which you can acquire using one of
+					the getter methods. DaoSession provides also some generic persistence methods like insert,
+					load, update, refresh and delete for entities. Lastly, a DaoSession objects also keeps track
+					of an identity scope. For more details, have a look at the session documentation.
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            DAOs:
+                        </code>
+                    </strong>
+					Data access objects (DAOs) persists and queries for entities. For each entity, greenDAO
+					generates a DAO. It has more persistence methods than the DaoSession, for example: count,
+					loadAll, and insertInTx.
+				</p>
+				<p>
+					<strong class="userinput">
+                        <code>
+                            Entities:
+                        </code>
+                    </strong>
+					Persistable objects. Usually, entities are generated (you do not have to), and are objects
+					representing a database row using standard Java properties (like a POJO or a JavaBean).
+				</p>
+            </div>
+			<div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <a xmlns:xslthl="http://xslthl.sf.net" name="N203A" class="section-anchor"
+                                href="#N203A">
+                                </a>
+                                2.3.&nbsp;Core Initialization
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+					The following code example illustrates the first steps to initialize the database and
+					the core greenDAO classes:
+                </p>
+                <pre class="programlisting">
+                    helper = new DaoMaster.DevOpenHelper(this, "notes-db", null);
+                    db = helper.getWritableDatabase();
+                    daoMaster = new DaoMaster(db);
+                    daoSession = daoMaster.newSession();
+                    noteDao = daoSession.getNoteDao();
+				</pre>
+				<p>
+					The example assumes having a “Note” entity. With its DAO (noteDao object), we can call
+					the persistence operation for this specific entity.
+				</p>
+            </div>
+        </div>
+        <div class="navfooter">
+            <div>
+                <div class="navbar">
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c01.html" title="How to get started - GreenDao Documentation 2.10">
+                        往后
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="GreenDao Documentation 2.10">
+                        目录
+                    </a>
+                    <span>
+                        |
+                    </span>
+                    <a xmlns:xslthl="http://xslthl.sf.net" href="c03.html" title="Modelling entities - GreenDao Documentation 2.10">
+                        往前
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
